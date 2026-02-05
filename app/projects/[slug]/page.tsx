@@ -5,16 +5,18 @@ import { ProjectDetail } from "@/components/project-detail";
 import { getProjectBySlug, projects } from "@/content/projects";
 import { siteConfig } from "@/lib/site";
 
+type PageParams = { slug: string };
+type PageProps = { params: Promise<PageParams> };
+
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
-}: {
-  params: { slug: string };
-}): Metadata {
-  const project = getProjectBySlug(params.slug);
+}: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
   if (!project) {
     return { title: siteConfig.title };
   }
@@ -24,12 +26,9 @@ export function generateMetadata({
   };
 }
 
-export default function ProjectDetailPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const project = getProjectBySlug(params.slug);
+export default async function ProjectDetailPage({ params }: PageProps) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     notFound();
