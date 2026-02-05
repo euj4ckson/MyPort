@@ -1,0 +1,16 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="studioGradient" x1="0" y1="0" x2="1200" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f1f5f9" />
+      <stop offset="0.5" stop-color="#e2e8f0" />
+      <stop offset="1" stop-color="#64748b" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#studioGradient)" />
+  <rect x="140" y="150" width="920" height="500" rx="32" fill="#ffffff" fill-opacity="0.9" stroke="#cbd5f5" stroke-width="2" />
+  <rect x="220" y="240" width="260" height="42" rx="21" fill="#0f172a" fill-opacity="0.85" />
+  <rect x="220" y="320" width="360" height="24" rx="12" fill="#94a3b8" fill-opacity="0.5" />
+  <rect x="220" y="380" width="460" height="24" rx="12" fill="#94a3b8" fill-opacity="0.5" />
+  <text x="220" y="600" fill="#0f172a" font-size="48" font-family="Arial" font-weight="700">Studio Grid</text>
+  <text x="220" y="650" fill="#475569" font-size="22" font-family="Arial">Creative ops hub</text>
+</svg>

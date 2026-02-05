@@ -1,0 +1,16 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lumenGradient" x1="0" y1="0" x2="1200" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f8fafc" />
+      <stop offset="0.6" stop-color="#e2e8f0" />
+      <stop offset="1" stop-color="#38bdf8" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#lumenGradient)" />
+  <rect x="140" y="160" width="920" height="480" rx="36" fill="#ffffff" fill-opacity="0.85" stroke="#e2e8f0" stroke-width="2" />
+  <rect x="220" y="240" width="240" height="240" rx="28" fill="#0ea5e9" fill-opacity="0.25" />
+  <rect x="520" y="280" width="380" height="36" rx="18" fill="#0f172a" fill-opacity="0.85" />
+  <rect x="520" y="340" width="300" height="22" rx="11" fill="#64748b" fill-opacity="0.5" />
+  <text x="220" y="560" fill="#0f172a" font-size="48" font-family="Arial" font-weight="700">Lumen Commerce</text>
+  <text x="220" y="610" fill="#475569" font-size="22" font-family="Arial">Premium storefront</text>
+</svg>

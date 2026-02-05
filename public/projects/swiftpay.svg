@@ -1,0 +1,16 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="swiftGradient" x1="0" y1="0" x2="1200" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#020617" />
+      <stop offset="0.5" stop-color="#1e293b" />
+      <stop offset="1" stop-color="#14b8a6" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#swiftGradient)" />
+  <rect x="180" y="140" width="840" height="520" rx="44" fill="#0f172a" fill-opacity="0.7" stroke="#1f2937" stroke-width="2" />
+  <rect x="260" y="220" width="240" height="360" rx="32" fill="#14b8a6" fill-opacity="0.25" />
+  <rect x="560" y="260" width="360" height="36" rx="18" fill="#f8fafc" fill-opacity="0.85" />
+  <rect x="560" y="320" width="280" height="22" rx="11" fill="#94a3b8" fill-opacity="0.6" />
+  <text x="260" y="610" fill="#f8fafc" font-size="48" font-family="Arial" font-weight="700">SwiftPay Mobile</text>
+  <text x="260" y="660" fill="#cbd5f5" font-size="22" font-family="Arial">Instant payouts</text>
+</svg>
