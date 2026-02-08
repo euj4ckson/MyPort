@@ -6,9 +6,9 @@ export default function CertificatesPage() {
     <section className="py-20">
       <div className="container space-y-10">
         <SectionHeading
-          eyebrow="Certificados"
-          title="Todos os certificados"
-          description="Histórico de certificações com links diretos."
+          eyebrow="Formacao e Certificados"
+          title="Certificacoes e formacao academica"
+          description="Filtre por categoria para visualizar certificados ou formacao academica."
         />
         <CertificatesGrid />
       </div>

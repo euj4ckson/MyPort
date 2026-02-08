@@ -23,9 +23,6 @@ export function CertificatesPreview() {
           {certificates.slice(0, 2).map((certificate) => (
             <Card key={certificate.title} className="overflow-hidden">
               <CardContent className="flex flex-col gap-4 p-6">
-                <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                  {certificate.date}
-                </div>
                 <div>
                   <h3 className="font-display text-xl font-semibold">
                     {certificate.title}
@@ -34,9 +31,11 @@ export function CertificatesPreview() {
                     {certificate.issuer}
                   </p>
                 </div>
-                <p className="text-xs text-muted-foreground">
-                  Credencial: {certificate.credentialId}
-                </p>
+                {certificate.credentialId ? (
+                  <p className="text-xs text-muted-foreground">
+                    Credencial: {certificate.credentialId}
+                  </p>
+                ) : null}
               </CardContent>
             </Card>
           ))}

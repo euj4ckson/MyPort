@@ -25,6 +25,33 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "encanshop",
+    title: "EncanShop",
+    shortDescription: "Loja virtual de velas com foco em experiencia de compra simples.",
+    description:
+      "Projeto de e-commerce para venda de velas, com interface web moderna e base em TypeScript.",
+    year: "2026",
+    role: "Desenvolvedor",
+    stack: ["TypeScript", "JavaScript", "CSS", "HTML"],
+    tags: ["TypeScript", "E-commerce", "Web"],
+    highlights: [
+      "Catalogo de velas com apresentacao visual clara",
+      "Fluxo de navegacao pensado para descoberta de produtos",
+      "Base de frontend pronta para evolucao de funcionalidades",
+    ],
+    challenges:
+      "Organizar apresentacao e navegacao dos produtos mantendo boa performance.",
+    solutions:
+      "Estrutura de componentes reutilizaveis, foco em UI objetiva e codigo tipado.",
+    links: [
+      { label: "GitHub", url: "https://github.com/euj4ckson/EncanShop" },
+    ],
+    thumbnail: {
+      src: "/projects/encanshop.svg",
+      alt: "EncanShop preview",
+    },
+  },
+  {
     slug: "fastbite",
     title: "FastBite",
     shortDescription: "Aplicação web para pedidos rápidos com backend em Python.",

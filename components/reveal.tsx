@@ -12,19 +12,27 @@ type RevealProps = {
 };
 
 export function Reveal({ children, className, delay = 0 }: RevealProps) {
-  const shouldReduceMotion = useReducedMotion();
+  const prefersReducedMotion = useReducedMotion();
+  const [isHydrated, setIsHydrated] = React.useState(false);
 
-  if (shouldReduceMotion) {
-    return <div className={className}>{children}</div>;
-  }
+  React.useEffect(() => {
+    setIsHydrated(true);
+  }, []);
+
+  const shouldReduceMotion = isHydrated && prefersReducedMotion;
 
   return (
     <motion.div
       className={cn("will-change-transform", className)}
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6, ease: "easeOut", delay }}
+      initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+      animate={shouldReduceMotion ? { opacity: 1, y: 0 } : undefined}
+      whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+      viewport={shouldReduceMotion ? undefined : { once: true, amount: 0.3 }}
+      transition={
+        shouldReduceMotion
+          ? { duration: 0 }
+          : { duration: 0.6, ease: "easeOut", delay }
+      }
     >
       {children}
     </motion.div>

@@ -12,7 +12,7 @@ export function ProjectsPreview() {
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading
             eyebrow="Projetos"
-            title="Soluções em .NET, APIs e MAUI"
+            title="Soluções Multiplataforma desenvolvidas"
             description="Projetos focados em estabilidade, performance e boas práticas de arquitetura."
           />
           <Button asChild variant="outline">

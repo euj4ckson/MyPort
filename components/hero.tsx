@@ -19,7 +19,7 @@ export function Hero() {
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                 {profile.location}
               </p>
-              <h1 className="font-display text-4xl font-semibold leading-tight md:text-5xl">
+              <h1 className="font-display text-5xl font-semibold leading-tight md:text-6xl lg:text-7xl">
                 {profile.headline}
               </h1>
               <p className="max-w-2xl text-lg text-muted-foreground">
@@ -55,7 +55,7 @@ export function Hero() {
               <div className="space-y-4">
                 <div className="text-sm text-muted-foreground">Foco atual</div>
                 <h3 className="font-display text-2xl font-semibold">
-                  APIs robustas e apps multiplataforma com MAUI
+                  Solucoes digitais de ponta a ponta
                 </h3>
                 <p className="text-sm text-muted-foreground">
                   Entregando serviços confiáveis, com boas práticas e performance consistente.
@@ -87,3 +87,4 @@ export function Hero() {
     </section>
   );
 }
+

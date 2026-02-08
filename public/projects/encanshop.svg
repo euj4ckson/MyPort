@@ -1,0 +1,26 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="encanBg" x1="0" y1="0" x2="1200" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff7ed" />
+      <stop offset="0.55" stop-color="#fde68a" />
+      <stop offset="1" stop-color="#fb923c" />
+    </linearGradient>
+    <radialGradient id="flame" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600 260) rotate(90) scale(120 90)">
+      <stop stop-color="#fff7ed" />
+      <stop offset="0.5" stop-color="#f59e0b" />
+      <stop offset="1" stop-color="#ea580c" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#encanBg)" />
+
+  <rect x="220" y="170" width="760" height="470" rx="44" fill="#ffffff" fill-opacity="0.82" stroke="#fed7aa" stroke-width="2" />
+  <rect x="440" y="290" width="320" height="250" rx="56" fill="#fef3c7" stroke="#fdba74" stroke-width="5" />
+  <rect x="575" y="250" width="50" height="56" rx="24" fill="#78350f" fill-opacity="0.8" />
+  <ellipse cx="600" cy="248" rx="85" ry="108" fill="url(#flame)" />
+  <ellipse cx="600" cy="254" rx="34" ry="46" fill="#fffbeb" fill-opacity="0.9" />
+
+  <rect x="312" y="580" width="576" height="18" rx="9" fill="#7c2d12" fill-opacity="0.32" />
+  <text x="600" y="675" text-anchor="middle" fill="#7c2d12" font-size="62" font-family="Arial" font-weight="700">EncanShop</text>
+  <text x="600" y="718" text-anchor="middle" fill="#9a3412" font-size="28" font-family="Arial">Loja de Velas</text>
+</svg>

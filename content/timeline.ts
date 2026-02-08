@@ -9,8 +9,8 @@ export const timeline: TimelineItem[] = [
   {
     period: "2024 - Presente",
     title: "Desenvolvedor .NET",
-    company: "Projetos pessoais e freelas",
+    company: "Atuando ativamente no mercado de desenvolvimento",
     description:
-      "Atuação com APIs em ASP.NET Core, integrações e apps MAUI multiplataforma.",
+      "Atuação com .NET, integrações e apps multiplataforma.",
   },
 ];

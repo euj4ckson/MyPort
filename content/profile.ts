@@ -1,6 +1,6 @@
 export const profile = {
   name: "Jackson Eduardo",
-  headline: "Desenvolvedor .NET | ASP.NET | MAUI",
+  headline: "Desenvolvedor",
   location: "Brasil",
   bio: "Desenvolvedor .NET/ASP/MAUI apaixonado por criar soluções inteligentes que simplificam problemas reais.",
   summary:
@@ -12,12 +12,14 @@ export const profile = {
     "Entity Framework Core",
     ".NET MAUI",
     "SQL Server",
-    "SQLite",
+    "OracleBD",
     "REST APIs",
     "Azure",
     "Docker",
     "Git",
-    "CI/CD",
+    "Phython",
+    "TypeScript",
+    "NodeJS",
   ],
   social: {
     github: "https://github.com/euj4ckson",

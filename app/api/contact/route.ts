@@ -8,6 +8,7 @@ const schema = z.object({
 });
 
 export const runtime = "nodejs";
+const contactDestinationEmail = "jacksonduardo6@gmail.com";
 
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
@@ -22,12 +23,14 @@ export async function POST(request: Request) {
 
   const { name, email, message } = parsed.data;
   const apiKey = process.env.RESEND_API_KEY;
-  const toEmail = process.env.CONTACT_TO_EMAIL;
   const fromEmail = process.env.CONTACT_FROM_EMAIL ?? "onboarding@resend.dev";
 
-  if (!apiKey || !toEmail) {
+  if (!apiKey) {
     return Response.json(
-      { error: "Email service is not configured" },
+      {
+        error: "Email service is not configured",
+        missing: ["RESEND_API_KEY"],
+      },
       { status: 503 },
     );
   }
@@ -35,16 +38,38 @@ export async function POST(request: Request) {
   const resend = new Resend(apiKey);
 
   try {
-    await resend.emails.send({
+    const { error: resendError } = await resend.emails.send({
       from: fromEmail,
-      to: toEmail,
+      to: contactDestinationEmail,
       subject: `New portfolio message from ${name}`,
       replyTo: email,
       text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
     });
 
+    if (resendError) {
+      return Response.json(
+        {
+          error: "Failed to send message",
+          details:
+            process.env.NODE_ENV === "development"
+              ? resendError.message
+              : undefined,
+        },
+        { status: 502 },
+      );
+    }
+
     return Response.json({ ok: true });
-  } catch (error) {
-    return Response.json({ error: "Failed to send message" }, { status: 500 });
+  } catch {
+    return Response.json(
+      {
+        error: "Failed to send message",
+        details:
+          process.env.NODE_ENV === "development"
+            ? "Unexpected server error while sending email"
+            : undefined,
+      },
+      { status: 500 },
+    );
   }
 }
