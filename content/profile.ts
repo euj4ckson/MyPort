@@ -6,14 +6,14 @@ export const profile = {
   summary:
     "Sou desenvolvedor .NET com formação técnica e tecnológica em Análise e Desenvolvimento de Sistemas. Atuo com foco em arquitetura, padrões de projeto e boas práticas que garantem aplicações escaláveis e de alta qualidade. Trabalho com ASP.NET, .NET MAUI e desenvolvimento multiplataforma, sempre priorizando organização, desempenho e a entrega de soluções robustas que gerem valor real para usuários e empresas.",
   stack: [
-    "C#",
+    "REST APIs",
     ".NET",
     "ASP.NET Core",
-    "Entity Framework Core",
     ".NET MAUI",
+    "Entity Framework Core",
+    "C#",
     "SQL Server",
     "OracleBD",
-    "REST APIs",
     "Azure",
     "Docker",
     "Git",
