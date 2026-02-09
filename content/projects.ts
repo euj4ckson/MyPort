@@ -75,7 +75,7 @@ export const projects: Project[] = [
     ],
     thumbnail: {
       src: "/projects/fastbite.svg",
-      alt: "FastBite preview",
+      alt: "Dashboard do FastBite com fila de pedidos e rota de entrega",
     },
   },
   {
@@ -102,7 +102,7 @@ export const projects: Project[] = [
     ],
     thumbnail: {
       src: "/projects/maui-finance.svg",
-      alt: "App Controle Financeiro preview",
+      alt: "Mockup do app financeiro em MAUI com resumo de entradas e saidas",
     },
   },
   {
@@ -129,7 +129,7 @@ export const projects: Project[] = [
     ],
     thumbnail: {
       src: "/projects/ai-agent.svg",
-      alt: "AI Agent preview",
+      alt: "Painel do AI Agent com loop de decisao e output de automacao",
     },
   },
   {
@@ -156,7 +156,7 @@ export const projects: Project[] = [
     ],
     thumbnail: {
       src: "/projects/costs.svg",
-      alt: "Costs Project Manager preview",
+      alt: "Dashboard de custos com projetos ativos e evolucao mensal",
     },
   },
 ];

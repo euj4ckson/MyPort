@@ -8,16 +8,21 @@ import type { Project } from "@/content/projects";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <Card className="flex h-full flex-col">
-      <CardHeader>
-        <div className="overflow-hidden rounded-2xl border border-border/60">
+    <Card className="group flex h-full flex-col">
+      <CardHeader className="space-y-4">
+        <div className="relative overflow-hidden rounded-2xl border border-border/60">
           <Image
             src={project.thumbnail.src}
             alt={project.thumbnail.alt}
             width={640}
             height={420}
-            className="h-48 w-full object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="h-48 w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
           />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
+          <span className="absolute left-3 top-3 rounded-full border border-white/20 bg-slate-950/60 px-2.5 py-1 text-[11px] font-semibold text-white/90 backdrop-blur">
+            {project.year}
+          </span>
         </div>
         <div className="space-y-2">
           <CardTitle>{project.title}</CardTitle>

@@ -1,45 +1,93 @@
 <svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="fastbite-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0b1120" />
-      <stop offset="60%" stop-color="#111827" />
-      <stop offset="100%" stop-color="#f59e0b" />
+    <linearGradient id="fb-bg" x1="70" y1="20" x2="1080" y2="790" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#101727" />
+      <stop offset="0.55" stop-color="#0F172A" />
+      <stop offset="1" stop-color="#F97316" />
     </linearGradient>
-    <radialGradient id="fastbite-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(920 240) rotate(135) scale(260 200)">
-      <stop stop-color="#fbbf24" stop-opacity="0.45" />
-      <stop offset="1" stop-color="#fbbf24" stop-opacity="0" />
+    <radialGradient id="fb-glow-a" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1030 130) rotate(133.66) scale(320 240)">
+      <stop stop-color="#FDBA74" stop-opacity="0.45" />
+      <stop offset="1" stop-color="#FDBA74" stop-opacity="0" />
     </radialGradient>
-    <pattern id="fastbite-grid" width="80" height="80" patternUnits="userSpaceOnUse">
-      <path d="M80 0H0V80" stroke="#1f2937" stroke-width="1" opacity="0.35" />
+    <radialGradient id="fb-glow-b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(250 750) rotate(-68.2) scale(280 220)">
+      <stop stop-color="#FB923C" stop-opacity="0.22" />
+      <stop offset="1" stop-color="#FB923C" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="fb-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#3D4A63" stroke-opacity="0.4" />
     </pattern>
-    <filter id="fastbite-blur" x="-200" y="-200" width="1600" height="1200" filterUnits="userSpaceOnUse">
-      <feGaussianBlur stdDeviation="60" />
+    <filter id="fb-shadow" x="0" y="0" width="1200" height="800" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="26" stdDeviation="22" flood-color="#020617" flood-opacity="0.55" />
     </filter>
+    <linearGradient id="fb-panel" x1="180" y1="150" x2="1020" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0C1425" stop-opacity="0.94" />
+      <stop offset="1" stop-color="#121E33" stop-opacity="0.88" />
+    </linearGradient>
+    <linearGradient id="fb-pill" x1="261" y1="293" x2="389" y2="293" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FB923C" />
+      <stop offset="1" stop-color="#F97316" />
+    </linearGradient>
+    <linearGradient id="fb-btn" x1="264" y1="567" x2="456" y2="567" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBBF24" />
+      <stop offset="1" stop-color="#F97316" />
+    </linearGradient>
   </defs>
-  <rect width="1200" height="800" fill="url(#fastbite-bg)" />
-  <rect width="1200" height="800" fill="url(#fastbite-grid)" opacity="0.35" />
-  <circle cx="920" cy="220" r="180" fill="url(#fastbite-glow)" />
-  <circle cx="260" cy="640" r="180" fill="#f59e0b" opacity="0.12" filter="url(#fastbite-blur)" />
 
-  <rect x="120" y="120" width="960" height="560" rx="48" fill="#0b1220" fill-opacity="0.78" stroke="#1f2937" stroke-width="2" />
-  <rect x="200" y="200" width="520" height="140" rx="28" fill="#101826" stroke="#283548" stroke-width="1.5" />
-  <rect x="220" y="230" width="180" height="28" rx="14" fill="#f59e0b" fill-opacity="0.9" />
-  <rect x="220" y="270" width="420" height="16" rx="8" fill="#e2e8f0" fill-opacity="0.7" />
-  <rect x="220" y="298" width="360" height="12" rx="6" fill="#94a3b8" fill-opacity="0.6" />
+  <rect width="1200" height="800" fill="url(#fb-bg)" />
+  <rect width="1200" height="800" fill="url(#fb-grid)" opacity="0.24" />
+  <circle cx="1024" cy="128" r="230" fill="url(#fb-glow-a)" />
+  <circle cx="250" cy="748" r="220" fill="url(#fb-glow-b)" />
 
-  <rect x="200" y="380" width="380" height="200" rx="28" fill="#0f172a" stroke="#283548" stroke-width="1.5" />
-  <rect x="220" y="410" width="220" height="20" rx="10" fill="#e2e8f0" fill-opacity="0.65" />
-  <rect x="220" y="445" width="280" height="14" rx="7" fill="#94a3b8" fill-opacity="0.55" />
-  <rect x="220" y="490" width="160" height="44" rx="22" fill="#f59e0b" />
-  <text x="260" y="520" fill="#0b1120" font-size="20" font-family="Arial" font-weight="700">Order</text>
+  <g filter="url(#fb-shadow)">
+    <rect x="96" y="92" width="1008" height="616" rx="42" fill="url(#fb-panel)" stroke="#334155" stroke-opacity="0.7" stroke-width="2" />
+    <rect x="96" y="92" width="1008" height="58" rx="42" fill="#0A1324" fill-opacity="0.85" />
+    <circle cx="138" cy="122" r="7" fill="#FB7185" fill-opacity="0.9" />
+    <circle cx="164" cy="122" r="7" fill="#FACC15" fill-opacity="0.9" />
+    <circle cx="190" cy="122" r="7" fill="#34D399" fill-opacity="0.9" />
+    <rect x="232" y="110" width="248" height="24" rx="12" fill="#182235" />
+  </g>
 
-  <rect x="640" y="380" width="360" height="200" rx="28" fill="#0f172a" stroke="#283548" stroke-width="1.5" />
-  <circle cx="740" cy="465" r="54" fill="#f59e0b" fill-opacity="0.25" />
-  <path d="M720 465h40" stroke="#f8fafc" stroke-width="8" stroke-linecap="round" />
-  <path d="M740 445v40" stroke="#f8fafc" stroke-width="8" stroke-linecap="round" />
-  <rect x="820" y="430" width="140" height="16" rx="8" fill="#e2e8f0" fill-opacity="0.6" />
-  <rect x="820" y="460" width="110" height="12" rx="6" fill="#94a3b8" fill-opacity="0.55" />
+  <rect x="184" y="186" width="374" height="430" rx="28" fill="#0E1729" stroke="#334155" stroke-opacity="0.65" />
+  <text x="220" y="228" fill="#F8FAFC" font-size="24" font-weight="600" font-family="Segoe UI, Arial, sans-serif">Pedidos em fila</text>
+  <rect x="220" y="252" width="230" height="10" rx="5" fill="#64748B" fill-opacity="0.45" />
 
-  <text x="200" y="660" fill="#f8fafc" font-size="46" font-family="Arial" font-weight="700">FastBite</text>
-  <text x="200" y="700" fill="#fde68a" font-size="20" font-family="Arial">Python + Web ordering</text>
+  <rect x="220" y="280" width="302" height="86" rx="20" fill="#111D33" stroke="#334155" stroke-opacity="0.75" />
+  <rect x="244" y="305" width="144" height="22" rx="11" fill="url(#fb-pill)" />
+  <text x="420" y="320" fill="#E2E8F0" font-size="15" font-weight="600" font-family="Segoe UI, Arial, sans-serif">12 min</text>
+  <rect x="244" y="337" width="214" height="10" rx="5" fill="#94A3B8" fill-opacity="0.48" />
+
+  <rect x="220" y="378" width="302" height="86" rx="20" fill="#111D33" stroke="#334155" stroke-opacity="0.75" />
+  <rect x="244" y="403" width="132" height="22" rx="11" fill="#FB923C" fill-opacity="0.28" />
+  <text x="420" y="418" fill="#E2E8F0" font-size="15" font-weight="600" font-family="Segoe UI, Arial, sans-serif">18 min</text>
+  <rect x="244" y="435" width="190" height="10" rx="5" fill="#94A3B8" fill-opacity="0.48" />
+
+  <rect x="220" y="476" width="302" height="86" rx="20" fill="#111D33" stroke="#334155" stroke-opacity="0.75" />
+  <rect x="244" y="501" width="158" height="22" rx="11" fill="#FDBA74" fill-opacity="0.2" />
+  <text x="420" y="516" fill="#E2E8F0" font-size="15" font-weight="600" font-family="Segoe UI, Arial, sans-serif">23 min</text>
+  <rect x="244" y="533" width="176" height="10" rx="5" fill="#94A3B8" fill-opacity="0.48" />
+
+  <rect x="264" y="547" width="192" height="40" rx="20" fill="url(#fb-btn)" />
+  <text x="315" y="573" fill="#0B1020" font-size="16" font-weight="700" font-family="Segoe UI, Arial, sans-serif">Despachar</text>
+
+  <rect x="602" y="186" width="414" height="210" rx="28" fill="#0E1729" stroke="#334155" stroke-opacity="0.65" />
+  <text x="636" y="226" fill="#F8FAFC" font-size="24" font-weight="600" font-family="Segoe UI, Arial, sans-serif">Rota de entrega</text>
+  <rect x="636" y="248" width="290" height="10" rx="5" fill="#64748B" fill-opacity="0.45" />
+  <path d="M654 340C694 282 742 360 788 312C828 272 876 330 918 292C950 264 977 286 988 305" stroke="#FDBA74" stroke-width="6" stroke-linecap="round" />
+  <circle cx="654" cy="340" r="8" fill="#F97316" />
+  <circle cx="788" cy="312" r="8" fill="#FDBA74" />
+  <circle cx="918" cy="292" r="8" fill="#F97316" />
+  <circle cx="988" cy="305" r="10" fill="#FED7AA" />
+
+  <rect x="602" y="418" width="414" height="198" rx="28" fill="#0E1729" stroke="#334155" stroke-opacity="0.65" />
+  <text x="636" y="458" fill="#F8FAFC" font-size="22" font-weight="600" font-family="Segoe UI, Arial, sans-serif">Resumo operacional</text>
+  <rect x="636" y="482" width="240" height="10" rx="5" fill="#64748B" fill-opacity="0.45" />
+  <rect x="636" y="512" width="160" height="12" rx="6" fill="#F97316" fill-opacity="0.82" />
+  <rect x="636" y="534" width="248" height="12" rx="6" fill="#94A3B8" fill-opacity="0.44" />
+  <rect x="636" y="556" width="210" height="12" rx="6" fill="#94A3B8" fill-opacity="0.44" />
+  <circle cx="930" cy="532" r="48" stroke="#FDBA74" stroke-width="10" stroke-opacity="0.35" />
+  <path d="M930 484A48 48 0 0 1 971 545" stroke="#F97316" stroke-width="10" stroke-linecap="round" />
+  <text x="915" y="539" fill="#FDE68A" font-size="20" font-weight="700" font-family="Segoe UI, Arial, sans-serif">68%</text>
+
+  <text x="170" y="672" fill="#F8FAFC" font-size="44" font-weight="700" font-family="Segoe UI, Arial, sans-serif">FastBite</text>
+  <text x="170" y="704" fill="#FED7AA" font-size="19" font-weight="500" font-family="Segoe UI, Arial, sans-serif">Web ordering with real-time kitchen flow</text>
 </svg>
