@@ -1,0 +1,101 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pm-bg" x1="70" y1="-30" x2="1130" y2="820" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#060F23"/>
+      <stop offset="0.55" stop-color="#0C1A34"/>
+      <stop offset="1" stop-color="#0A4E8A"/>
+    </linearGradient>
+    <radialGradient id="pm-glow-a" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1020 120) rotate(132) scale(350 260)">
+      <stop stop-color="#38BDF8" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pm-glow-b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(210 760) rotate(-58) scale(340 260)">
+      <stop stop-color="#22D3EE" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="pm-grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" stroke="#334155" stroke-opacity="0.34"/>
+    </pattern>
+    <linearGradient id="pm-panel" x1="110" y1="94" x2="1090" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#08142A" stop-opacity="0.96"/>
+      <stop offset="1" stop-color="#0C213E" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="pm-maze-line" x1="176" y1="190" x2="1030" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2F6DF8"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+    <radialGradient id="pm-pacman" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(390 372) rotate(40) scale(158 158)">
+      <stop stop-color="#FDE68A"/>
+      <stop offset="0.45" stop-color="#FACC15"/>
+      <stop offset="1" stop-color="#EAB308"/>
+    </radialGradient>
+    <linearGradient id="pm-ghost" x1="832" y1="348" x2="988" y2="548" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FB7185"/>
+      <stop offset="1" stop-color="#EF4444"/>
+    </linearGradient>
+    <filter id="pm-shadow" x="0" y="0" width="1200" height="800" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#020617" flood-opacity="0.55"/>
+    </filter>
+    <filter id="pm-neon" x="130" y="140" width="940" height="540" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#pm-bg)"/>
+  <rect width="1200" height="800" fill="url(#pm-grid)" opacity="0.24"/>
+  <circle cx="1020" cy="120" r="250" fill="url(#pm-glow-a)"/>
+  <circle cx="210" cy="760" r="230" fill="url(#pm-glow-b)"/>
+
+  <g filter="url(#pm-shadow)">
+    <rect x="94" y="92" width="1012" height="616" rx="42" fill="url(#pm-panel)" stroke="#334155" stroke-opacity="0.68" stroke-width="2"/>
+    <rect x="94" y="92" width="1012" height="54" rx="42" fill="#09172E" fill-opacity="0.9"/>
+    <circle cx="136" cy="118" r="6.5" fill="#FB7185"/>
+    <circle cx="160" cy="118" r="6.5" fill="#FACC15"/>
+    <circle cx="184" cy="118" r="6.5" fill="#34D399"/>
+  </g>
+
+  <rect x="152" y="168" width="896" height="476" rx="32" fill="#0A1731" stroke="#1E293B" stroke-width="2"/>
+  <rect x="152" y="168" width="896" height="476" rx="32" fill="url(#pm-grid)" opacity="0.18"/>
+  <rect x="188" y="204" width="824" height="404" rx="20" fill="#0B1E3B" fill-opacity="0.9"/>
+
+  <g filter="url(#pm-neon)">
+    <path d="M212 230H988V582H212V230Z" stroke="url(#pm-maze-line)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M212 334H754" stroke="url(#pm-maze-line)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M446 334V516" stroke="url(#pm-maze-line)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M584 230V428" stroke="url(#pm-maze-line)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M702 334V582" stroke="url(#pm-maze-line)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M826 428V582" stroke="url(#pm-maze-line)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M324 428H894" stroke="url(#pm-maze-line)" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <ellipse cx="390" cy="386" rx="160" ry="118" fill="#111827" fill-opacity="0.55"/>
+  <circle cx="390" cy="372" r="112" fill="url(#pm-pacman)"/>
+  <path d="M390 372L484 302C499 320 508 344 508 372C508 433 459 484 398 484H390V372Z" fill="#08142A"/>
+  <circle cx="350" cy="336" r="8.5" fill="#0B1326"/>
+
+  <g>
+    <circle cx="590" cy="302" r="15" fill="#F8FAFC"/>
+    <circle cx="642" cy="302" r="15" fill="#F8FAFC"/>
+    <circle cx="694" cy="302" r="15" fill="#F8FAFC"/>
+    <circle cx="746" cy="302" r="15" fill="#F8FAFC"/>
+    <circle cx="798" cy="302" r="15" fill="#F8FAFC"/>
+    <circle cx="850" cy="302" r="15" fill="#F8FAFC"/>
+  </g>
+
+  <g>
+    <path d="M836 415C836 365 877 324 927 324H935C985 324 1026 365 1026 415V462H836V415Z" fill="url(#pm-ghost)"/>
+    <path d="M836 462L859 441L882 462L905 441L928 462L951 441L974 462L997 441L1026 462V494H836V462Z" fill="#FCA5A5"/>
+    <circle cx="894" cy="406" r="16" fill="#F8FAFC"/>
+    <circle cx="942" cy="406" r="16" fill="#F8FAFC"/>
+    <circle cx="894" cy="406" r="7" fill="#0F172A"/>
+    <circle cx="942" cy="406" r="7" fill="#0F172A"/>
+  </g>
+
+  <rect x="182" y="188" width="242" height="56" rx="16" fill="#09172E" fill-opacity="0.84" stroke="#334155" stroke-opacity="0.7"/>
+  <text x="208" y="218" fill="#E2E8F0" font-size="22" font-weight="700" font-family="Segoe UI, Arial, sans-serif">PACMAN 3D</text>
+  <text x="208" y="236" fill="#7DD3FC" font-size="12" font-family="Segoe UI, Arial, sans-serif">Neon maze gameplay</text>
+</svg>

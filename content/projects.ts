@@ -25,6 +25,44 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "pacman-3d",
+    title: "Pacman 3D",
+    shortDescription: "Jogo 3D inspirado em Pac-Man para jogar direto no navegador.",
+    description:
+      "Projeto de game web em 3D com movimentacao em labirinto, coleta de pontos e foco em jogabilidade fluida.",
+    year: "2026",
+    role: "Desenvolvedor",
+    stack: ["JavaScript", "Three.js", "HTML", "CSS"],
+    tags: ["GameDev", "3D", "Web"],
+    highlights: [
+      "Mapa 3D interativo com movimentacao em tempo real",
+      "Loop de jogo com coleta de pontos e progressao da partida",
+      "Deploy web para execucao imediata no browser",
+    ],
+    challenges:
+      "Manter boa performance de renderizacao 3D em diferentes dispositivos.",
+    solutions:
+      "Otimizacao do loop de renderizacao, ajustes de colisao e organizacao modular da logica do jogo.",
+    links: [
+      { label: "Demo", url: "https://pacman-kappa-liard.vercel.app/" },
+      { label: "GitHub", url: "https://github.com/euj4ckson/PACMAN.git" },
+    ],
+    thumbnail: {
+      src: "/projects/pacman-3d.svg",
+      alt: "Preview do jogo Pacman 3D com labirinto e pontos",
+    },
+    gallery: [
+      {
+        src: "/projects/pacman-3d-chase.svg",
+        alt: "Cena de perseguicao no Pacman 3D com fantasmas no labirinto neon",
+      },
+      {
+        src: "/projects/pacman-3d-level.svg",
+        alt: "Preview de fase do Pacman 3D com score e layout do mapa",
+      },
+    ],
+  },
+  {
     slug: "encanshop",
     title: "EncanShop",
     shortDescription: "Loja virtual de velas com foco em experiencia de compra simples.",

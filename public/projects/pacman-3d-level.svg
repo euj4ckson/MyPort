@@ -1,0 +1,90 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pl-bg" x1="100" y1="-10" x2="1130" y2="820" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#071026"/>
+      <stop offset="0.52" stop-color="#0D203E"/>
+      <stop offset="1" stop-color="#164E63"/>
+    </linearGradient>
+    <pattern id="pl-grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" stroke="#334155" stroke-opacity="0.28"/>
+    </pattern>
+    <radialGradient id="pl-glow-a" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1030 150) rotate(139) scale(320 230)">
+      <stop stop-color="#67E8F9" stop-opacity="0.33"/>
+      <stop offset="1" stop-color="#67E8F9" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pl-panel" x1="120" y1="96" x2="1060" y2="710" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#091830" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#102643" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="pl-neon" x1="176" y1="204" x2="1008" y2="612" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+    <linearGradient id="pl-pac" x1="332" y1="498" x2="455" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EAB308"/>
+      <stop offset="1" stop-color="#FDE68A"/>
+    </linearGradient>
+    <linearGradient id="pl-purple" x1="812" y1="328" x2="960" y2="518" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C084FC"/>
+      <stop offset="1" stop-color="#A855F7"/>
+    </linearGradient>
+    <filter id="pl-shadow" x="0" y="0" width="1200" height="800" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="22" stdDeviation="26" flood-color="#020617" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#pl-bg)"/>
+  <rect width="1200" height="800" fill="url(#pl-grid)" opacity="0.18"/>
+  <circle cx="1030" cy="150" r="250" fill="url(#pl-glow-a)"/>
+
+  <g filter="url(#pl-shadow)">
+    <rect x="94" y="92" width="1012" height="616" rx="42" fill="url(#pl-panel)" stroke="#334155" stroke-opacity="0.68" stroke-width="2"/>
+    <rect x="94" y="92" width="1012" height="54" rx="42" fill="#0A1A33"/>
+    <circle cx="136" cy="120" r="6.5" fill="#FB7185"/>
+    <circle cx="160" cy="120" r="6.5" fill="#FACC15"/>
+    <circle cx="184" cy="120" r="6.5" fill="#34D399"/>
+  </g>
+
+  <rect x="154" y="174" width="892" height="492" rx="32" fill="#091A35" stroke="#1E293B" stroke-width="2"/>
+  <path d="M188 224H1012V610H188V224Z" stroke="url(#pl-neon)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M188 322H824" stroke="url(#pl-neon)" stroke-width="11" stroke-linecap="round"/>
+  <path d="M188 434H636" stroke="url(#pl-neon)" stroke-width="11" stroke-linecap="round"/>
+  <path d="M314 224V434" stroke="url(#pl-neon)" stroke-width="11" stroke-linecap="round"/>
+  <path d="M470 322V610" stroke="url(#pl-neon)" stroke-width="11" stroke-linecap="round"/>
+  <path d="M636 224V546" stroke="url(#pl-neon)" stroke-width="11" stroke-linecap="round"/>
+  <path d="M824 322V610" stroke="url(#pl-neon)" stroke-width="11" stroke-linecap="round"/>
+  <path d="M636 546H1012" stroke="url(#pl-neon)" stroke-width="11" stroke-linecap="round"/>
+
+  <g fill="#F8FAFC">
+    <circle cx="372" cy="272" r="13"/>
+    <circle cx="420" cy="272" r="13"/>
+    <circle cx="468" cy="272" r="13"/>
+    <circle cx="516" cy="272" r="13"/>
+    <circle cx="564" cy="272" r="13"/>
+    <circle cx="612" cy="272" r="13"/>
+    <circle cx="660" cy="272" r="13"/>
+  </g>
+
+  <g>
+    <circle cx="370" cy="476" r="102" fill="url(#pl-pac)"/>
+    <path d="M370 476L447 408C460 424 468 445 468 468C468 523 425 568 370 568V476Z" fill="#08142A"/>
+    <circle cx="334" cy="442" r="8.5" fill="#0B1326"/>
+  </g>
+
+  <g>
+    <path d="M812 414C812 365 852 326 901 326H907C956 326 996 365 996 414V460H812V414Z" fill="url(#pl-purple)"/>
+    <path d="M812 460L832 441L852 460L872 441L892 460L912 441L932 460L952 441L972 460L992 441L996 460V492H812V460Z" fill="#E9D5FF"/>
+    <circle cx="865" cy="398" r="15" fill="#F8FAFC"/>
+    <circle cx="909" cy="398" r="15" fill="#F8FAFC"/>
+    <circle cx="865" cy="398" r="7" fill="#0F172A"/>
+    <circle cx="909" cy="398" r="7" fill="#0F172A"/>
+  </g>
+
+  <rect x="854" y="176" width="172" height="76" rx="16" fill="#09172E" stroke="#334155" stroke-opacity="0.72"/>
+  <text x="878" y="206" fill="#E2E8F0" font-size="16" font-family="Segoe UI, Arial, sans-serif">SCORE</text>
+  <text x="878" y="232" fill="#7DD3FC" font-size="26" font-weight="700" font-family="Segoe UI, Arial, sans-serif">12840</text>
+
+  <rect x="176" y="176" width="300" height="76" rx="16" fill="#09172E" stroke="#334155" stroke-opacity="0.72"/>
+  <text x="202" y="208" fill="#E2E8F0" font-size="22" font-weight="700" font-family="Segoe UI, Arial, sans-serif">LEVEL PREVIEW</text>
+  <text x="202" y="228" fill="#7DD3FC" font-size="12" font-family="Segoe UI, Arial, sans-serif">Interactive 3D maze scene</text>
+</svg>

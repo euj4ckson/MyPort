@@ -1,0 +1,92 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pc-bg" x1="120" y1="-20" x2="1160" y2="820" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#050C1C"/>
+      <stop offset="0.56" stop-color="#0D1C36"/>
+      <stop offset="1" stop-color="#0E7490"/>
+    </linearGradient>
+    <pattern id="pc-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#334155" stroke-opacity="0.3"/>
+    </pattern>
+    <radialGradient id="pc-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(350 250) rotate(19) scale(350 280)">
+      <stop stop-color="#67E8F9" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#67E8F9" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pc-lane" x1="170" y1="220" x2="1040" y2="590" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+    <linearGradient id="pc-pac" x1="310" y1="430" x2="454" y2="298" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FACC15"/>
+      <stop offset="1" stop-color="#FDE68A"/>
+    </linearGradient>
+    <linearGradient id="pc-red" x1="730" y1="312" x2="846" y2="466" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FB7185"/>
+      <stop offset="1" stop-color="#EF4444"/>
+    </linearGradient>
+    <linearGradient id="pc-cyan" x1="860" y1="368" x2="1000" y2="522" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67E8F9"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+    <filter id="pc-shadow" x="0" y="0" width="1200" height="800" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="22" stdDeviation="26" flood-color="#020617" flood-opacity="0.52"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#pc-bg)"/>
+  <rect width="1200" height="800" fill="url(#pc-grid)" opacity="0.2"/>
+  <circle cx="350" cy="250" r="300" fill="url(#pc-glow)"/>
+
+  <g filter="url(#pc-shadow)">
+    <rect x="96" y="94" width="1008" height="612" rx="42" fill="#07152C" fill-opacity="0.92" stroke="#334155" stroke-opacity="0.7" stroke-width="2"/>
+    <rect x="96" y="94" width="1008" height="54" rx="42" fill="#08162F"/>
+    <circle cx="136" cy="120" r="6.5" fill="#FB7185"/>
+    <circle cx="160" cy="120" r="6.5" fill="#FACC15"/>
+    <circle cx="184" cy="120" r="6.5" fill="#34D399"/>
+  </g>
+
+  <rect x="156" y="176" width="888" height="490" rx="30" fill="#081A34" stroke="#1E293B" stroke-width="2"/>
+  <path d="M208 260H1000V590H208V260Z" stroke="url(#pc-lane)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M208 346H738" stroke="url(#pc-lane)" stroke-width="12" stroke-linecap="round"/>
+  <path d="M408 260V482" stroke="url(#pc-lane)" stroke-width="12" stroke-linecap="round"/>
+  <path d="M576 346V590" stroke="url(#pc-lane)" stroke-width="12" stroke-linecap="round"/>
+  <path d="M744 260V516" stroke="url(#pc-lane)" stroke-width="12" stroke-linecap="round"/>
+  <path d="M742 516H1000" stroke="url(#pc-lane)" stroke-width="12" stroke-linecap="round"/>
+  <path d="M308 432H576" stroke="url(#pc-lane)" stroke-width="12" stroke-linecap="round"/>
+
+  <g>
+    <circle cx="380" cy="392" r="102" fill="url(#pc-pac)"/>
+    <path d="M380 392L460 330C474 347 482 368 482 392C482 449 437 494 380 494V392Z" fill="#08142A"/>
+    <circle cx="344" cy="358" r="8.5" fill="#0B1326"/>
+  </g>
+
+  <g fill="#F8FAFC">
+    <circle cx="480" cy="316" r="14"/>
+    <circle cx="530" cy="316" r="14"/>
+    <circle cx="580" cy="316" r="14"/>
+    <circle cx="630" cy="316" r="14"/>
+    <circle cx="680" cy="316" r="14"/>
+  </g>
+
+  <g>
+    <path d="M730 403C730 359 765 324 809 324H813C857 324 892 359 892 403V445H730V403Z" fill="url(#pc-red)"/>
+    <path d="M730 445L746 430L762 445L778 430L794 445L810 430L826 445L842 430L858 445L874 430L892 445V468H730V445Z" fill="#FECACA"/>
+    <circle cx="776" cy="391" r="14" fill="#F8FAFC"/>
+    <circle cx="818" cy="391" r="14" fill="#F8FAFC"/>
+    <circle cx="776" cy="391" r="6.5" fill="#0F172A"/>
+    <circle cx="818" cy="391" r="6.5" fill="#0F172A"/>
+  </g>
+
+  <g>
+    <path d="M860 461C860 414 898 376 945 376H949C996 376 1034 414 1034 461V506H860V461Z" fill="url(#pc-cyan)"/>
+    <path d="M860 506L878 490L896 506L914 490L932 506L950 490L968 506L986 490L1004 506L1022 490L1034 506V532H860V506Z" fill="#CFFAFE"/>
+    <circle cx="910" cy="446" r="14" fill="#F8FAFC"/>
+    <circle cx="952" cy="446" r="14" fill="#F8FAFC"/>
+    <circle cx="910" cy="446" r="6.5" fill="#0F172A"/>
+    <circle cx="952" cy="446" r="6.5" fill="#0F172A"/>
+  </g>
+
+  <rect x="176" y="194" width="260" height="58" rx="16" fill="#09172E" stroke="#334155" stroke-opacity="0.72"/>
+  <text x="202" y="227" fill="#E2E8F0" font-size="22" font-weight="700" font-family="Segoe UI, Arial, sans-serif">CHASE MODE</text>
+  <text x="202" y="244" fill="#7DD3FC" font-size="12" font-family="Segoe UI, Arial, sans-serif">Ghost AI + collectible dots</text>
+</svg>
