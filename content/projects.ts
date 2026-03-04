@@ -31,7 +31,7 @@ export const projects: Project[] = [
       "Portal publico para gestao de abrigos e pontos de doacao em crises de chuvas e enchentes.",
     description:
       "Aplicacao web para centralizar informacoes oficiais de abrigos e pontos de coleta durante eventos extremos em Minas Gerais, com painel restrito para equipes autorizadas atualizarem vagas e necessidades urgentes.",
-    year: "2024",
+    year: "2026",
     role: "Desenvolvedor Full-stack",
     stack: [
       "Next.js 14",
