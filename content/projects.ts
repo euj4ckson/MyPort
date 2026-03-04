@@ -25,6 +25,43 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "sos-mg",
+    title: "SOS MG",
+    shortDescription:
+      "Portal publico para gestao de abrigos e pontos de doacao em crises de chuvas e enchentes.",
+    description:
+      "Aplicacao web para centralizar informacoes oficiais de abrigos e pontos de coleta durante eventos extremos em Minas Gerais, com painel restrito para equipes autorizadas atualizarem vagas e necessidades urgentes.",
+    year: "2024",
+    role: "Desenvolvedor Full-stack",
+    stack: [
+      "Next.js 14",
+      "TypeScript",
+      "Tailwind CSS",
+      "Prisma ORM",
+      "Postgres (Neon/Supabase)",
+      "NextAuth",
+      "Leaflet",
+      "OpenStreetMap",
+    ],
+    tags: ["Next.js", "TypeScript", "Prisma", "Mapas", "Full-stack"],
+    highlights: [
+      "Portal publico com consulta de vagas, localizacao de abrigos e pontos oficiais de coleta",
+      "Painel restrito com autenticacao por credenciais para atualizacao das informacoes por equipes autorizadas",
+      "Mapa interativo com Leaflet + OpenStreetMap e clusters para leitura rapida em cenarios de crise",
+    ],
+    challenges:
+      "Manter dados operacionais confiaveis e atualizados durante eventos de chuva forte com alta demanda.",
+    solutions:
+      "Fluxo autenticado com NextAuth, modelagem de dados com Prisma e Postgres serverless, e interface otimizada para destacar necessidades urgentes.",
+    links: [
+      { label: "GitHub", url: "https://github.com/euj4ckson/SOS_MG.git" },
+    ],
+    thumbnail: {
+      src: "/projects/sos-mg.svg",
+      alt: "Mapa de resposta a enchentes com abrigos e pontos de doacao em Minas Gerais",
+    },
+  },
+  {
     slug: "pacman-3d",
     title: "Pacman 3D",
     shortDescription: "Jogo 3D inspirado em Pac-Man para jogar direto no navegador.",
