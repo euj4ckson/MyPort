@@ -73,6 +73,13 @@ export const certificates: Certificate[] = [
     image: "/projects/atlas.svg",
   },
   {
+    title: "POS-GRADUACAO EM ENGENHARIA DE SOFTWARE - EM ANDAMENTO",
+    issuer: "Formacao Academica",
+    category: "academic",
+    url: "#",
+    image: "/projects/atlas.svg",
+  },
+  {
     title: "TECNOLOGO EM ANALISE E DESENVOLVIMENTO DE SISTEMAS",
     issuer: "Centro Universitario Estacio Juiz de Fora",
     category: "academic",
