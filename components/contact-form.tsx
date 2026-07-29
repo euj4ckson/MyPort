@@ -3,17 +3,12 @@
 import * as React from "react";
 import { z } from "zod";
 
+import { useLanguage } from "@/components/language-provider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
-const schema = z.object({
-  name: z.string().min(2, "Informe seu nome"),
-  email: z.string().email("Digite um email válido"),
-  message: z.string().min(10, "Explique melhor sua necessidade"),
-});
-
-type FormState = z.infer<typeof schema>;
+type FormState = { name: string; email: string; message: string };
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -22,6 +17,7 @@ type FieldErrors = Partial<Record<keyof FormState, string>>;
 const initialState: FormState = { name: "", email: "", message: "" };
 
 export function ContactForm() {
+  const { text } = useLanguage();
   const [values, setValues] = React.useState<FormState>(initialState);
   const [errors, setErrors] = React.useState<FieldErrors>({});
   const [status, setStatus] = React.useState<Status>("idle");
@@ -33,6 +29,11 @@ export function ContactForm() {
     };
 
   const validate = () => {
+    const schema = z.object({
+      name: z.string().min(2, text.form.nameError),
+      email: z.string().email(text.form.emailError),
+      message: z.string().min(10, text.form.messageError),
+    });
     const result = schema.safeParse(values);
     if (result.success) {
       setErrors({});
@@ -77,7 +78,7 @@ export function ContactForm() {
     <form className="space-y-5" onSubmit={onSubmit} noValidate>
       <div className="space-y-2">
         <label htmlFor="name" className="text-sm font-medium">
-          Nome
+          {text.form.name}
         </label>
         <Input
           id="name"
@@ -86,7 +87,7 @@ export function ContactForm() {
           onChange={onChange("name")}
           aria-invalid={Boolean(errors.name)}
           aria-describedby={errors.name ? "name-error" : undefined}
-          placeholder="Seu nome"
+          placeholder={text.form.namePlaceholder}
           required
         />
         {errors.name ? (
@@ -97,7 +98,7 @@ export function ContactForm() {
       </div>
       <div className="space-y-2">
         <label htmlFor="email" className="text-sm font-medium">
-          Email
+          {text.form.email}
         </label>
         <Input
           id="email"
@@ -107,7 +108,7 @@ export function ContactForm() {
           onChange={onChange("email")}
           aria-invalid={Boolean(errors.email)}
           aria-describedby={errors.email ? "email-error" : undefined}
-          placeholder="voce@empresa.com"
+          placeholder={text.form.emailPlaceholder}
           required
         />
         {errors.email ? (
@@ -118,7 +119,7 @@ export function ContactForm() {
       </div>
       <div className="space-y-2">
         <label htmlFor="message" className="text-sm font-medium">
-          Mensagem
+          {text.form.message}
         </label>
         <Textarea
           id="message"
@@ -127,7 +128,7 @@ export function ContactForm() {
           onChange={onChange("message")}
           aria-invalid={Boolean(errors.message)}
           aria-describedby={errors.message ? "message-error" : undefined}
-          placeholder="Conte um pouco sobre o projeto"
+          placeholder={text.form.messagePlaceholder}
           required
         />
         {errors.message ? (
@@ -138,15 +139,15 @@ export function ContactForm() {
       </div>
       <div className="flex flex-wrap items-center gap-4">
         <Button type="submit" disabled={status === "loading"}>
-          {status === "loading" ? "Enviando..." : "Enviar mensagem"}
+          {status === "loading" ? text.form.sending : text.form.send}
         </Button>
         <div className="min-h-[20px]" aria-live="polite">
           {status === "success" ? (
-            <p className="text-sm text-emerald-500">Mensagem enviada. Obrigado!</p>
+            <p className="text-sm text-emerald-500">{text.form.success}</p>
           ) : null}
           {status === "error" ? (
             <p className="text-sm text-red-500">
-              Algo deu errado. Tente novamente.
+              {text.form.error}
             </p>
           ) : null}
         </div>

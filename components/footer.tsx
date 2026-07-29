@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
 
+import { useLanguage } from "@/components/language-provider";
 import { profile } from "@/content/profile";
+import { localizeProfile } from "@/lib/i18n";
 
 const footerLinks = [
   { label: "GitHub", href: profile.social.github },
@@ -9,12 +13,19 @@ const footerLinks = [
 ].filter((link) => Boolean(link.href));
 
 export function Footer() {
+  const { language } = useLanguage();
+  const localizedProfile = localizeProfile(language);
+
   return (
     <footer className="border-t border-border/60 py-10">
       <div className="container flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div className="space-y-2">
-          <p className="font-display text-lg font-semibold">{profile.name}</p>
-          <p className="text-sm text-muted-foreground">{profile.headline}</p>
+          <p className="font-display text-lg font-semibold">
+            {localizedProfile.name}
+          </p>
+          <p className="text-sm text-muted-foreground">
+            {localizedProfile.headline}
+          </p>
         </div>
         <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
           {footerLinks.map((link) => (

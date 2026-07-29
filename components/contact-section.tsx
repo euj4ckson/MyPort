@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { Github, Linkedin, Mail, MessageCircle } from "lucide-react";
 
 import { ContactForm } from "@/components/contact-form";
+import { useLanguage } from "@/components/language-provider";
 import { SectionHeading } from "@/components/section-heading";
 import { Card } from "@/components/ui/card";
 import { profile } from "@/content/profile";
@@ -14,20 +17,24 @@ const contactLinks = [
 ].filter((link) => Boolean(link.href));
 
 export function ContactSection() {
+  const { text } = useLanguage();
+
   return (
     <section id="contact" className="py-20">
       <div className="container space-y-12">
         <SectionHeading
-          eyebrow="Contato"
-          title="Vamos construir algo sólido"
-          description="Compartilhe objetivos, prazo e contexto. Respondo com um plano claro e próximos passos."
+          eyebrow={text.contact.eyebrow}
+          title={text.contact.title}
+          description={text.contact.description}
         />
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <Card className="space-y-6 p-6">
             <div className="space-y-3">
-              <h3 className="font-display text-xl font-semibold">Contato direto</h3>
+              <h3 className="font-display text-xl font-semibold">
+                {text.contact.direct}
+              </h3>
               <p className="text-sm text-muted-foreground">
-                Prefere uma resposta rápida? Fale comigo pelos canais abaixo.
+                {text.contact.directDescription}
               </p>
             </div>
             <div className="grid gap-3">
@@ -43,7 +50,7 @@ export function ContactSection() {
               ))}
             </div>
             <div className="rounded-2xl border border-border/60 bg-muted/40 p-4 text-xs text-muted-foreground">
-              Disponível para projetos em .NET, ASP.NET Core e MAUI.
+              {text.contact.available}
             </div>
           </Card>
           <Card className="p-6">

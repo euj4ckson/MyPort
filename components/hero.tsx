@@ -1,13 +1,21 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
+import { useLanguage } from "@/components/language-provider";
 import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
 import { getProjectBySlug } from "@/content/projects";
-import { profile } from "@/content/profile";
+import { localizeProfile, localizeProject } from "@/lib/i18n";
 
 export function Hero() {
-  const featuredProject = getProjectBySlug("supportdesk-api");
+  const { language, text } = useLanguage();
+  const sourceProject = getProjectBySlug("supportdesk-api");
+  const featuredProject = sourceProject
+    ? localizeProject(sourceProject, language)
+    : undefined;
+  const localizedProfile = localizeProfile(language);
   const featuredProjectUrl = featuredProject?.links[0]?.url ?? "/projects";
   const isFeaturedProjectExternal = featuredProjectUrl.startsWith("http");
   const featuredProjectLinkProps = isFeaturedProjectExternal
@@ -21,36 +29,36 @@ export function Hero() {
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card px-4 py-2 text-xs text-muted-foreground">
               <span className="h-2 w-2 rounded-full bg-accent" />
-              Disponivel para novas oportunidades
+              {text.hero.available}
             </div>
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                {profile.location}
+                {localizedProfile.location}
               </p>
               <h1 className="font-display text-5xl font-semibold leading-tight md:text-6xl lg:text-7xl">
-                {profile.headline}
+                {localizedProfile.headline}
               </h1>
               <p className="max-w-2xl text-lg text-muted-foreground">
-                {profile.bio}
+                {localizedProfile.bio}
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
               <Button asChild size="lg">
-                <Link href="/projects">Ver projetos</Link>
+                <Link href="/projects">{text.hero.viewProjects}</Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link href="/#contact">Entrar em contato</Link>
+                <Link href="/#contact">{text.hero.contact}</Link>
               </Button>
             </div>
             <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
               <span className="rounded-full border border-border/60 px-3 py-1">
-                Arquitetura .NET
+                {text.hero.architecture}
               </span>
               <span className="rounded-full border border-border/60 px-3 py-1">
-                APIs REST
+                {text.hero.restApis}
               </span>
               <span className="rounded-full border border-border/60 px-3 py-1">
-                MAUI multiplataforma
+                {text.hero.multiplatform}
               </span>
             </div>
           </div>
@@ -61,17 +69,19 @@ export function Hero() {
             <div className="absolute -bottom-12 right-0 h-40 w-40 rounded-full bg-primary/20 blur-3xl" />
             <div className="relative rounded-[28px] border border-border/60 bg-card/80 p-6 shadow-soft">
               <div className="space-y-4">
-                <div className="text-sm text-muted-foreground">Projeto destaque</div>
+                <div className="text-sm text-muted-foreground">
+                  {text.hero.featured}
+                </div>
                 <h3 className="font-display text-2xl font-semibold">
-                  {featuredProject?.title ?? "Projeto em destaque"}
+                  {featuredProject?.title ?? text.hero.featuredFallback}
                 </h3>
                 <p className="text-sm text-muted-foreground">
                   {featuredProject?.shortDescription ??
-                    "Projeto selecionado para destaque na home."}
+                    text.hero.featuredDescription}
                 </p>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {(featuredProject?.stack.slice(0, 4) ??
-                    profile.stack.slice(0, 4)).map((item) => (
+                    localizedProfile.stack.slice(0, 4)).map((item) => (
                     <div
                       key={item}
                       className="flex items-center gap-2 rounded-2xl border border-border/60 bg-background px-3 py-2 text-xs"
@@ -88,7 +98,7 @@ export function Hero() {
                 >
                   <Image
                     src={featuredProject?.thumbnail.src ?? "/projects/maui-finance.svg"}
-                    alt={featuredProject?.thumbnail.alt ?? "Preview de projeto"}
+                    alt={featuredProject?.thumbnail.alt ?? text.hero.previewAlt}
                     width={640}
                     height={420}
                     className="rounded-2xl border border-border/60 transition-transform duration-500 ease-out hover:scale-[1.01]"
@@ -98,12 +108,14 @@ export function Hero() {
                 <div className="flex flex-wrap gap-3">
                   <Button asChild size="sm">
                     <Link href={featuredProjectUrl} {...featuredProjectLinkProps}>
-                      Ver no GitHub
+                      {text.hero.github}
                     </Link>
                   </Button>
                   {featuredProject ? (
                     <Button asChild variant="outline" size="sm">
-                      <Link href={`/projects/${featuredProject.slug}`}>Ver detalhes</Link>
+                      <Link href={`/projects/${featuredProject.slug}`}>
+                        {text.hero.details}
+                      </Link>
                     </Button>
                   ) : null}
                 </div>

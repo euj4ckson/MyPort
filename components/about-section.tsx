@@ -1,38 +1,50 @@
+"use client";
+
 import Link from "next/link";
 
+import { useLanguage } from "@/components/language-provider";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
-import { profile } from "@/content/profile";
 import { timeline } from "@/content/timeline";
+import {
+  localizeProfile,
+  timelineEnglish,
+} from "@/lib/i18n";
 
 export function AboutSection() {
+  const { language, text } = useLanguage();
+  const localizedProfile = localizeProfile(language);
+  const localizedTimeline = language === "en" ? timelineEnglish : timeline;
+
   return (
     <section id="about" className="py-20">
       <div className="container space-y-12">
         <SectionHeading
-          eyebrow="Sobre"
-          title="Arquitetura, boas práticas e entrega de valor"
-          description={profile.summary}
+          eyebrow={text.about.eyebrow}
+          title={text.about.title}
+          description={localizedProfile.summary}
         />
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal>
             <div className="rounded-2xl border border-border/60 bg-card p-6 shadow-soft">
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div>
-                  <h3 className="font-display text-xl font-semibold">Stack principal</h3>
+                  <h3 className="font-display text-xl font-semibold">
+                    {text.about.stack}
+                  </h3>
                   <p className="mt-2 text-sm text-muted-foreground">
-                    Ferramentas focadas em organização, performance e escalabilidade.
+                    {text.about.stackDescription}
                   </p>
                 </div>
                 <Button asChild size="sm" variant="outline">
-                  <Link href={profile.resumeUrl} download>
-                    Baixar currículo
+                  <Link href={localizedProfile.resumeUrl} download>
+                    {text.about.resume}
                   </Link>
                 </Button>
               </div>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                {profile.stack.map((item) => (
+                {localizedProfile.stack.map((item) => (
                   <div
                     key={item}
                     className="rounded-2xl border border-border/60 bg-background px-4 py-3 text-sm"
@@ -45,9 +57,11 @@ export function AboutSection() {
           </Reveal>
           <Reveal delay={0.1}>
             <div className="space-y-4 rounded-2xl border border-border/60 bg-card p-6 shadow-soft">
-              <h3 className="font-display text-xl font-semibold">Experiência</h3>
+              <h3 className="font-display text-xl font-semibold">
+                {text.about.experience}
+              </h3>
               <div className="space-y-5">
-                {timeline.map((item) => (
+                {localizedTimeline.map((item) => (
                   <div key={item.title} className="space-y-2">
                     <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
                       {item.period}

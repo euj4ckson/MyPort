@@ -5,6 +5,7 @@ import "./globals.css";
 
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { LanguageProvider } from "@/components/language-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/lib/site";
 
@@ -44,11 +45,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         suppressHydrationWarning
       >
         <ThemeProvider>
-          <div className="min-h-screen bg-background text-foreground">
-            <Header />
-            <main className="pt-16">{children}</main>
-            <Footer />
-          </div>
+          <LanguageProvider>
+            <div className="min-h-screen bg-background text-foreground">
+              <Header />
+              <main className="pt-16">{children}</main>
+              <Footer />
+            </div>
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

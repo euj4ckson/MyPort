@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 
+import { useLanguage } from "@/components/language-provider";
 import {
   Dialog,
   DialogContent,
@@ -15,8 +16,10 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { certificates } from "@/content/certificates";
+import { localizeCertificate } from "@/lib/i18n";
 
 export function CertificatesGrid() {
+  const { language, text } = useLanguage();
   const [activeFilter, setActiveFilter] = useState<
     "all" | "certificate" | "academic"
   >("all");
@@ -26,10 +29,12 @@ export function CertificatesGrid() {
 
   const filteredCertificates = useMemo(
     () =>
-      certificates.filter((certificate) =>
-        activeFilter === "all" ? true : certificate.category === activeFilter,
-      ),
-    [activeFilter],
+      certificates
+        .filter((certificate) =>
+          activeFilter === "all" ? true : certificate.category === activeFilter,
+        )
+        .map((certificate) => localizeCertificate(certificate, language)),
+    [activeFilter, language],
   );
 
   return (
@@ -40,21 +45,21 @@ export function CertificatesGrid() {
           variant={activeFilter === "all" ? "default" : "outline"}
           onClick={() => setActiveFilter("all")}
         >
-          Todos
+          {text.certificatesPage.all}
         </Button>
         <Button
           size="sm"
           variant={activeFilter === "certificate" ? "default" : "outline"}
           onClick={() => setActiveFilter("certificate")}
         >
-          Certificacões
+          {text.certificatesPage.certifications}
         </Button>
         <Button
           size="sm"
           variant={activeFilter === "academic" ? "default" : "outline"}
           onClick={() => setActiveFilter("academic")}
         >
-          Formação acadêmica
+          {text.certificatesPage.academic}
         </Button>
       </div>
 
@@ -77,19 +82,24 @@ export function CertificatesGrid() {
                   </div>
                   {certificate.credentialId ? (
                     <p className="text-xs text-muted-foreground">
-                      Credencial: {certificate.credentialId}
+                      {text.certificatesPage.credential}{" "}
+                      {certificate.credentialId}
                     </p>
                   ) : null}
                 </CardContent>
                 <CardFooter className="mt-auto">
                   <DialogTrigger asChild>
                     <Button size="sm" variant="outline">
-                      {certificate.credentialId ? "Ver credencial" : "Ver detalhes"}
+                      {certificate.credentialId
+                        ? text.certificatesPage.viewCredential
+                        : text.certificatesPage.details}
                     </Button>
                   </DialogTrigger>
                   {certificate.url !== "#" ? (
                     <Button asChild size="sm">
-                      <Link href={certificate.url}>Abrir link</Link>
+                      <Link href={certificate.url}>
+                        {text.certificatesPage.open}
+                      </Link>
                     </Button>
                   ) : null}
                 </CardFooter>
@@ -102,7 +112,7 @@ export function CertificatesGrid() {
                 <div className="space-y-4">
                   <Image
                     src={currentImage}
-                    alt={`Preview do certificado ${certificate.title}`}
+                    alt={`${text.certificatesPage.previewAlt} ${certificate.title}`}
                     width={1200}
                     height={800}
                     className="h-64 w-full rounded-2xl border border-border/60 object-cover"
@@ -119,12 +129,14 @@ export function CertificatesGrid() {
                   <div className="flex flex-wrap gap-3">
                     {certificate.url !== "#" ? (
                       <Button asChild size="sm">
-                        <Link href={certificate.url}>Ver credencial</Link>
+                        <Link href={certificate.url}>
+                          {text.certificatesPage.viewCredential}
+                        </Link>
                       </Button>
                     ) : null}
                     <Button asChild size="sm" variant="outline">
                       <Link href={currentImage} download>
-                        Baixar imagem
+                        {text.certificatesPage.download}
                       </Link>
                     </Button>
                   </div>
