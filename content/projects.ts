@@ -25,6 +25,46 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "supportdesk-api",
+    title: "SupportDesk API",
+    shortDescription:
+      "API de gestão de chamados de suporte com autenticação, auditoria e atualizações em tempo real.",
+    description:
+      "Backend para equipes de atendimento gerenciarem todo o ciclo de vida de chamados, com acesso por perfis, comentários públicos e internos, histórico de alterações e notificações em tempo real.",
+    year: "2026",
+    role: "Desenvolvedor Back-end",
+    stack: [
+      "C# 14",
+      ".NET 10",
+      "ASP.NET Core Minimal APIs",
+      "PostgreSQL",
+      "Entity Framework Core",
+      "ASP.NET Core Identity",
+      "JWT",
+      "SignalR",
+      "Docker",
+      "xUnit",
+    ],
+    tags: ["C#", ".NET", "API", "Back-end"],
+    highlights: [
+      "Autenticação JWT e autorização por perfis de cliente, atendente e administrador",
+      "Fluxo completo de chamados com filtros, paginação, atribuição, comentários e transições de status controladas",
+      "Auditoria das alterações, concorrência otimista e notificações em tempo real com SignalR",
+      "Testes de integração, migrações para PostgreSQL, Docker Compose e integração contínua",
+    ],
+    challenges:
+      "Garantir que clientes visualizem apenas os próprios chamados, enquanto a equipe mantém acesso operacional seguro e atualizações concorrentes não sobrescrevem dados silenciosamente.",
+    solutions:
+      "Regras de autorização centralizadas nos serviços, ASP.NET Core Identity com JWT, controle de versão para concorrência otimista, histórico de auditoria e testes de integração com SQLite em memória.",
+    links: [
+      { label: "GitHub", url: "https://github.com/euj4ckson/SupportDesk.git" },
+    ],
+    thumbnail: {
+      src: "/projects/supportdesk.webp",
+      alt: "Painel conceitual da API SupportDesk com fila de chamados, auditoria e fluxo seguro de atendimento",
+    },
+  },
+  {
     slug: "sos-mg",
     title: "SOS MG",
     shortDescription:
