@@ -220,60 +220,6 @@ export const projects: Project[] = [
       alt: "Mockup do app financeiro em MAUI com resumo de entradas e saidas",
     },
   },
-  {
-    slug: "ai-agent",
-    title: "AI Agent",
-    shortDescription: "Experimento com agente inteligente e interface web.",
-    description:
-      "Projeto com backend em Python e frontend em JavaScript, HTML e CSS para explorar automações com IA.",
-    year: "2024",
-    role: "Desenvolvedor",
-    stack: ["Python", "JavaScript", "HTML", "CSS"],
-    tags: ["Python", "IA", "Web"],
-    highlights: [
-      "Base para automações inteligentes",
-      "Interface simples para testes rápidos",
-      "Organização do projeto para iterar funcionalidades",
-    ],
-    challenges:
-      "Orquestrar ações do agente mantendo simplicidade de uso.",
-    solutions:
-      "Estrutura enxuta de endpoints e UI direta para executar fluxos.",
-    links: [
-      { label: "GitHub", url: "https://github.com/euj4ckson/AI_agent" },
-    ],
-    thumbnail: {
-      src: "/projects/ai-agent.svg",
-      alt: "Painel do AI Agent com loop de decisao e output de automacao",
-    },
-  },
-  {
-    slug: "costs-project-manager",
-    title: "Costs Project Manager",
-    shortDescription: "Aplicação React para gestão de custos de projetos.",
-    description:
-      "Frontend em React para acompanhar orçamento, categorias e evolução de projetos.",
-    year: "2023",
-    role: "Desenvolvedor",
-    stack: ["React", "JavaScript", "HTML", "CSS"],
-    tags: ["React", "Frontend", "Web"],
-    highlights: [
-      "UX simples para cadastro e atualização",
-      "Organização por categorias e status",
-      "Estrutura pronta para integrações futuras",
-    ],
-    challenges:
-      "Manter o fluxo de edição rápido e sem atritos.",
-    solutions:
-      "Componentes reutilizáveis e navegação direta entre etapas.",
-    links: [
-      { label: "GitHub", url: "https://github.com/euj4ckson/Costs-ProjectManager" },
-    ],
-    thumbnail: {
-      src: "/projects/costs.svg",
-      alt: "Dashboard de custos com projetos ativos e evolucao mensal",
-    },
-  },
 ];
 
 export const projectTags = Array.from(
