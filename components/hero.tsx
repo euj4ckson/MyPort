@@ -7,13 +7,10 @@ import { getProjectBySlug } from "@/content/projects";
 import { profile } from "@/content/profile";
 
 export function Hero() {
-  const featuredProject = getProjectBySlug("pacman-3d");
-  const featuredDemoUrl =
-    featuredProject?.links.find((link) => link.label === "Demo")?.url ??
-    featuredProject?.links[0]?.url ??
-    "/projects";
-  const isFeaturedDemoExternal = featuredDemoUrl.startsWith("http");
-  const featuredDemoLinkProps = isFeaturedDemoExternal
+  const featuredProject = getProjectBySlug("supportdesk-api");
+  const featuredProjectUrl = featuredProject?.links[0]?.url ?? "/projects";
+  const isFeaturedProjectExternal = featuredProjectUrl.startsWith("http");
+  const featuredProjectLinkProps = isFeaturedProjectExternal
     ? { target: "_blank", rel: "noreferrer" }
     : {};
 
@@ -84,7 +81,11 @@ export function Hero() {
                     </div>
                   ))}
                 </div>
-                <Link href={featuredDemoUrl} {...featuredDemoLinkProps} className="block">
+                <Link
+                  href={featuredProjectUrl}
+                  {...featuredProjectLinkProps}
+                  className="block"
+                >
                   <Image
                     src={featuredProject?.thumbnail.src ?? "/projects/maui-finance.svg"}
                     alt={featuredProject?.thumbnail.alt ?? "Preview de projeto"}
@@ -96,8 +97,8 @@ export function Hero() {
                 </Link>
                 <div className="flex flex-wrap gap-3">
                   <Button asChild size="sm">
-                    <Link href={featuredDemoUrl} {...featuredDemoLinkProps}>
-                      Jogar agora
+                    <Link href={featuredProjectUrl} {...featuredProjectLinkProps}>
+                      Ver no GitHub
                     </Link>
                   </Button>
                   {featuredProject ? (
