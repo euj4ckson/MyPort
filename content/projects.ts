@@ -65,6 +65,49 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "service-scheduler-api",
+    title: "ServiceScheduler API",
+    shortDescription:
+      "API de agendamento de serviços com disponibilidade, reservas seguras e prevenção de conflitos.",
+    description:
+      "Backend para clientes reservarem serviços e profissionais administrarem catálogo, disponibilidade semanal e todo o ciclo de vida dos atendimentos.",
+    year: "2026",
+    role: "Desenvolvedor Back-end",
+    stack: [
+      "C# 14",
+      ".NET 10",
+      "ASP.NET Core Minimal APIs",
+      "SQL Server",
+      "Entity Framework Core",
+      "ASP.NET Core Identity",
+      "JWT",
+      "Docker",
+      "xUnit",
+    ],
+    tags: ["C#", ".NET", "API", "Back-end"],
+    highlights: [
+      "Autenticação JWT e autorização por perfis de cliente, profissional e administrador",
+      "Catálogo de serviços, disponibilidade semanal e cálculo de horários livres conforme a duração",
+      "Criação, remarcação, confirmação, conclusão e cancelamento de agendamentos",
+      "Detecção transacional de conflitos, concorrência otimista, auditoria e isolamento dos dados",
+      "Testes de integração, migrações para SQL Server, Docker Compose e integração contínua",
+    ],
+    challenges:
+      "Evitar reservas sobrepostas mesmo quando vários clientes tentam ocupar o mesmo horário simultaneamente, sem comprometer a privacidade dos dados.",
+    solutions:
+      "Transações com isolamento Serializable protegem a verificação e a reserva, enquanto controle de versão, índices por intervalo e regras de autorização garantem consistência e segurança.",
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/euj4ckson/ServiceScheduler.git",
+      },
+    ],
+    thumbnail: {
+      src: "/projects/service-scheduler.webp",
+      alt: "Ilustração isométrica do ServiceScheduler com calendário, relógio e serviços conectados a horários disponíveis",
+    },
+  },
+  {
     slug: "sos-mg",
     title: "SOS MG",
     shortDescription:
