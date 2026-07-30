@@ -8,6 +8,15 @@ import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
 import { projects } from "@/content/projects";
 
+const previewProjects = [
+  "supportdesk-api",
+  "service-scheduler-api",
+  "app-controle-financeiro",
+].flatMap((slug) => {
+  const project = projects.find((item) => item.slug === slug);
+  return project ? [project] : [];
+});
+
 export function ProjectsPreview() {
   const { text } = useLanguage();
 
@@ -25,7 +34,7 @@ export function ProjectsPreview() {
           </Button>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.slice(0, 3).map((project) => (
+          {previewProjects.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
