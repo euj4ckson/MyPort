@@ -27,7 +27,7 @@ export const copy = {
       featuredFallback: "Projeto em destaque",
       featuredDescription: "Projeto selecionado para destaque na página inicial.",
       previewAlt: "Prévia do projeto",
-      github: "Ver no GitHub",
+      github: "Ver prévia",
       details: "Ver detalhes",
     },
     projectsPreview: {
