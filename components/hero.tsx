@@ -11,7 +11,7 @@ import { localizeProfile, localizeProject } from "@/lib/i18n";
 
 export function Hero() {
   const { language, text } = useLanguage();
-  const sourceProject = getProjectBySlug("supportdesk-api");
+  const sourceProject = getProjectBySlug("bancada");
   const featuredProject = sourceProject
     ? localizeProject(sourceProject, language)
     : undefined;

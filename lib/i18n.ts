@@ -255,6 +255,27 @@ type ProjectTranslation = Pick<
 };
 
 const projectTranslations: Record<string, ProjectTranslation> = {
+  bancada: {
+    title: "Bancada",
+    shortDescription:
+      "A recipe community born from my passion for cooking and thoughtfully crafted digital experiences.",
+    description:
+      "A full-stack platform where home cooks can publish and discover recipes, create profiles, save favorites, comment, and join culinary challenges. The project turns my personal passion for cooking into a complete, secure, and responsive experience.",
+    role: "Full-stack Developer",
+    tags: ["C#", ".NET", "Blazor", "Full-stack", "API"],
+    highlights: [
+      "Recipe publishing, editing, and discovery with filters for text, difficulty, time, and ingredients",
+      "Public profiles, favorites, comments, and secure HTTP-only cookie authentication",
+      "Culinary challenges and a Mystery Box designed to inspire creativity and community participation",
+      "Layered architecture, PostgreSQL, local/R2 image uploads, and domain and integration tests",
+    ],
+    challenges:
+      "Bring content, social interaction, and participation rules into a simple experience for home cooks without compromising security, consistency, or room to grow.",
+    solutions:
+      "Separated domain, application, infrastructure, API, and Blazor client responsibilities, centralized authentication and authorization with ASP.NET Core Identity, and protected key workflows with automated tests.",
+    thumbnailAlt:
+      "Bancada preview featuring an editorial introduction, culinary challenge, and recipe cards",
+  },
   "supportdesk-api": {
     title: "SupportDesk API",
     shortDescription:

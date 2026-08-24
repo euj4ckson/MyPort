@@ -25,6 +25,46 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "bancada",
+    title: "Bancada",
+    shortDescription:
+      "Comunidade de receitas criada a partir da minha paixão pela culinária e por experiências digitais bem construídas.",
+    description:
+      "Plataforma full-stack para quem cozinha em casa publicar e descobrir receitas, criar perfis, salvar favoritos, comentar e participar de desafios culinários. O projeto nasceu da minha paixão pela cozinha e transforma esse interesse pessoal em uma experiência completa, segura e responsiva.",
+    year: "2026",
+    role: "Desenvolvedor Full-stack",
+    stack: [
+      "C# 14",
+      ".NET 10",
+      "Blazor WebAssembly",
+      "ASP.NET Core Minimal APIs",
+      "PostgreSQL",
+      "Entity Framework Core",
+      "ASP.NET Core Identity",
+      "Cloudflare R2",
+      "Docker",
+      "xUnit",
+    ],
+    tags: ["C#", ".NET", "Blazor", "Full-stack", "API"],
+    highlights: [
+      "Publicação, edição e descoberta de receitas com busca por texto, dificuldade, tempo e ingrediente",
+      "Perfis públicos, favoritos, comentários e autenticação segura com cookie HTTP-only",
+      "Desafios culinários e Caixa Misteriosa para estimular criatividade e participação da comunidade",
+      "Arquitetura em camadas, PostgreSQL, upload de imagens local/R2 e testes de domínio e integração",
+    ],
+    challenges:
+      "Reunir conteúdo, interação social e regras de participação em uma experiência simples para quem cozinha em casa, sem abrir mão de segurança, consistência e capacidade de evolução.",
+    solutions:
+      "Separei domínio, aplicação, infraestrutura, API e cliente Blazor, centralizei autenticação e autorização com ASP.NET Core Identity e protegi os principais fluxos com testes automatizados.",
+    links: [
+      { label: "GitHub", url: "https://github.com/euj4ckson/Bancada.git" },
+    ],
+    thumbnail: {
+      src: "/projects/bancada.svg",
+      alt: "Prévia do Bancada com apresentação editorial, desafio culinário e cartões de receitas",
+    },
+  },
+  {
     slug: "supportdesk-api",
     title: "SupportDesk API",
     shortDescription:
