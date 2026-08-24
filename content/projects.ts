@@ -57,7 +57,7 @@ export const projects: Project[] = [
     solutions:
       "Separei domínio, aplicação, infraestrutura, API e cliente Blazor, centralizei autenticação e autorização com ASP.NET Core Identity e protegi os principais fluxos com testes automatizados.",
     links: [
-      { label: "GitHub", url: "https://github.com/euj4ckson/Bancada.git" },
+      { label: "GitHub", url: "https://bancada-3h5.pages.dev/" },
     ],
     thumbnail: {
       src: "/projects/bancada.svg",
