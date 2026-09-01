@@ -255,6 +255,28 @@ type ProjectTranslation = Pick<
 };
 
 const projectTranslations: Record<string, ProjectTranslation> = {
+  "database-portal": {
+    title: "DatabasePortal",
+    shortDescription:
+      "A governance portal for securely validating, authorizing, and auditing SQL Server operations.",
+    description:
+      "A full-stack application that centralizes access to SQL Server databases and controls each operation by user, role, environment, statement, and object. The portal provides a protected SQL console, connection and permission management, and complete request traceability.",
+    role: "Full-stack Developer",
+    tags: ["C#", ".NET", "Blazor", "SQL Server", "Full-stack"],
+    highlights: [
+      "SQL console with policy validation, authorization, and auditing before every execution",
+      "Granular permissions by user, role, environment, statement type, and database object",
+      "Administration panel for users, protected connections, and access rules",
+      "History containing the hash, decision, result, and context of every SQL request",
+      "SQL Server migrations, a dedicated migration tool, and automated policy and API tests",
+    ],
+    challenges:
+      "Enable SQL operations across different databases without turning technical access into a security blind spot, while preserving least privilege and individual accountability.",
+    solutions:
+      "Implemented default-deny behavior, structural T-SQL analysis with ScriptDom, server-side authorization rules, credential protection, and persistent auditing for every decision.",
+    thumbnailAlt:
+      "DatabasePortal dashboard with governance metrics, a protected SQL console, and an audit trail",
+  },
   bancada: {
     title: "Bancada",
     shortDescription:

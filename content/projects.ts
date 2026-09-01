@@ -25,6 +25,49 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "database-portal",
+    title: "DatabasePortal",
+    shortDescription:
+      "Portal de governança para validar, autorizar e auditar operações SQL Server com segurança.",
+    description:
+      "Aplicação full-stack que centraliza o acesso a bancos SQL Server e controla cada operação por usuário, perfil, ambiente, comando e objeto. O portal oferece console SQL protegido, administração de conexões e permissões, além de rastreabilidade completa das solicitações.",
+    year: "2026",
+    role: "Desenvolvedor Full-stack",
+    stack: [
+      "C# 14",
+      ".NET 10",
+      "Blazor",
+      "ASP.NET Core Identity",
+      "Entity Framework Core",
+      "SQL Server",
+      "T-SQL ScriptDom",
+      "Data Protection",
+      "xUnit",
+    ],
+    tags: ["C#", ".NET", "Blazor", "SQL Server", "Full-stack"],
+    highlights: [
+      "Console SQL com validação de política, autorização e auditoria antes de cada execução",
+      "Permissões granulares por usuário, perfil, ambiente, tipo de comando e objeto do banco",
+      "Painel administrativo para gerenciar usuários, conexões protegidas e regras de acesso",
+      "Histórico com hash, decisão, resultado e contexto de cada solicitação SQL",
+      "Migrations para SQL Server, migrador dedicado e testes automatizados de políticas e APIs",
+    ],
+    challenges:
+      "Permitir operações SQL em diferentes bancos sem transformar o acesso técnico em um ponto cego de segurança, mantendo privilégio mínimo e responsabilização individual.",
+    solutions:
+      "Implementei negação por padrão, análise estrutural de T-SQL com ScriptDom, regras de autorização no servidor, proteção das credenciais e auditoria persistente de todas as decisões.",
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/euj4ckson/DatabasePortal.git",
+      },
+    ],
+    thumbnail: {
+      src: "/projects/database-portal.svg",
+      alt: "Painel do DatabasePortal com métricas de governança, console SQL protegido e trilha de auditoria",
+    },
+  },
+  {
     slug: "bancada",
     title: "Bancada",
     shortDescription:

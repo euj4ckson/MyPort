@@ -1,0 +1,133 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="portal-bg" x1="80" y1="20" x2="1120" y2="780" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DDF8F4" />
+      <stop offset="0.5" stop-color="#F4F7FB" />
+      <stop offset="1" stop-color="#DDE7F1" />
+    </linearGradient>
+    <linearGradient id="portal-sidebar" x1="90" y1="90" x2="90" y2="710" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F766E" />
+      <stop offset="1" stop-color="#134E4A" />
+    </linearGradient>
+    <filter id="portal-shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#0F172A" flood-opacity="0.16" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#portal-bg)" />
+  <circle cx="1080" cy="90" r="190" fill="#99F6E4" fill-opacity="0.28" />
+  <circle cx="110" cy="760" r="230" fill="#BFDBFE" fill-opacity="0.22" />
+
+  <g filter="url(#portal-shadow)">
+    <rect x="70" y="65" width="1060" height="670" rx="30" fill="#F8FAFC" />
+    <rect x="70" y="65" width="228" height="670" rx="30" fill="url(#portal-sidebar)" />
+    <rect x="270" y="65" width="860" height="670" rx="30" fill="#F8FAFC" />
+  </g>
+
+  <g transform="translate(105 102)">
+    <rect width="42" height="42" rx="11" fill="#ECFDF5" />
+    <path d="M12 14C12 10.7 16 8 21 8C26 8 30 10.7 30 14V28C30 31.3 26 34 21 34C16 34 12 31.3 12 28V14Z" stroke="#0F766E" stroke-width="2.5" />
+    <ellipse cx="21" cy="14" rx="9" ry="5.5" stroke="#0F766E" stroke-width="2.5" />
+    <path d="M12 21C12 24.3 16 27 21 27C26 27 30 24.3 30 21" stroke="#0F766E" stroke-width="2.5" />
+    <text x="57" y="19" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="18" font-weight="800">DatabasePortal</text>
+    <text x="57" y="36" fill="#A7F3D0" font-family="Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="1.2">SQL GOVERNANCE</text>
+  </g>
+
+  <g fill="#CCFBF1" font-family="Arial, sans-serif" font-size="13" font-weight="700">
+    <rect x="92" y="184" width="184" height="46" rx="9" fill="#FFFFFF" fill-opacity="0.15" />
+    <text x="125" y="213">Visão geral</text>
+    <text x="125" y="273">Console SQL</text>
+    <text x="125" y="329">Auditoria</text>
+    <text x="125" y="385">Usuários</text>
+    <text x="125" y="441">Conexões</text>
+    <text x="125" y="497">Permissões</text>
+  </g>
+  <g stroke="#99F6E4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M104 197H116V215H104V197ZM108 204H112M108 209H112" />
+    <path d="M104 258H116M104 264H116M104 270H112" />
+    <circle cx="110" cy="322" r="7" /><path d="M110 318V322L113 325" />
+    <circle cx="110" cy="376" r="5" /><path d="M101 389C103 382 117 382 119 389" />
+    <ellipse cx="110" cy="432" rx="8" ry="4" /><path d="M102 432V442C102 447 118 447 118 442V432" />
+    <path d="M102 487H118V499H102V487ZM106 483V487M114 483V487" />
+  </g>
+
+  <text x="335" y="126" fill="#0F766E" font-family="Arial, sans-serif" font-size="11" font-weight="800" letter-spacing="2">GOVERNANÇA DE BANCO DE DADOS</text>
+  <text x="335" y="169" fill="#172033" font-family="Arial, sans-serif" font-size="31" font-weight="800">Operações SQL com controle e rastreabilidade.</text>
+  <text x="335" y="197" fill="#64748B" font-family="Arial, sans-serif" font-size="15">Valide, autorize e audite consultas nos bancos dos clientes.</text>
+
+  <g font-family="Arial, sans-serif">
+    <g transform="translate(335 230)">
+      <rect width="176" height="106" rx="14" fill="#FFFFFF" stroke="#E2E8F0" />
+      <text x="18" y="27" fill="#64748B" font-size="11">Bancos ativos</text>
+      <text x="18" y="67" fill="#172033" font-size="30" font-weight="800">12</text>
+      <text x="18" y="88" fill="#94A3B8" font-size="10">destinos disponíveis</text>
+    </g>
+    <g transform="translate(527 230)">
+      <rect width="176" height="106" rx="14" fill="#FFFFFF" stroke="#E2E8F0" />
+      <text x="18" y="27" fill="#64748B" font-size="11">Execuções hoje</text>
+      <text x="18" y="67" fill="#172033" font-size="30" font-weight="800">248</text>
+      <text x="18" y="88" fill="#94A3B8" font-size="10">inclui bloqueios</text>
+    </g>
+    <g transform="translate(719 230)">
+      <rect width="176" height="106" rx="14" fill="#FFFFFF" stroke="#E2E8F0" />
+      <text x="18" y="27" fill="#64748B" font-size="11">Bloqueios hoje</text>
+      <text x="18" y="67" fill="#B91C1C" font-size="30" font-weight="800">7</text>
+      <text x="18" y="88" fill="#94A3B8" font-size="10">decisões preventivas</text>
+    </g>
+    <g transform="translate(911 230)">
+      <rect width="176" height="106" rx="14" fill="#FFFFFF" stroke="#E2E8F0" />
+      <text x="18" y="27" fill="#64748B" font-size="11">Políticas ativas</text>
+      <text x="18" y="67" fill="#0F766E" font-size="30" font-weight="800">36</text>
+      <text x="18" y="88" fill="#94A3B8" font-size="10">regras vigentes</text>
+    </g>
+  </g>
+
+  <g transform="translate(335 366)">
+    <rect width="512" height="299" rx="16" fill="#FFFFFF" stroke="#E2E8F0" />
+    <text x="22" y="31" fill="#0F766E" font-family="Arial, sans-serif" font-size="10" font-weight="800" letter-spacing="1.6">EXECUÇÃO CONTROLADA</text>
+    <text x="22" y="59" fill="#172033" font-family="Arial, sans-serif" font-size="20" font-weight="800">Console SQL</text>
+    <rect x="22" y="79" width="468" height="151" rx="10" fill="#111827" />
+    <g font-family="Consolas, monospace" font-size="12">
+      <text x="41" y="110" fill="#93C5FD">SELECT</text>
+      <text x="93" y="110" fill="#D6F7F1"> TOP (100) *</text>
+      <text x="41" y="138" fill="#93C5FD">FROM</text>
+      <text x="81" y="138" fill="#5EEAD4"> dbo.Clientes</text>
+      <text x="41" y="166" fill="#93C5FD">WHERE</text>
+      <text x="89" y="166" fill="#D6F7F1"> Ativo = </text>
+      <text x="148" y="166" fill="#FDE68A">1</text>
+      <text x="41" y="194" fill="#93C5FD">ORDER BY</text>
+      <text x="105" y="194" fill="#D6F7F1"> Nome;</text>
+    </g>
+    <rect x="332" y="247" width="158" height="34" rx="8" fill="#0F766E" />
+    <text x="411" y="269" fill="#FFFFFF" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="800">VALIDAR E EXECUTAR</text>
+    <text x="22" y="268" fill="#64748B" font-family="Arial, sans-serif" font-size="10">negação por padrão</text>
+  </g>
+
+  <g transform="translate(869 366)">
+    <rect width="218" height="299" rx="16" fill="#FFFFFF" stroke="#E2E8F0" />
+    <text x="18" y="30" fill="#0F766E" font-family="Arial, sans-serif" font-size="10" font-weight="800" letter-spacing="1.4">AUDITORIA</text>
+    <text x="18" y="58" fill="#172033" font-family="Arial, sans-serif" font-size="18" font-weight="800">Decisões recentes</text>
+    <g font-family="Arial, sans-serif" font-size="10">
+      <rect x="18" y="80" width="182" height="52" rx="9" fill="#ECFDF5" />
+      <rect x="30" y="94" width="58" height="19" rx="9" fill="#BBF7D0" />
+      <text x="59" y="107" fill="#166534" text-anchor="middle" font-size="8" font-weight="800">EXECUTED</text>
+      <text x="30" y="124" fill="#64748B">SELECT · 84 ms</text>
+
+      <rect x="18" y="144" width="182" height="52" rx="9" fill="#FEF2F2" />
+      <rect x="30" y="158" width="52" height="19" rx="9" fill="#FECACA" />
+      <text x="56" y="171" fill="#991B1B" text-anchor="middle" font-size="8" font-weight="800">BLOCKED</text>
+      <text x="30" y="188" fill="#64748B">DELETE · policy</text>
+
+      <rect x="18" y="208" width="182" height="52" rx="9" fill="#EFF6FF" />
+      <rect x="30" y="222" width="48" height="19" rx="9" fill="#BFDBFE" />
+      <text x="54" y="235" fill="#1D4ED8" text-anchor="middle" font-size="8" font-weight="800">ALLOWED</text>
+      <text x="30" y="252" fill="#64748B">UPDATE · validated</text>
+    </g>
+  </g>
+
+  <g transform="translate(335 687)">
+    <rect width="752" height="28" rx="10" fill="#ECFDF5" stroke="#A7F3D0" />
+    <circle cx="18" cy="14" r="5" fill="#10B981" />
+    <text x="32" y="18" fill="#47645E" font-family="Arial, sans-serif" font-size="10" font-weight="700">Somente comandos e objetos expressamente permitidos chegam ao executor.</text>
+  </g>
+</svg>
