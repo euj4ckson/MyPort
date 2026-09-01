@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 import { useLanguage } from "@/components/language-provider";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
@@ -38,9 +36,12 @@ export function AboutSection() {
                   </p>
                 </div>
                 <Button asChild size="sm" variant="outline">
-                  <Link href={localizedProfile.resumeUrl} download>
+                  <a
+                    href={localizedProfile.resumeUrl}
+                    download="Jackson-Eduardo-Curriculo.pdf"
+                  >
                     {text.about.resume}
-                  </Link>
+                  </a>
                 </Button>
               </div>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
