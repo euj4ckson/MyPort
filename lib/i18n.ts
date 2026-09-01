@@ -468,7 +468,7 @@ export function localizeProfile(language: Language) {
 export const timelineEnglish: TimelineItem[] = [
   {
     period: "2024 - Present",
-    title: ".NET Developer",
+    title: ".NET Developer PL",
     company: "Actively working in the software development market",
     description: "Working with .NET, integrations, and cross-platform applications.",
   },
