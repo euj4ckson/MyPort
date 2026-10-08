@@ -9,9 +9,9 @@ import { Button } from "@/components/ui/button";
 import { projects } from "@/content/projects";
 
 const previewProjects = [
+  "claude-admin-agent",
   "database-portal",
   "bancada",
-  "supportdesk-api",
 ].flatMap((slug) => {
   const project = projects.find((item) => item.slug === slug);
   return project ? [project] : [];
