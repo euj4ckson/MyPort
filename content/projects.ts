@@ -25,6 +25,39 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "claude-admin-agent",
+    title: "Central de Tickets AI",
+    shortDescription:
+      "Central local-first para organizar desenvolvimentos com agentes de código com mais segurança e rastreabilidade.",
+    description:
+      "Aplicação web para transformar tickets em um fluxo controlado de análise, aprovação, implementação, testes, revisão e entrega. O projeto combina worktrees isoladas, regras de escopo, evidências verificáveis e integração com agentes de código sem publicar alterações automaticamente.",
+    year: "2026",
+    role: "Desenvolvedor Full-stack",
+    stack: ["Node.js", "JavaScript", "PowerShell", "Git", "Claude Code", "Testes automatizados"],
+    tags: ["Node.js", "Automação", "Developer Tools", "Segurança", "Full-stack"],
+    highlights: [
+      "Painel de tickets com etapas claras, aprovação explícita e acompanhamento da execução",
+      "Worktrees e branches isoladas para reduzir colisões e preservar o checkout principal",
+      "Hooks e políticas locais para limitar escopo, bloquear push acidental e controlar recursos compartilhados",
+      "Matriz de variantes, evidências reproduzíveis e prints de testes manuais para apoiar a revisão",
+      "Fluxo local-first compatível com diferentes repositórios e agentes de desenvolvimento",
+    ],
+    challenges:
+      "Aumentar a confiabilidade de desenvolvimentos assistidos por IA sem transformar automação em autorização irrestrita ou perder o contexto do ticket.",
+    solutions:
+      "Estruturei o fluxo em etapas auditáveis, com aprovação vinculada ao plano, isolamento por worktree, políticas de ferramentas, reserva de compilação/testes e documentação baseada em evidências.",
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/euj4ckson/Claude_admin_agent",
+      },
+    ],
+    thumbnail: {
+      src: "/projects/claude-admin-agent.svg",
+      alt: "Dashboard conceitual da Central de Tickets AI com tickets, aprovações e evidências",
+    },
+  },
+  {
     slug: "database-portal",
     title: "DatabasePortal",
     shortDescription:

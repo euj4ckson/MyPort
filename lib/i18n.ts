@@ -255,6 +255,28 @@ type ProjectTranslation = Pick<
 };
 
 const projectTranslations: Record<string, ProjectTranslation> = {
+  "claude-admin-agent": {
+    title: "AI Ticket Control Center",
+    shortDescription:
+      "A local-first workspace for coordinating AI-assisted development with stronger safety and traceability.",
+    description:
+      "A web application that turns tickets into a controlled workflow across analysis, approval, implementation, testing, review, and delivery. It combines isolated worktrees, scope rules, verifiable evidence, and coding-agent integrations without automatic publication.",
+    role: "Full-stack Developer",
+    tags: ["Node.js", "Automation", "Developer Tools", "Security", "Full-stack"],
+    highlights: [
+      "Ticket dashboard with explicit approval and clear execution stages",
+      "Isolated worktrees and branches that protect the main checkout",
+      "Local hooks and policies that constrain scope, prevent accidental pushes, and coordinate shared resources",
+      "Variant matrices, reproducible evidence, and screenshots for manual test review",
+      "Local-first workflow that supports multiple repositories and coding agents",
+    ],
+    challenges:
+      "Improve the reliability of AI-assisted development without turning automation into unrestricted authorization or losing ticket context.",
+    solutions:
+      "Built an auditable workflow with plan-bound approval, worktree isolation, tool policies, shared build and test reservations, and evidence-based documentation.",
+    thumbnailAlt:
+      "Conceptual AI Ticket Control Center dashboard with tickets, approvals, and evidence",
+  },
   "database-portal": {
     title: "DatabasePortal",
     shortDescription:
