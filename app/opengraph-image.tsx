@@ -8,49 +8,70 @@ export const size = {
 };
 
 export const contentType = "image/png";
+export const alt =
+  "Jackson Eduardo — Desenvolvedor Backend .NET Pleno. APIs, integrações e sistemas de gestão.";
 
 export default function OpenGraphImage() {
   return new ImageResponse(
-    (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "80px",
-          background: "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0ea5e9 120%)",
-          color: "#f8fafc",
-          fontSize: 54,
-          fontWeight: 700,
-        }}
-      >
-        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-          <div style={{ fontSize: 26, textTransform: "uppercase", letterSpacing: "0.2em" }}>
-            Portfólio
-          </div>
-          <div>{profile.name}</div>
-          <div style={{ fontSize: 28, fontWeight: 400, color: "#cbd5f5" }}>
-            {profile.headline}
-          </div>
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: "80px",
+        background: "linear-gradient(120deg, #0e1111 0%, #111d19 100%)",
+        color: "#f8fafc",
+        fontSize: 72,
+        fontWeight: 700,
+      }}
+    >
+      <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+        <div
+          style={{
+            fontSize: 20,
+            color: "#6de5b4",
+            textTransform: "uppercase",
+            letterSpacing: "0.15em",
+          }}
+        >
+          Código com propósito / Portfólio
+        </div>
+        <div>{profile.name}</div>
+        <div style={{ fontSize: 30, fontWeight: 400, color: "#b4c3bd" }}>
+          {profile.headline}
         </div>
         <div
           style={{
-            width: 180,
-            height: 180,
-            borderRadius: 36,
-            background: "rgba(15, 23, 42, 0.6)",
             display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: 64,
+            marginTop: 36,
+            borderTop: "1px solid #304038",
+            paddingTop: 28,
+            fontSize: 22,
+            fontWeight: 400,
+            color: "#6de5b4",
           }}
         >
-          J
+          C# · ASP.NET Core · APIs · SQL · Automação com IA
         </div>
       </div>
-    ),
+      <div
+        style={{
+          width: 120,
+          height: 120,
+          borderRadius: 24,
+          background: "#6de5b4",
+          color: "#0e1111",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontSize: 64,
+        }}
+      >
+        J.
+      </div>
+    </div>,
     { ...size },
   );
 }

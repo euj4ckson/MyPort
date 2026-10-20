@@ -23,9 +23,6 @@ export function CertificatesGrid() {
   const [activeFilter, setActiveFilter] = useState<
     "all" | "certificate" | "academic"
   >("all");
-  const [imageSrcByTitle, setImageSrcByTitle] = useState<
-    Record<string, string>
-  >({});
 
   const filteredCertificates = useMemo(
     () =>
@@ -44,6 +41,7 @@ export function CertificatesGrid() {
           size="sm"
           variant={activeFilter === "all" ? "default" : "outline"}
           onClick={() => setActiveFilter("all")}
+          aria-pressed={activeFilter === "all"}
         >
           {text.certificatesPage.all}
         </Button>
@@ -51,6 +49,7 @@ export function CertificatesGrid() {
           size="sm"
           variant={activeFilter === "certificate" ? "default" : "outline"}
           onClick={() => setActiveFilter("certificate")}
+          aria-pressed={activeFilter === "certificate"}
         >
           {text.certificatesPage.certifications}
         </Button>
@@ -58,6 +57,7 @@ export function CertificatesGrid() {
           size="sm"
           variant={activeFilter === "academic" ? "default" : "outline"}
           onClick={() => setActiveFilter("academic")}
+          aria-pressed={activeFilter === "academic"}
         >
           {text.certificatesPage.academic}
         </Button>
@@ -65,8 +65,7 @@ export function CertificatesGrid() {
 
       <div className="grid gap-6 md:grid-cols-2">
         {filteredCertificates.map((certificate) => {
-          const currentImage =
-            imageSrcByTitle[certificate.title] ?? certificate.image;
+          const currentImage = certificate.image;
 
           return (
             <Dialog key={certificate.title}>
@@ -79,6 +78,11 @@ export function CertificatesGrid() {
                     <p className="text-sm text-muted-foreground">
                       {certificate.issuer}
                     </p>
+                    {certificate.period && (
+                      <p className="mt-1 text-xs text-muted-foreground">
+                        {certificate.period}
+                      </p>
+                    )}
                   </div>
                   {certificate.credentialId ? (
                     <p className="text-xs text-muted-foreground">
@@ -97,7 +101,11 @@ export function CertificatesGrid() {
                   </DialogTrigger>
                   {certificate.url !== "#" ? (
                     <Button asChild size="sm">
-                      <Link href={certificate.url}>
+                      <Link
+                        href={certificate.url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
                         {text.certificatesPage.open}
                       </Link>
                     </Button>
@@ -110,35 +118,38 @@ export function CertificatesGrid() {
                   <DialogDescription>{certificate.issuer}</DialogDescription>
                 </DialogHeader>
                 <div className="space-y-4">
-                  <Image
-                    src={currentImage}
-                    alt={`${text.certificatesPage.previewAlt} ${certificate.title}`}
-                    width={1200}
-                    height={800}
-                    className="h-64 w-full rounded-2xl border border-border/60 object-cover"
-                    onError={(event) => {
-                      if (event.currentTarget.src.includes("/projects/atlas.svg")) {
-                        return;
-                      }
-                      setImageSrcByTitle((previous) => ({
-                        ...previous,
-                        [certificate.title]: "/projects/atlas.svg",
-                      }));
-                    }}
-                  />
+                  {currentImage ? (
+                    <Image
+                      src={currentImage}
+                      alt={`${text.certificatesPage.previewAlt} ${certificate.title}`}
+                      width={1200}
+                      height={800}
+                      className="h-64 w-full rounded-2xl border border-border/60 object-cover"
+                    />
+                  ) : (
+                    <p className="rounded-xl border border-border bg-muted/40 p-5 text-sm text-muted-foreground">
+                      {certificate.period}
+                    </p>
+                  )}
                   <div className="flex flex-wrap gap-3">
                     {certificate.url !== "#" ? (
                       <Button asChild size="sm">
-                        <Link href={certificate.url}>
+                        <Link
+                          href={certificate.url}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           {text.certificatesPage.viewCredential}
                         </Link>
                       </Button>
                     ) : null}
-                    <Button asChild size="sm" variant="outline">
-                      <Link href={currentImage} download>
-                        {text.certificatesPage.download}
-                      </Link>
-                    </Button>
+                    {currentImage ? (
+                      <Button asChild size="sm" variant="outline">
+                        <Link href={currentImage} download>
+                          {text.certificatesPage.download}
+                        </Link>
+                      </Button>
+                    ) : null}
                   </div>
                 </div>
               </DialogContent>

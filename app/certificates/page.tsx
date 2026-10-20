@@ -11,6 +11,7 @@ export default function CertificatesPage() {
     <section className="py-20">
       <div className="container space-y-10">
         <SectionHeading
+          level={1}
           eyebrow={text.certificatesPage.eyebrow}
           title={text.certificatesPage.title}
           description={text.certificatesPage.description}

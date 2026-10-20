@@ -5,10 +5,7 @@ import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
 import { timeline } from "@/content/timeline";
-import {
-  localizeProfile,
-  timelineEnglish,
-} from "@/lib/i18n";
+import { localizeProfile, timelineEnglish } from "@/lib/i18n";
 
 export function AboutSection() {
   const { language, text } = useLanguage();
@@ -16,7 +13,7 @@ export function AboutSection() {
   const localizedTimeline = language === "en" ? timelineEnglish : timeline;
 
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="border-y border-border bg-card/40 py-20">
       <div className="container space-y-12">
         <SectionHeading
           eyebrow={text.about.eyebrow}
@@ -64,12 +61,16 @@ export function AboutSection() {
               <div className="space-y-5">
                 {localizedTimeline.map((item) => (
                   <div key={item.title} className="space-y-2">
-                    <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                    <p className="text-xs uppercase tracking-[0.2em] text-primary">
                       {item.period}
                     </p>
                     <div className="text-base font-semibold">{item.title}</div>
-                    <div className="text-sm text-muted-foreground">{item.company}</div>
-                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                    <div className="text-sm text-muted-foreground">
+                      {item.company}
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      {item.description}
+                    </p>
                   </div>
                 ))}
               </div>

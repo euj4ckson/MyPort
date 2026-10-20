@@ -15,6 +15,7 @@ export type Project = {
   highlights: string[];
   challenges: string;
   solutions: string;
+  caveats?: string;
   links: ProjectLink[];
   thumbnail: {
     src: string;
@@ -33,8 +34,21 @@ export const projects: Project[] = [
       "Aplicação web para transformar tickets em um fluxo controlado de análise, aprovação, implementação, testes, revisão e entrega. O projeto combina worktrees isoladas, regras de escopo, evidências verificáveis e integração com agentes de código sem publicar alterações automaticamente.",
     year: "2026",
     role: "Desenvolvedor Full-stack",
-    stack: ["Node.js", "JavaScript", "PowerShell", "Git", "Claude Code", "Testes automatizados"],
-    tags: ["Node.js", "Automação", "Developer Tools", "Segurança", "Full-stack"],
+    stack: [
+      "Node.js",
+      "JavaScript",
+      "PowerShell",
+      "Git",
+      "Claude Code",
+      "Testes automatizados",
+    ],
+    tags: [
+      "Node.js",
+      "Automação",
+      "Developer Tools",
+      "Segurança",
+      "Full-stack",
+    ],
     highlights: [
       "Painel de tickets com etapas claras, aprovação explícita e acompanhamento da execução",
       "Worktrees e branches isoladas para reduzir colisões e preservar o checkout principal",
@@ -89,6 +103,8 @@ export const projects: Project[] = [
       "Permitir operações SQL em diferentes bancos sem transformar o acesso técnico em um ponto cego de segurança, mantendo privilégio mínimo e responsabilização individual.",
     solutions:
       "Implementei negação por padrão, análise estrutural de T-SQL com ScriptDom, regras de autorização no servidor, proteção das credenciais e auditoria persistente de todas as decisões.",
+    caveats:
+      "O README documenta que a configuração de demonstração ainda usa Encrypt=false e precisa trocar o login sa por uma conta de mínimo privilégio antes de qualquer exposição em produção.",
     links: [
       {
         label: "GitHub",
@@ -132,9 +148,7 @@ export const projects: Project[] = [
       "Reunir conteúdo, interação social e regras de participação em uma experiência simples para quem cozinha em casa, sem abrir mão de segurança, consistência e capacidade de evolução.",
     solutions:
       "Separei domínio, aplicação, infraestrutura, API e cliente Blazor, centralizei autenticação e autorização com ASP.NET Core Identity e protegi os principais fluxos com testes automatizados.",
-    links: [
-      { label: "GitHub", url: "https://bancada-3h5.pages.dev/" },
-    ],
+    links: [{ label: "Demo", url: "https://bancada-3h5.pages.dev/" }],
     thumbnail: {
       src: "/projects/bancada.svg",
       alt: "Prévia do Bancada com apresentação editorial, desafio culinário e cartões de receitas",
@@ -212,6 +226,8 @@ export const projects: Project[] = [
       "Evitar reservas sobrepostas mesmo quando vários clientes tentam ocupar o mesmo horário simultaneamente, sem comprometer a privacidade dos dados.",
     solutions:
       "Transações com isolamento Serializable protegem a verificação e a reserva, enquanto controle de versão, índices por intervalo e regras de autorização garantem consistência e segurança.",
+    caveats:
+      "A documentação descreve a proteção contra conflitos, mas o teste publicado faz reservas em sequência. Ainda falta um teste com solicitações simultâneas contra SQL Server para comprovar esse cenário.",
     links: [
       {
         label: "GitHub",
@@ -263,7 +279,8 @@ export const projects: Project[] = [
   {
     slug: "pacman-3d",
     title: "Pacman 3D",
-    shortDescription: "Jogo 3D inspirado em Pac-Man para jogar direto no navegador.",
+    shortDescription:
+      "Jogo 3D inspirado em Pac-Man para jogar direto no navegador.",
     description:
       "Projeto de game web em 3D com movimentacao em labirinto, coleta de pontos e foco em jogabilidade fluida.",
     year: "2026",
@@ -301,7 +318,8 @@ export const projects: Project[] = [
   {
     slug: "encanshop",
     title: "EncanShop",
-    shortDescription: "Loja virtual de velas com foco em experiencia de compra simples.",
+    shortDescription:
+      "Loja virtual de velas com foco em experiencia de compra simples.",
     description:
       "Projeto de e-commerce para venda de velas, com interface web moderna e base em TypeScript.",
     year: "2026",
@@ -317,9 +335,7 @@ export const projects: Project[] = [
       "Organizar apresentacao e navegacao dos produtos mantendo boa performance.",
     solutions:
       "Estrutura de componentes reutilizaveis, foco em UI objetiva e codigo tipado.",
-    links: [
-      { label: "GitHub", url: "https://github.com/euj4ckson/EncanShop" },
-    ],
+    links: [{ label: "GitHub", url: "https://github.com/euj4ckson/EncanShop" }],
     thumbnail: {
       src: "/projects/encanshop.svg",
       alt: "EncanShop preview",
@@ -328,7 +344,8 @@ export const projects: Project[] = [
   {
     slug: "fastbite",
     title: "FastBite",
-    shortDescription: "Aplicação web para pedidos rápidos com backend em Python.",
+    shortDescription:
+      "Aplicação web para pedidos rápidos com backend em Python.",
     description:
       "Projeto full-stack com backend em Python e interface web em HTML, CSS e JavaScript.",
     year: "2024",
@@ -340,13 +357,10 @@ export const projects: Project[] = [
       "Estrutura organizada para crescer o projeto",
       "Separação clara entre lógica e apresentação",
     ],
-    challenges:
-      "Manter o backend simples e a interface leve para uso rápido.",
+    challenges: "Manter o backend simples e a interface leve para uso rápido.",
     solutions:
       "Implementação modular e foco em fluxos curtos para o usuário final.",
-    links: [
-      { label: "GitHub", url: "https://github.com/euj4ckson/FastBite" },
-    ],
+    links: [{ label: "GitHub", url: "https://github.com/euj4ckson/FastBite" }],
     thumbnail: {
       src: "/projects/fastbite.svg",
       alt: "Dashboard do FastBite com fila de pedidos e rota de entrega",
@@ -367,12 +381,13 @@ export const projects: Project[] = [
       "Fluxos claros para cadastro e acompanhamento",
       "Projeto pensado para evolução de features",
     ],
-    challenges:
-      "Garantir boa experiência em diferentes dispositivos.",
-    solutions:
-      "Componentização da UI e padronização de estilos e navegação.",
+    challenges: "Garantir boa experiência em diferentes dispositivos.",
+    solutions: "Componentização da UI e padronização de estilos e navegação.",
     links: [
-      { label: "GitHub", url: "https://github.com/euj4ckson/AppControleFinanceiro" },
+      {
+        label: "GitHub",
+        url: "https://github.com/euj4ckson/AppControleFinanceiro",
+      },
     ],
     thumbnail: {
       src: "/projects/maui-finance.svg",

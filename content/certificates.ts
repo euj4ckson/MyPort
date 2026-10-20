@@ -2,14 +2,15 @@ export type Certificate = {
   title: string;
   issuer: string;
   category: "certificate" | "academic";
+  period?: string;
   credentialId?: string;
   url: string;
-  image: string;
+  image?: string;
 };
 
 export const certificates: Certificate[] = [
   {
-    title: "PROGRAMACAO DE ALGORITMOS ESCALAVEIS",
+    title: "Programação de Algoritmos Escaláveis",
     issuer: "Estacio",
     category: "certificate",
     credentialId: "dcb68b7730c17a9e4d5ba68",
@@ -25,7 +26,8 @@ export const certificates: Certificate[] = [
     image: "/certificates/dotnet-maui-udemy.jpg",
   },
   {
-    title: "DESENVOLVIMENTO RAPIDO DE APLICACOES EM PYTHON PARA CLOUD, IOT E BIGDATA",
+    title:
+      "Desenvolvimento Rápido de Aplicações em Python para Cloud, IoT e Big Data",
     issuer: "Estacio",
     category: "certificate",
     credentialId: "2d91da0166a3a91f56fb1ce",
@@ -34,7 +36,7 @@ export const certificates: Certificate[] = [
   },
   {
     title:
-      "Fundamentos de Linguagem Python para Analise de Dados e Data Science - Nivel Introdutorio",
+      "Fundamentos de Linguagem Python para Análise de Dados e Data Science - Nível Introdutório",
     issuer: "Data Science Academy",
     category: "certificate",
     credentialId: "673215c67ae7fe5f3c03fce5",
@@ -42,7 +44,7 @@ export const certificates: Certificate[] = [
     image: "/certificates/fundamentos-python-dsa-2024.jpg",
   },
   {
-    title: "PROGRAMACAO PARA INTERNET",
+    title: "Programação para Internet",
     issuer: "Estacio",
     category: "certificate",
     credentialId: "899f002ae2c48c0faf74772",
@@ -50,7 +52,7 @@ export const certificates: Certificate[] = [
     image: "/certificates/programacao-para-internet.jpg",
   },
   {
-    title: "PROGRAMACAO PARA DISPOSITIVOS MOVEIS",
+    title: "Programação para Dispositivos Móveis",
     issuer: "Estacio",
     category: "certificate",
     credentialId: "5b05a371daeea62a840e032",
@@ -58,7 +60,7 @@ export const certificates: Certificate[] = [
     image: "/certificates/programacao-dispositivos-moveis.jpg",
   },
   {
-    title: "Computacao em Nuvem",
+    title: "Computação em Nuvem",
     issuer: "Amazon Web Services (AWS)",
     category: "certificate",
     credentialId: "05053-53866",
@@ -66,24 +68,25 @@ export const certificates: Certificate[] = [
     image: "/certificates/computacao-em-nuvem-aws.png",
   },
   {
-    title: "ANALISE E DESENVOLVIMENTO DE SISTEMAS - FORMACAO TECNICA",
-    issuer: "Formacao Academica",
+    title: "Técnico em Desenvolvimento de Sistemas",
+    issuer: "SENAI",
     category: "academic",
+    period: "2021 - 2023",
     url: "#",
-    image: "/projects/atlas.svg",
   },
   {
-    title: "POS-GRADUACAO EM ENGENHARIA DE SOFTWARE - EM ANDAMENTO",
+    title: "Pós-graduação em Engenharia de Software",
     issuer: "Formacao Academica",
     category: "academic",
+    period: "Abr/2026 - Abr/2027 · Em andamento",
     url: "#",
-    image: "/projects/atlas.svg",
   },
   {
-    title: "TECNOLOGO EM ANALISE E DESENVOLVIMENTO DE SISTEMAS",
+    title: "Tecnólogo em Análise e Desenvolvimento de Sistemas",
     issuer: "Centro Universitario Estacio Juiz de Fora",
     category: "academic",
     credentialId: "1986.1986.9161ed4d229e",
+    period: "Mar/2023 - Ago/2025",
     url: "https://consultadiploma.estacio.br/diploma/1986.1986.9161ed4d229e",
     image: "/certificates/diploma-ads-estacio-2025.jpg",
   },

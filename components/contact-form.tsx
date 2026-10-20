@@ -7,6 +7,7 @@ import { useLanguage } from "@/components/language-provider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { profile } from "@/content/profile";
 
 type FormState = { name: string; email: string; message: string };
 
@@ -30,9 +31,21 @@ export function ContactForm() {
 
   const validate = () => {
     const schema = z.object({
-      name: z.string().min(2, text.form.nameError),
-      email: z.string().email(text.form.emailError),
-      message: z.string().min(10, text.form.messageError),
+      name: z
+        .string()
+        .trim()
+        .min(2, text.form.nameError)
+        .max(100, text.form.nameError),
+      email: z
+        .string()
+        .trim()
+        .email(text.form.emailError)
+        .max(254, text.form.emailError),
+      message: z
+        .string()
+        .trim()
+        .min(10, text.form.messageError)
+        .max(5000, text.form.messageError),
     });
     const result = schema.safeParse(values);
     if (result.success) {
@@ -83,6 +96,8 @@ export function ContactForm() {
         <Input
           id="name"
           name="name"
+          autoComplete="name"
+          maxLength={100}
           value={values.name}
           onChange={onChange("name")}
           aria-invalid={Boolean(errors.name)}
@@ -104,6 +119,8 @@ export function ContactForm() {
           id="email"
           name="email"
           type="email"
+          autoComplete="email"
+          maxLength={254}
           value={values.email}
           onChange={onChange("email")}
           aria-invalid={Boolean(errors.email)}
@@ -124,6 +141,7 @@ export function ContactForm() {
         <Textarea
           id="message"
           name="message"
+          maxLength={5000}
           value={values.message}
           onChange={onChange("message")}
           aria-invalid={Boolean(errors.message)}
@@ -147,7 +165,10 @@ export function ContactForm() {
           ) : null}
           {status === "error" ? (
             <p className="text-sm text-red-500">
-              {text.form.error}
+              {text.form.error}{" "}
+              <a className="underline" href={`mailto:${profile.social.email}`}>
+                {profile.social.email}
+              </a>
             </p>
           ) : null}
         </div>

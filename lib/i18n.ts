@@ -14,7 +14,11 @@ export const copy = {
       contact: "Contato",
       talk: "Fale comigo",
     },
-    language: { label: "Alterar idioma", portuguese: "Português", english: "Inglês" },
+    language: {
+      label: "Alterar idioma",
+      portuguese: "Português",
+      english: "Inglês",
+    },
     theme: { toggle: "Alterar tema" },
     hero: {
       available: "Disponível para novas oportunidades",
@@ -25,7 +29,8 @@ export const copy = {
       multiplatform: "MAUI multiplataforma",
       featured: "Projeto destaque",
       featuredFallback: "Projeto em destaque",
-      featuredDescription: "Projeto selecionado para destaque na página inicial.",
+      featuredDescription:
+        "Projeto selecionado para destaque na página inicial.",
       previewAlt: "Prévia do projeto",
       github: "Ver prévia",
       details: "Ver detalhes",
@@ -55,6 +60,7 @@ export const copy = {
       challengesSolutions: "Desafios e soluções",
       challenge: "Desafio:",
       solution: "Solução:",
+      caveat: "Limitação conhecida:",
       gallery: "Galeria",
       demo: "Demo",
       github: "GitHub",
@@ -62,7 +68,7 @@ export const copy = {
     },
     about: {
       eyebrow: "Sobre",
-      title: "Arquitetura, boas práticas e entrega de valor",
+      title: "Além da interface, a engenharia.",
       stack: "Stack principal",
       stackDescription:
         "Ferramentas focadas em organização, desempenho e escalabilidade.",
@@ -94,13 +100,14 @@ export const copy = {
     },
     contact: {
       eyebrow: "Contato",
-      title: "Vamos construir algo sólido",
+      title: "Vamos trabalhar juntos?",
       description:
-        "Compartilhe objetivos, prazo e contexto. Respondo com um plano claro e próximos passos.",
+        "Está buscando alguém para seu time ou quer conversar sobre um projeto? Conte sobre a oportunidade.",
       direct: "Contato direto",
       directDescription:
         "Prefere uma resposta rápida? Fale comigo pelos canais abaixo.",
-      available: "Disponível para projetos em .NET, ASP.NET Core e MAUI.",
+      available:
+        "Aberto a conversar sobre oportunidades em desenvolvimento backend .NET.",
     },
     form: {
       name: "Nome",
@@ -108,7 +115,7 @@ export const copy = {
       email: "Email",
       emailPlaceholder: "voce@empresa.com",
       message: "Mensagem",
-      messagePlaceholder: "Conte um pouco sobre o projeto",
+      messagePlaceholder: "Conte sobre a vaga, o time ou o projeto",
       send: "Enviar mensagem",
       sending: "Enviando...",
       success: "Mensagem enviada. Obrigado!",
@@ -119,7 +126,8 @@ export const copy = {
     },
     notFound: {
       title: "Página não encontrada",
-      description: "A página que você buscou não existe. Vamos voltar ao início.",
+      description:
+        "A página que você buscou não existe. Vamos voltar ao início.",
       back: "Voltar para o início",
     },
   },
@@ -131,7 +139,11 @@ export const copy = {
       contact: "Contact",
       talk: "Contact me",
     },
-    language: { label: "Change language", portuguese: "Portuguese", english: "English" },
+    language: {
+      label: "Change language",
+      portuguese: "Portuguese",
+      english: "English",
+    },
     theme: { toggle: "Toggle theme" },
     hero: {
       available: "Available for new opportunities",
@@ -157,7 +169,8 @@ export const copy = {
     projectsPage: {
       eyebrow: "Projects",
       title: "All projects",
-      description: "Filter by category, search by keyword, and explore the details.",
+      description:
+        "Filter by category, search by keyword, and explore the details.",
       searchTitle: "Search and filter",
       searchDescription: "Find projects by stack, category, or keyword.",
       searchPlaceholder: "Search projects",
@@ -170,6 +183,7 @@ export const copy = {
       challengesSolutions: "Challenges and solutions",
       challenge: "Challenge:",
       solution: "Solution:",
+      caveat: "Known limitation:",
       gallery: "Gallery",
       demo: "Demo",
       github: "GitHub",
@@ -177,7 +191,7 @@ export const copy = {
     },
     about: {
       eyebrow: "About",
-      title: "Architecture, best practices, and valuable outcomes",
+      title: "Beyond the interface, the engineering.",
       stack: "Core stack",
       stackDescription:
         "Tools focused on organization, performance, and scalability.",
@@ -209,12 +223,13 @@ export const copy = {
     },
     contact: {
       eyebrow: "Contact",
-      title: "Let’s build something solid",
+      title: "Let’s work together.",
       description:
-        "Share your goals, timeline, and context. I will respond with a clear plan and next steps.",
+        "Looking for someone to join your team or want to discuss a project? Tell me about the opportunity.",
       direct: "Direct contact",
-      directDescription: "Need a quick reply? Reach me through the channels below.",
-      available: "Available for .NET, ASP.NET Core, and MAUI projects.",
+      directDescription:
+        "Need a quick reply? Reach me through the channels below.",
+      available: "Open to discussing .NET backend opportunities.",
     },
     form: {
       name: "Name",
@@ -222,7 +237,7 @@ export const copy = {
       email: "Email",
       emailPlaceholder: "you@company.com",
       message: "Message",
-      messagePlaceholder: "Tell me a little about your project",
+      messagePlaceholder: "Tell me about the role, team, or project",
       send: "Send message",
       sending: "Sending...",
       success: "Message sent. Thank you!",
@@ -233,7 +248,8 @@ export const copy = {
     },
     notFound: {
       title: "Page not found",
-      description: "The page you are looking for does not exist. Let’s go home.",
+      description:
+        "The page you are looking for does not exist. Let’s go home.",
       back: "Back to home",
     },
   },
@@ -249,6 +265,7 @@ type ProjectTranslation = Pick<
   | "highlights"
   | "challenges"
   | "solutions"
+  | "caveats"
 > & {
   thumbnailAlt: string;
   galleryAlts?: string[];
@@ -262,7 +279,13 @@ const projectTranslations: Record<string, ProjectTranslation> = {
     description:
       "A web application that turns tickets into a controlled workflow across analysis, approval, implementation, testing, review, and delivery. It combines isolated worktrees, scope rules, verifiable evidence, and coding-agent integrations without automatic publication.",
     role: "Full-stack Developer",
-    tags: ["Node.js", "Automation", "Developer Tools", "Security", "Full-stack"],
+    tags: [
+      "Node.js",
+      "Automation",
+      "Developer Tools",
+      "Security",
+      "Full-stack",
+    ],
     highlights: [
       "Ticket dashboard with explicit approval and clear execution stages",
       "Isolated worktrees and branches that protect the main checkout",
@@ -296,6 +319,8 @@ const projectTranslations: Record<string, ProjectTranslation> = {
       "Enable SQL operations across different databases without turning technical access into a security blind spot, while preserving least privilege and individual accountability.",
     solutions:
       "Implemented default-deny behavior, structural T-SQL analysis with ScriptDom, server-side authorization rules, credential protection, and persistent auditing for every decision.",
+    caveats:
+      "The README states that the demo setup still uses Encrypt=false and needs a least-privilege account instead of sa before any production exposure.",
     thumbnailAlt:
       "DatabasePortal dashboard with governance metrics, a protected SQL console, and an audit trail",
   },
@@ -360,6 +385,8 @@ const projectTranslations: Record<string, ProjectTranslation> = {
       "Prevent overlapping bookings when multiple customers try to reserve the same time slot simultaneously without compromising data privacy.",
     solutions:
       "Serializable transactions protect availability checks and reservations, while version control, interval indexes, and authorization rules ensure consistency and security.",
+    caveats:
+      "The documentation describes conflict prevention, but the published test makes bookings sequentially. A simultaneous-request test against SQL Server is still needed to prove that scenario.",
     thumbnailAlt:
       "Isometric ServiceScheduler illustration with a calendar, clock, and services connected to available time slots",
   },
@@ -395,10 +422,12 @@ const projectTranslations: Record<string, ProjectTranslation> = {
       "Game loop with point collection and match progression",
       "Web deployment for instant browser play",
     ],
-    challenges: "Maintain smooth 3D rendering performance across different devices.",
+    challenges:
+      "Maintain smooth 3D rendering performance across different devices.",
     solutions:
       "Optimized the render loop, refined collision behavior, and modularized the game logic.",
-    thumbnailAlt: "Pacman 3D game preview featuring a maze and collectible points",
+    thumbnailAlt:
+      "Pacman 3D game preview featuring a maze and collectible points",
     galleryAlts: [
       "Pacman 3D chase scene with ghosts in a neon maze",
       "Pacman 3D level preview with score and map layout",
@@ -434,7 +463,8 @@ const projectTranslations: Record<string, ProjectTranslation> = {
       "Organized architecture ready to grow",
       "Clear separation between logic and presentation",
     ],
-    challenges: "Keep the backend simple and the interface lightweight for quick use.",
+    challenges:
+      "Keep the backend simple and the interface lightweight for quick use.",
     solutions:
       "Modular implementation focused on short, direct flows for the end user.",
     thumbnailAlt: "FastBite dashboard with an order queue and delivery route",
@@ -452,7 +482,8 @@ const projectTranslations: Record<string, ProjectTranslation> = {
       "Architecture designed for future features",
     ],
     challenges: "Deliver a strong experience across different devices.",
-    solutions: "Componentized the interface and standardized styling and navigation.",
+    solutions:
+      "Componentized the interface and standardized styling and navigation.",
     thumbnailAlt:
       "MAUI finance app mockup showing a summary of income and expenses",
   },
@@ -476,11 +507,11 @@ export function localizeProject(project: Project, language: Language): Project {
 
 export const profileEnglish = {
   ...profile,
-  headline: "Developer",
-  location: "Brazil",
-  bio: ".NET, ASP.NET, and MAUI developer passionate about building intelligent solutions that simplify real-world problems.",
+  headline: "Mid-level .NET Backend Developer",
+  location: "Juiz de Fora, Brazil",
+  bio: "I work with C#, .NET and SQL Server to evolve business systems and integrations. In my personal projects, I explore APIs, security, testing and AI-assisted automation.",
   summary:
-    "I am a .NET developer with technical and technology degrees in Systems Analysis and Development. I focus on architecture, design patterns, and best practices that deliver scalable, high-quality applications. I work with ASP.NET, .NET MAUI, and cross-platform development, always prioritizing organization, performance, and robust solutions that create real value for users and businesses.",
+    "At Union Sistemas de Gestão, I develop and maintain an ERP covering tax, financial, logistics and administrative processes. I investigate issues across code, databases and integrations, translate user needs into features and help validate deliveries. I hold a technology degree in Systems Analysis and Development and a technical qualification in Systems Development, and I am pursuing postgraduate studies in Software Engineering.",
 };
 
 export function localizeProfile(language: Language) {
@@ -489,10 +520,25 @@ export function localizeProfile(language: Language) {
 
 export const timelineEnglish: TimelineItem[] = [
   {
-    period: "2024 - Present",
-    title: ".NET Developer PL",
-    company: "Actively working in the software development market",
-    description: "Working with .NET, integrations, and cross-platform applications.",
+    period: "Jun 2025 - Present",
+    title: "Mid-level .NET Backend Developer",
+    company: "Union Sistemas de Gestão",
+    description:
+      "ERP development and maintenance with C#, ASP.NET, VB.NET and SQL Server; REST integrations, tax, financial and logistics processes, and an Android sales app integrated through WCF/SOAP and SQLite.",
+  },
+  {
+    period: "Apr 2024 - Jun 2025",
+    title: "Junior Backend Developer",
+    company: "Union Sistemas de Gestão",
+    description:
+      "Implementation and maintenance of ERP features, integrations, SQL queries and stored procedures. Incident reproduction, investigation and improvement validation.",
+  },
+  {
+    period: "Aug 2023 - Jan 2024",
+    title: "Systems Analyst Intern",
+    company: "Santa Casa de Juiz de Fora",
+    description:
+      "ERP systems and SQL database routines analysis, incident investigation and support for internal operations.",
   },
 ];
 
@@ -504,7 +550,10 @@ const certificateTranslations: Record<
     title: "SCALABLE ALGORITHM PROGRAMMING",
     issuer: "Estácio",
   },
-  "/certificates/dotnet-maui-udemy.jpg": { title: ".NET MAUI", issuer: "Udemy" },
+  "/certificates/dotnet-maui-udemy.jpg": {
+    title: ".NET MAUI",
+    issuer: "Udemy",
+  },
   "/certificates/desenvolvimento-rapido-python-cloud-iot-bigdata.jpg": {
     title: "RAPID PYTHON APPLICATION DEVELOPMENT FOR CLOUD, IOT, AND BIG DATA",
     issuer: "Estácio",
@@ -535,11 +584,11 @@ export function localizeCertificate(
   if (language === "pt") return certificate;
   if (certificate.category === "academic") {
     const academicTitles: Record<string, string> = {
-      "ANALISE E DESENVOLVIMENTO DE SISTEMAS - FORMACAO TECNICA":
-        "SYSTEMS ANALYSIS AND DEVELOPMENT — TECHNICAL DEGREE",
-      "POS-GRADUACAO EM ENGENHARIA DE SOFTWARE - EM ANDAMENTO":
+      "Técnico em Desenvolvimento de Sistemas":
+        "Technical Qualification in Systems Development",
+      "Pós-graduação em Engenharia de Software":
         "POSTGRADUATE DEGREE IN SOFTWARE ENGINEERING — IN PROGRESS",
-      "TECNOLOGO EM ANALISE E DESENVOLVIMENTO DE SISTEMAS":
+      "Tecnólogo em Análise e Desenvolvimento de Sistemas":
         "TECHNOLOGY DEGREE IN SYSTEMS ANALYSIS AND DEVELOPMENT",
     };
     return {
@@ -549,7 +598,16 @@ export function localizeCertificate(
         certificate.issuer === "Formacao Academica"
           ? "Academic Education"
           : certificate.issuer,
+      period:
+        certificate.period === "Mar/2023 - Ago/2025"
+          ? "Mar 2023 - Aug 2025"
+          : certificate.period === "2021 - 2023"
+            ? certificate.period
+            : "Apr 2026 - Apr 2027 · In progress",
     };
   }
-  return { ...certificate, ...certificateTranslations[certificate.image] };
+  return {
+    ...certificate,
+    ...(certificate.image ? certificateTranslations[certificate.image] : {}),
+  };
 }

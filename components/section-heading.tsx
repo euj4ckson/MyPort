@@ -5,6 +5,7 @@ type SectionHeadingProps = {
   title: string;
   description?: string;
   className?: string;
+  level?: 1 | 2;
 };
 
 export function SectionHeading({
@@ -12,19 +13,21 @@ export function SectionHeading({
   title,
   description,
   className,
+  level = 2,
 }: SectionHeadingProps) {
+  const Heading = level === 1 ? "h1" : "h2";
   return (
     <div className={cn("space-y-3", className)}>
       {eyebrow ? (
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="font-display text-3xl font-semibold md:text-4xl">
+      <Heading className="font-display text-3xl font-semibold tracking-tight md:text-4xl">
         {title}
-      </h2>
+      </Heading>
       {description ? (
-        <p className="max-w-2xl text-base text-muted-foreground">
+        <p className="max-w-2xl text-sm leading-7 text-muted-foreground md:text-base">
           {description}
         </p>
       ) : null}

@@ -2,127 +2,184 @@
 
 import Image from "next/image";
 import Link from "next/link";
-
+import { ArrowDown, ArrowUpRight, Download, Github } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
-import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
 import { getProjectBySlug } from "@/content/projects";
 import { localizeProfile, localizeProject } from "@/lib/i18n";
 
 export function Hero() {
   const { language, text } = useLanguage();
-  const sourceProject = getProjectBySlug("claude-admin-agent");
-  const featuredProject = sourceProject
-    ? localizeProject(sourceProject, language)
-    : undefined;
-  const localizedProfile = localizeProfile(language);
-  const featuredProjectUrl = featuredProject?.links[0]?.url ?? "/projects";
-  const isFeaturedProjectExternal = featuredProjectUrl.startsWith("http");
-  const featuredProjectLinkProps = isFeaturedProjectExternal
-    ? { target: "_blank", rel: "noreferrer" }
-    : {};
+  const en = language === "en";
+  const profile = localizeProfile(language);
+  const source = getProjectBySlug("service-scheduler-api");
+  const project = source ? localizeProject(source, language) : undefined;
 
   return (
-    <section className="relative overflow-hidden pb-20 pt-32">
-      <div className="container grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-        <Reveal>
-          <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card px-4 py-2 text-xs text-muted-foreground">
-              <span className="h-2 w-2 rounded-full bg-accent" />
-              {text.hero.available}
-            </div>
-            <div className="space-y-5">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                {localizedProfile.location}
-              </p>
-              <h1 className="font-display text-5xl font-semibold leading-tight md:text-6xl lg:text-7xl">
-                {localizedProfile.headline}
-              </h1>
-              <p className="max-w-2xl text-lg text-muted-foreground">
-                {localizedProfile.bio}
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-4">
+    <section className="hero-surface relative overflow-hidden border-b border-border">
+      <div className="container relative pb-10 pt-16 md:pt-24">
+        <div className="mb-10 flex flex-wrap items-center gap-3 text-xs">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-2 text-primary">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+            {text.hero.available}
+          </span>
+          <span className="text-muted-foreground">
+            {profile.location} · PT / EN
+          </span>
+        </div>
+        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+          <div>
+            <p className="mb-5 text-xs font-medium uppercase tracking-[0.24em] text-primary">
+              {profile.headline}
+            </p>
+            <h1 className="font-display text-[clamp(3.5rem,7.6vw,6.8rem)] font-semibold leading-[0.95] tracking-[-0.065em]">
+              Jackson
+              <span className="block">
+                Eduardo<span className="text-primary">.</span>
+              </span>
+            </h1>
+            <h2 className="mt-7 max-w-lg font-display text-2xl leading-snug tracking-tight md:text-3xl">
+              {en
+                ? "From complex problems to software that works."
+                : "De problemas complexos a software que funciona."}
+            </h2>
+            <p className="mt-4 max-w-lg text-sm leading-7 text-muted-foreground md:text-base">
+              {profile.bio}
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg">
-                <Link href="/projects">{text.hero.viewProjects}</Link>
+                <Link href="#projects">
+                  {text.hero.viewProjects}
+                  <ArrowDown size={16} />
+                </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link href="/#contact">{text.hero.contact}</Link>
+                <a
+                  href={profile.resumeUrl}
+                  download="Jackson-Eduardo-Curriculo.pdf"
+                >
+                  <Download size={16} />
+                  {text.about.resume}
+                </a>
               </Button>
             </div>
-            <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
-              <span className="rounded-full border border-border/60 px-3 py-1">
-                {text.hero.architecture}
-              </span>
-              <span className="rounded-full border border-border/60 px-3 py-1">
-                {text.hero.restApis}
-              </span>
-              <span className="rounded-full border border-border/60 px-3 py-1">
-                {text.hero.multiplatform}
-              </span>
+            <div className="mt-6 flex flex-wrap gap-6 text-sm text-muted-foreground">
+              <a
+                href={profile.social.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 hover:text-foreground"
+              >
+                <Github size={16} />
+                GitHub
+                <ArrowUpRight size={13} />
+              </a>
+              {profile.social.linkedin && (
+                <a
+                  href={profile.social.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 hover:text-foreground"
+                >
+                  LinkedIn
+                  <ArrowUpRight size={13} />
+                </a>
+              )}
+              <Link
+                href="#contact"
+                className="inline-flex items-center gap-2 hover:text-foreground"
+              >
+                {text.nav.talk}
+                <ArrowUpRight size={13} />
+              </Link>
             </div>
           </div>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <div className="relative">
-            <div className="absolute -left-10 -top-12 h-40 w-40 rounded-full bg-accent/20 blur-3xl" />
-            <div className="absolute -bottom-12 right-0 h-40 w-40 rounded-full bg-primary/20 blur-3xl" />
-            <div className="relative rounded-[28px] border border-border/60 bg-card/80 p-6 shadow-soft">
-              <div className="space-y-4">
-                <div className="text-sm text-muted-foreground">
-                  {text.hero.featured}
-                </div>
-                <h3 className="font-display text-2xl font-semibold">
-                  {featuredProject?.title ?? text.hero.featuredFallback}
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  {featuredProject?.shortDescription ??
-                    text.hero.featuredDescription}
+          {project && (
+            <div className="featured-project overflow-hidden rounded-2xl border border-border bg-card">
+              <div className="flex items-center justify-between border-b border-border px-5 py-4 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                <span className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-primary" />
+                  {en ? "Illustrative preview" : "Prévia ilustrativa"}
+                </span>
+                <span>01 / {project.year}</span>
+              </div>
+              <Link
+                href={`/projects/${project.slug}`}
+                className="group block overflow-hidden"
+              >
+                <Image
+                  src={project.thumbnail.src}
+                  alt={project.thumbnail.alt}
+                  width={640}
+                  height={420}
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="aspect-[1.65] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  priority
+                />
+              </Link>
+              <div className="p-6">
+                <p className="mb-3 text-[10px] uppercase tracking-[0.18em] text-primary">
+                  {text.hero.featured} · ASP.NET Core & SQL Server
                 </p>
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {(featuredProject?.stack.slice(0, 4) ??
-                    localizedProfile.stack.slice(0, 4)).map((item) => (
-                    <div
+                <h3 className="font-display text-2xl font-semibold tracking-tight">
+                  {project.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                  {project.shortDescription}
+                </p>
+                <div className="my-5 flex flex-wrap gap-2">
+                  {project.stack.slice(0, 3).map((item) => (
+                    <span
                       key={item}
-                      className="flex items-center gap-2 rounded-2xl border border-border/60 bg-background px-3 py-2 text-xs"
+                      className="rounded border border-border px-2 py-1 font-mono text-[10px] text-muted-foreground"
                     >
-                      <span className="h-2 w-2 rounded-full bg-primary" />
                       {item}
-                    </div>
+                    </span>
                   ))}
                 </div>
-                <Link
-                  href={featuredProjectUrl}
-                  {...featuredProjectLinkProps}
-                  className="block"
-                >
-                  <Image
-                    src={featuredProject?.thumbnail.src ?? "/projects/maui-finance.svg"}
-                    alt={featuredProject?.thumbnail.alt ?? text.hero.previewAlt}
-                    width={640}
-                    height={420}
-                    className="rounded-2xl border border-border/60 transition-transform duration-500 ease-out hover:scale-[1.01]"
-                    priority
-                  />
-                </Link>
-                <div className="flex flex-wrap gap-3">
-                  <Button asChild size="sm">
-                    <Link href={featuredProjectUrl} {...featuredProjectLinkProps}>
-                      {text.hero.github}
-                    </Link>
-                  </Button>
-                  {featuredProject ? (
-                    <Button asChild variant="outline" size="sm">
-                      <Link href={`/projects/${featuredProject.slug}`}>
-                        {text.hero.details}
-                      </Link>
-                    </Button>
-                  ) : null}
+                <div className="flex flex-wrap items-center justify-between gap-4 border-t border-border pt-4 text-sm font-medium">
+                  <Link
+                    href={`/projects/${project.slug}`}
+                    className="inline-flex items-center gap-2 hover:text-primary"
+                  >
+                    {en ? "Read the technical case" : "Ler o estudo técnico"}
+                    <ArrowUpRight size={16} />
+                  </Link>
+                  {project.links.find((item) => item.label === "GitHub") && (
+                    <a
+                      href={
+                        project.links.find((item) => item.label === "GitHub")!
+                          .url
+                      }
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground"
+                    >
+                      <Github size={15} />
+                      GitHub
+                      <ArrowUpRight size={13} />
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
-          </div>
-        </Reveal>
+          )}
+        </div>
+        <div className="mt-14 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-border pt-7 md:mt-20">
+          <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+            {en ? "Core technologies" : "Minha base técnica"}
+          </span>
+          {["C#", ".NET", "ASP.NET", "SQL Server", "APIs REST", "Git"].map(
+            (item) => (
+              <span
+                key={item}
+                className="font-display text-sm font-medium text-foreground/75"
+              >
+                {item}
+              </span>
+            ),
+          )}
+        </div>
       </div>
     </section>
   );

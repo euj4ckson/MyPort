@@ -11,6 +11,7 @@ export default function ProjectsPage() {
     <section className="py-20">
       <div className="container space-y-10">
         <SectionHeading
+          level={1}
           eyebrow={text.projectsPage.eyebrow}
           title={text.projectsPage.title}
           description={text.projectsPage.description}

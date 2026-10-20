@@ -2,15 +2,23 @@ import { z } from "zod";
 import { Resend } from "resend";
 
 const schema = z.object({
-  name: z.string().min(2),
-  email: z.string().email(),
-  message: z.string().min(10),
+  name: z.string().trim().min(2).max(100),
+  email: z.string().trim().email().max(254),
+  message: z.string().trim().min(10).max(5000),
 });
 
 export const runtime = "nodejs";
 const contactDestinationEmail = "jacksonduardo6@gmail.com";
 
 export async function POST(request: Request) {
+  const contentLength = Number(request.headers.get("content-length"));
+  if (Number.isFinite(contentLength) && contentLength > 16_384) {
+    return Response.json(
+      { error: "Request body is too large" },
+      { status: 413 },
+    );
+  }
+
   const body = await request.json().catch(() => null);
   const parsed = schema.safeParse(body);
 

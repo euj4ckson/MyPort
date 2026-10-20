@@ -12,7 +12,11 @@ import { profile } from "@/content/profile";
 const contactLinks = [
   { label: "LinkedIn", href: profile.social.linkedin, icon: Linkedin },
   { label: "GitHub", href: profile.social.github, icon: Github },
-  { label: "Email", href: `mailto:${profile.social.email}`, icon: Mail },
+  {
+    label: profile.social.email,
+    href: `mailto:${profile.social.email}?subject=${encodeURIComponent("Oportunidade para Desenvolvedor Backend .NET")}`,
+    icon: Mail,
+  },
   { label: "WhatsApp", href: profile.social.whatsapp, icon: MessageCircle },
 ].filter((link) => Boolean(link.href));
 

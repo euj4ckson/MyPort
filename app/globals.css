@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: 210 20% 98%;
+  --background: 60 14% 97%;
   --foreground: 222 47% 11%;
   --card: 0 0% 100%;
   --card-foreground: 222 47% 11%;
@@ -11,26 +11,26 @@
   --muted-foreground: 215 16% 46%;
   --border: 214 20% 86%;
   --input: 214 20% 86%;
-  --primary: 220 74% 52%;
+  --primary: 162 80% 25%;
   --primary-foreground: 210 40% 98%;
-  --accent: 193 80% 45%;
+  --accent: 162 60% 36%;
   --accent-foreground: 222 47% 11%;
   --ring: 220 74% 52%;
   --radius: 1rem;
 }
 
 .dark {
-  --background: 222 47% 7%;
+  --background: 180 10% 6%;
   --foreground: 210 40% 96%;
-  --card: 222 47% 9%;
+  --card: 180 9% 9%;
   --card-foreground: 210 40% 96%;
-  --muted: 223 20% 16%;
+  --muted: 180 7% 14%;
   --muted-foreground: 215 16% 70%;
-  --border: 223 18% 22%;
+  --border: 180 7% 19%;
   --input: 223 18% 22%;
-  --primary: 219 88% 62%;
-  --primary-foreground: 222 47% 9%;
-  --accent: 193 80% 55%;
+  --primary: 158 69% 66%;
+  --primary-foreground: 180 20% 8%;
+  --accent: 158 69% 66%;
   --accent-foreground: 222 47% 11%;
   --ring: 219 88% 62%;
 }
@@ -60,4 +60,33 @@ body {
 ::selection {
   background: hsl(var(--accent));
   color: hsl(var(--accent-foreground));
+}
+
+section[id] {
+  scroll-margin-top: 6rem;
+}
+
+:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 5px;
+}
+
+.hero-surface {
+  background-image: radial-gradient(
+    ellipse at 85% 25%,
+    hsl(var(--primary) / 0.07),
+    transparent 55%
+  );
+}
+
+.featured-project {
+  box-shadow: 0 24px 80px -40px hsl(var(--primary) / 0.2);
+}
+
+.section-label {
+  @apply mb-4 text-xs font-medium uppercase tracking-[0.2em] text-primary;
+}
+
+.section-title {
+  @apply font-display text-3xl font-semibold leading-tight tracking-tight md:text-5xl;
 }

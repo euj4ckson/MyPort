@@ -6,8 +6,12 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
-      allow: "/",
+      ...(siteConfig.isPublicUrlConfigured
+        ? { allow: "/" }
+        : { disallow: "/" }),
     },
-    sitemap: `${siteConfig.url}/sitemap.xml`,
+    sitemap: siteConfig.isPublicUrlConfigured
+      ? `${siteConfig.url}/sitemap.xml`
+      : undefined,
   };
 }

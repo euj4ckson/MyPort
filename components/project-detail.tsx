@@ -21,6 +21,12 @@ export function ProjectDetail({ project }: { project: Project }) {
 
   return (
     <div className="space-y-10">
+      <Link
+        href="/projects"
+        className="inline-flex text-sm text-muted-foreground hover:text-primary"
+      >
+        ← {text.projectsPreview.all}
+      </Link>
       <div className="space-y-6">
         <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
           <span className="rounded-full border border-border/60 px-3 py-1">
@@ -48,11 +54,21 @@ export function ProjectDetail({ project }: { project: Project }) {
         <div className="flex flex-wrap gap-3">
           {localizedProject.links.map((link) => (
             <Button asChild key={link.url} variant="outline" size="sm">
-              <Link href={link.url}>{linkLabels[link.label]}</Link>
+              <Link href={link.url} target="_blank" rel="noreferrer">
+                {linkLabels[link.label]}
+              </Link>
             </Button>
           ))}
         </div>
       </div>
+      {localizedProject.caveats ? (
+        <aside className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-5 text-sm leading-6 text-muted-foreground">
+          <span className="font-semibold text-foreground">
+            {text.projectDetail.caveat}{" "}
+          </span>
+          {localizedProject.caveats}
+        </aside>
+      ) : null}
       <Card className="overflow-hidden">
         <Image
           src={localizedProject.thumbnail.src}
@@ -70,7 +86,10 @@ export function ProjectDetail({ project }: { project: Project }) {
             </h2>
             <ul className="space-y-3 text-sm text-muted-foreground">
               {localizedProject.highlights.map((highlight) => (
-                <li key={highlight} className="rounded-2xl border border-border/60 p-4">
+                <li
+                  key={highlight}
+                  className="rounded-2xl border border-border/60 p-4"
+                >
                   {highlight}
                 </li>
               ))}
@@ -103,19 +122,36 @@ export function ProjectDetail({ project }: { project: Project }) {
           <div className="space-y-4">
             {(localizedProject.gallery ?? [localizedProject.thumbnail]).map(
               (item) => (
-              <Card key={item.src} className="overflow-hidden">
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  width={800}
-                  height={520}
-                  className="h-56 w-full object-cover"
-                />
-              </Card>
+                <Card key={item.src} className="overflow-hidden">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    width={800}
+                    height={520}
+                    className="h-56 w-full object-cover"
+                  />
+                </Card>
               ),
             )}
           </div>
         </div>
+      </div>
+      <div className="flex flex-wrap items-center justify-between gap-5 rounded-2xl border border-primary/25 bg-primary/5 p-6">
+        <div>
+          <h2 className="font-display text-xl font-semibold">
+            {language === "en"
+              ? "Could this experience help your team?"
+              : "Essa experiência faz sentido para o seu time?"}
+          </h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            {language === "en"
+              ? "Let's talk about the role or the challenge you are working on."
+              : "Vamos conversar sobre a vaga ou o desafio que você está construindo."}
+          </p>
+        </div>
+        <Button asChild>
+          <Link href="/#contact">{text.nav.talk}</Link>
+        </Button>
       </div>
     </div>
   );

@@ -6,7 +6,13 @@ import Link from "next/link";
 import { useLanguage } from "@/components/language-provider";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import type { Project } from "@/content/projects";
 import { localizeProject } from "@/lib/i18n";
 
@@ -58,8 +64,14 @@ export function ProjectCard({ project }: { project: Project }) {
         </Button>
         {project.links[0] ? (
           <Button asChild variant="outline" size="sm">
-            <Link href={localizedProject.links[0].url}>
-              {text.projectCard.open}
+            <Link
+              href={localizedProject.links[0].url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {localizedProject.links[0].label === "GitHub"
+                ? "GitHub"
+                : text.projectDetail.demo}
             </Link>
           </Button>
         ) : null}

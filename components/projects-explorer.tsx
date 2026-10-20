@@ -9,12 +9,30 @@ import { Input } from "@/components/ui/input";
 import { projects } from "@/content/projects";
 import { localizeProject } from "@/lib/i18n";
 
+const projectPriority = [
+  "service-scheduler-api",
+  "supportdesk-api",
+  "database-portal",
+  "claude-admin-agent",
+  "bancada",
+];
+
 export function ProjectsExplorer() {
   const { language, text } = useLanguage();
   const [query, setQuery] = React.useState("");
   const [activeTag, setActiveTag] = React.useState<string | null>(null);
   const localizedProjects = React.useMemo(
-    () => projects.map((project) => localizeProject(project, language)),
+    () =>
+      projects
+        .map((project) => localizeProject(project, language))
+        .sort((left, right) => {
+          const leftIndex = projectPriority.indexOf(left.slug);
+          const rightIndex = projectPriority.indexOf(right.slug);
+          return (
+            (leftIndex < 0 ? 99 : leftIndex) -
+            (rightIndex < 0 ? 99 : rightIndex)
+          );
+        }),
     [language],
   );
   const localizedTags = React.useMemo(
@@ -32,7 +50,8 @@ export function ProjectsExplorer() {
   const filteredProjects = React.useMemo(() => {
     return localizedProjects.filter((project) => {
       const matchesTag = activeTag === null || project.tags.includes(activeTag);
-      const searchText = `${project.title} ${project.shortDescription} ${project.description}`.toLowerCase();
+      const searchText =
+        `${project.title} ${project.shortDescription} ${project.description} ${project.stack.join(" ")} ${project.tags.join(" ")}`.toLowerCase();
       const matchesQuery = searchText.includes(query.trim().toLowerCase());
       return matchesTag && matchesQuery;
     });
@@ -61,14 +80,15 @@ export function ProjectsExplorer() {
         {[text.projectsPage.all, ...localizedTags].map((tag, index) => {
           const tagValue = index === 0 ? null : tag;
           return (
-          <Button
-            key={tag}
-            variant={tagValue === activeTag ? "default" : "outline"}
-            size="sm"
-            onClick={() => setActiveTag(tagValue)}
-          >
-            {tag}
-          </Button>
+            <Button
+              key={tag}
+              variant={tagValue === activeTag ? "default" : "outline"}
+              size="sm"
+              aria-pressed={tagValue === activeTag}
+              onClick={() => setActiveTag(tagValue)}
+            >
+              {tag}
+            </Button>
           );
         })}
       </div>
