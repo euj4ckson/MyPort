@@ -511,7 +511,7 @@ export const profileEnglish = {
   location: "Juiz de Fora, Brazil",
   bio: "I work with C#, .NET and SQL Server to evolve business systems and integrations. In my personal projects, I explore APIs, security, testing and AI-assisted automation.",
   summary:
-    "At Union Sistemas de Gestão, I develop and maintain an ERP covering tax, financial, logistics and administrative processes. I investigate issues across code, databases and integrations, translate user needs into features and help validate deliveries. I hold a technology degree in Systems Analysis and Development and a technical qualification in Systems Development, and I am pursuing postgraduate studies in Software Engineering.",
+    "I develop and maintain ERP systems that support tax, financial, logistics and administrative processes. I investigate issues across code, databases and integrations, translate user needs into features and help validate deliveries. I hold a technology degree in Systems Analysis and Development and a technical qualification in Systems Development, and I am pursuing postgraduate studies in Software Engineering.",
 };
 
 export function localizeProfile(language: Language) {

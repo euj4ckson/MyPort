@@ -4,7 +4,7 @@ export const profile = {
   location: "Juiz de Fora, MG · Brasil",
   bio: "Trabalho com C#, .NET e SQL Server na evolução de sistemas de gestão e integrações. Nos meus projetos, exploro APIs, segurança, testes e automação com IA.",
   summary:
-    "Na Union Sistemas de Gestão, trabalho no desenvolvimento e na sustentação de um ERP com processos fiscais, financeiros, logísticos e administrativos. Investigo problemas em código, banco de dados e integrações, traduzo necessidades dos usuários em funcionalidades e acompanho a validação das entregas. Sou tecnólogo em Análise e Desenvolvimento de Sistemas, técnico em Desenvolvimento de Sistemas e pós-graduando em Engenharia de Software.",
+    "Atuo no desenvolvimento e na sustentação de sistemas ERP que apoiam processos fiscais, financeiros, logísticos e administrativos. Investigo problemas em código, banco de dados e integrações, traduzo necessidades dos usuários em funcionalidades e acompanho a validação das entregas. Sou tecnólogo em Análise e Desenvolvimento de Sistemas, técnico em Desenvolvimento de Sistemas e pós-graduando em Engenharia de Software.",
   stack: [
     "C#",
     ".NET",
