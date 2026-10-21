@@ -27,42 +27,48 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "claude-admin-agent",
-    title: "Central de Tickets AI",
+    title: "Central de Tickets",
     shortDescription:
-      "Central local-first para organizar desenvolvimentos com agentes de código, atualmente em migração gradual de Node.js para C#/.NET.",
+      "Ferramenta local para acompanhar tickets, sessões de desenvolvimento e evidências de entrega.",
     description:
-      "Aplicação web para transformar tickets em um fluxo controlado de análise, aprovação, implementação, testes, revisão e entrega. A versão principal usa Node.js e a migração incremental para C#/.NET 10 já inclui uma API e uma interface web de leitura, mantendo os dados existentes sem alterações.",
+      "Aplicação para organizar o trabalho de desenvolvimento desde a análise do ticket até a revisão e a entrega. Reúne aprovação de escopo, preparação de worktrees, integração com Azure DevOps, acompanhamento de Claude Code e Codex e registro de testes e evidências. O servidor e as ferramentas de automação são escritos em C# com ASP.NET Core; os dados continuam locais e legíveis pelos fluxos existentes.",
     year: "2026",
     role: "Desenvolvedor Full-stack",
     stack: [
-      "Node.js",
+      "C#",
+      ".NET 10",
+      "ASP.NET Core",
+      "HTML",
+      "CSS",
       "JavaScript",
       "PowerShell",
-      "C#",
-      "ASP.NET Core 10",
       "Git",
+      "Azure DevOps REST API",
+      "MCP",
       "Claude Code",
-      "Testes automatizados",
+      "Codex CLI",
+      "xUnit",
     ],
     tags: [
-      "Node.js",
+      "C#",
+      ".NET",
       "Automação",
       "Developer Tools",
       "Segurança",
       "Full-stack",
     ],
     highlights: [
-      "Painel de tickets com etapas claras, aprovação explícita e acompanhamento da execução",
+      "Painel de tickets com etapas claras, aprovação explícita e acompanhamento das sessões",
       "Worktrees e branches isoladas para reduzir colisões e preservar o checkout principal",
       "Hooks e políticas locais para limitar escopo, bloquear push acidental e controlar recursos compartilhados",
       "Matriz de variantes, evidências reproduzíveis e prints de testes manuais para apoiar a revisão",
-      "Fluxo local-first compatível com diferentes repositórios e agentes de desenvolvimento",
-      "Migração incremental para ASP.NET Core com API e interface responsiva, preservando a operação Node durante a transição",
+      "Cadastro e importação de tickets do Azure DevOps, com prévia e anexos antes de iniciar o trabalho",
+      "Uso de Claude Code e Codex, com políticas locais, integração MCP e dados preservados no computador",
     ],
     challenges:
       "Aumentar a confiabilidade de desenvolvimentos assistidos por IA sem transformar automação em autorização irrestrita ou perder o contexto do ticket.",
     solutions:
-      "Estruturei o fluxo em etapas auditáveis, com aprovação vinculada ao plano, isolamento por worktree, políticas de ferramentas, reserva de compilação/testes e documentação baseada em evidências. A migração para ASP.NET Core é feita em fatias testadas, sem substituir a Central Node antes de cobrir os fluxos equivalentes.",
+      "Organizei o processo em etapas auditáveis: a aprovação fica vinculada ao plano, cada ticket trabalha em sua própria worktree e os gates conferem escopo, testes e evidências antes da entrega. A integração com os agentes reduz tarefas manuais sem remover as decisões que precisam continuar sob controle do usuário.",
     links: [
       {
         label: "GitHub",
@@ -71,16 +77,16 @@ export const projects: Project[] = [
     ],
     thumbnail: {
       src: "/projects/claude-admin-agent.svg",
-      alt: "Dashboard conceitual da Central de Tickets AI com tickets, aprovações e evidências",
+      alt: "Painel da Central de Tickets com tickets, aprovações e evidências",
     },
   },
   {
     slug: "database-portal",
     title: "DatabasePortal",
     shortDescription:
-      "Portal de governança para validar, autorizar e auditar operações SQL Server com segurança.",
+      "Portal para controlar e auditar operações em bancos SQL Server.",
     description:
-      "Aplicação full-stack que centraliza o acesso a bancos SQL Server e controla cada operação por usuário, perfil, ambiente, comando e objeto. O portal oferece console SQL protegido, administração de conexões e permissões, além de rastreabilidade completa das solicitações.",
+      "Aplicação full-stack para administrar conexões e permissões de acesso a bancos SQL Server. As operações passam por regras de autorização e ficam registradas com o usuário, ambiente, comando e resultado, incluindo o uso do console SQL.",
     year: "2026",
     role: "Desenvolvedor Full-stack",
     stack: [
@@ -96,16 +102,16 @@ export const projects: Project[] = [
     ],
     tags: ["C#", ".NET", "Blazor", "SQL Server", "Full-stack"],
     highlights: [
-      "Console SQL com validação de política, autorização e auditoria antes de cada execução",
-      "Permissões granulares por usuário, perfil, ambiente, tipo de comando e objeto do banco",
+      "Validação e auditoria das operações executadas pelo console SQL",
+      "Permissões por usuário, perfil, ambiente, comando e objeto do banco",
       "Painel administrativo para gerenciar usuários, conexões protegidas e regras de acesso",
-      "Histórico com hash, decisão, resultado e contexto de cada solicitação SQL",
-      "Migrations para SQL Server, migrador dedicado e testes automatizados de políticas e APIs",
+      "Histórico das solicitações com decisão, resultado e contexto da execução",
+      "Migrações para SQL Server e testes automatizados das políticas e APIs",
     ],
     challenges:
       "Permitir operações SQL em diferentes bancos sem transformar o acesso técnico em um ponto cego de segurança, mantendo privilégio mínimo e responsabilização individual.",
     solutions:
-      "Implementei negação por padrão, análise estrutural de T-SQL com ScriptDom, regras de autorização no servidor, proteção das credenciais e auditoria persistente de todas as decisões.",
+      "Apliquei autorização no servidor e análise estrutural de T-SQL com ScriptDom antes da execução. As credenciais são protegidas e as decisões ficam registradas para consulta posterior.",
     caveats:
       "O README documenta que a configuração de demonstração ainda usa Encrypt=false e precisa trocar o login sa por uma conta de mínimo privilégio antes de qualquer exposição em produção.",
     links: [
@@ -123,9 +129,9 @@ export const projects: Project[] = [
     slug: "bancada",
     title: "Bancada",
     shortDescription:
-      "Comunidade de receitas criada a partir da minha paixão pela culinária e por experiências digitais bem construídas.",
+      "Uma comunidade para publicar, encontrar e compartilhar receitas.",
     description:
-      "Plataforma full-stack para quem cozinha em casa publicar e descobrir receitas, criar perfis, salvar favoritos, comentar e participar de desafios culinários. O projeto nasceu da minha paixão pela cozinha e transforma esse interesse pessoal em uma experiência completa, segura e responsiva.",
+      "Plataforma full-stack em que pessoas podem publicar receitas, explorar opções por ingrediente ou tempo de preparo, montar uma coleção de favoritas e interagir por comentários e desafios culinários.",
     year: "2026",
     role: "Desenvolvedor Full-stack",
     stack: [
@@ -142,15 +148,15 @@ export const projects: Project[] = [
     ],
     tags: ["C#", ".NET", "Blazor", "Full-stack", "API"],
     highlights: [
-      "Publicação, edição e descoberta de receitas com busca por texto, dificuldade, tempo e ingrediente",
-      "Perfis públicos, favoritos, comentários e autenticação segura com cookie HTTP-only",
-      "Desafios culinários e Caixa Misteriosa para estimular criatividade e participação da comunidade",
-      "Arquitetura em camadas, PostgreSQL, upload de imagens local/R2 e testes de domínio e integração",
+      "Busca e filtros por texto, dificuldade, tempo de preparo e ingredientes",
+      "Perfis, receitas favoritas e comentários com autenticação por cookie HTTP-only",
+      "Desafios culinários e Caixa Misteriosa para dar novas ideias a quem cozinha",
+      "Imagens armazenadas localmente ou no Cloudflare R2, com testes de domínio e integração",
     ],
     challenges:
       "Reunir conteúdo, interação social e regras de participação em uma experiência simples para quem cozinha em casa, sem abrir mão de segurança, consistência e capacidade de evolução.",
     solutions:
-      "Separei domínio, aplicação, infraestrutura, API e cliente Blazor, centralizei autenticação e autorização com ASP.NET Core Identity e protegi os principais fluxos com testes automatizados.",
+      "Separei a aplicação em camadas, usei ASP.NET Core Identity para autenticação e autorização e cobri as regras principais com testes automatizados.",
     links: [{ label: "Demo", url: "https://bancada-3h5.pages.dev/" }],
     thumbnail: {
       src: "/projects/bancada.svg",
@@ -161,9 +167,9 @@ export const projects: Project[] = [
     slug: "supportdesk-api",
     title: "SupportDesk API",
     shortDescription:
-      "API de gestão de chamados de suporte com autenticação, auditoria e atualizações em tempo real.",
+      "API para organizar chamados de suporte e acompanhar seu andamento.",
     description:
-      "Backend para equipes de atendimento gerenciarem todo o ciclo de vida de chamados, com acesso por perfis, comentários públicos e internos, histórico de alterações e notificações em tempo real.",
+      "Backend para equipes de atendimento registrarem e acompanharem chamados, comentários, atribuições e mudanças de status. Os perfis controlam o acesso e as atualizações importantes podem ser acompanhadas em tempo real.",
     year: "2026",
     role: "Desenvolvedor Back-end",
     stack: [
@@ -181,14 +187,14 @@ export const projects: Project[] = [
     tags: ["C#", ".NET", "API", "Back-end"],
     highlights: [
       "Autenticação JWT e autorização por perfis de cliente, atendente e administrador",
-      "Fluxo completo de chamados com filtros, paginação, atribuição, comentários e transições de status controladas",
-      "Auditoria das alterações, concorrência otimista e notificações em tempo real com SignalR",
-      "Testes de integração, migrações para PostgreSQL, Docker Compose e integração contínua",
+      "Filtros, paginação, atribuição e comentários públicos ou internos",
+      "Histórico de alterações, controle de concorrência e notificações com SignalR",
+      "Testes de integração, migrações PostgreSQL e execução local com Docker Compose",
     ],
     challenges:
       "Garantir que clientes visualizem apenas os próprios chamados, enquanto a equipe mantém acesso operacional seguro e atualizações concorrentes não sobrescrevem dados silenciosamente.",
     solutions:
-      "Regras de autorização centralizadas nos serviços, ASP.NET Core Identity com JWT, controle de versão para concorrência otimista, histórico de auditoria e testes de integração com SQLite em memória.",
+      "Concentrei as regras de autorização nos serviços, usei Identity com JWT e registrei as alterações para facilitar o acompanhamento. Os testes de integração usam SQLite em memória.",
     links: [
       { label: "GitHub", url: "https://github.com/euj4ckson/SupportDesk.git" },
     ],
@@ -201,9 +207,9 @@ export const projects: Project[] = [
     slug: "service-scheduler-api",
     title: "ServiceScheduler API",
     shortDescription:
-      "API de agendamento de serviços com disponibilidade, reservas seguras e prevenção de conflitos.",
+      "API para consultar horários e gerenciar agendamentos de serviços.",
     description:
-      "Backend para clientes reservarem serviços e profissionais administrarem catálogo, disponibilidade semanal e todo o ciclo de vida dos atendimentos.",
+      "Backend em que clientes consultam horários e reservam serviços, enquanto profissionais administram o catálogo, a disponibilidade semanal e os atendimentos agendados.",
     year: "2026",
     role: "Desenvolvedor Back-end",
     stack: [
@@ -222,13 +228,14 @@ export const projects: Project[] = [
       "Autenticação JWT e autorização por perfis de cliente, profissional e administrador",
       "Catálogo de serviços, disponibilidade semanal e cálculo de horários livres conforme a duração",
       "Criação, remarcação, confirmação, conclusão e cancelamento de agendamentos",
-      "Detecção transacional de conflitos, concorrência otimista, auditoria e isolamento dos dados",
-      "Testes de integração, migrações para SQL Server, Docker Compose e integração contínua",
+      "Verificação transacional de conflitos e controle de concorrência",
+      "Auditoria e isolamento dos dados por perfil de acesso",
+      "Testes de integração, migrações para SQL Server e execução com Docker Compose",
     ],
     challenges:
       "Evitar reservas sobrepostas mesmo quando vários clientes tentam ocupar o mesmo horário simultaneamente, sem comprometer a privacidade dos dados.",
     solutions:
-      "Transações com isolamento Serializable protegem a verificação e a reserva, enquanto controle de versão, índices por intervalo e regras de autorização garantem consistência e segurança.",
+      "A reserva e a verificação de disponibilidade são feitas em transação com isolamento Serializable. O projeto também usa controle de versão e regras de autorização para proteger os dados.",
     caveats:
       "A documentação descreve a proteção contra conflitos, mas o teste publicado faz reservas em sequência. Ainda falta um teste com solicitações simultâneas contra SQL Server para comprovar esse cenário.",
     links: [
@@ -246,9 +253,9 @@ export const projects: Project[] = [
     slug: "sos-mg",
     title: "SOS MG",
     shortDescription:
-      "Portal publico para gestao de abrigos e pontos de doacao em crises de chuvas e enchentes.",
+      "Portal para localizar abrigos e pontos de doação durante enchentes em Minas Gerais.",
     description:
-      "Aplicacao web para centralizar informacoes oficiais de abrigos e pontos de coleta durante eventos extremos em Minas Gerais, com painel restrito para equipes autorizadas atualizarem vagas e necessidades urgentes.",
+      "Aplicação web para reunir informações de abrigos e pontos de coleta durante eventos de chuva e enchente em Minas Gerais. Um painel restrito permite que equipes autorizadas atualizem vagas e necessidades locais.",
     year: "2026",
     role: "Desenvolvedor Full-stack",
     stack: [
@@ -263,14 +270,14 @@ export const projects: Project[] = [
     ],
     tags: ["Next.js", "TypeScript", "Prisma", "Mapas", "Full-stack"],
     highlights: [
-      "Portal publico com consulta de vagas, localizacao de abrigos e pontos oficiais de coleta",
-      "Painel restrito com autenticacao por credenciais para atualizacao das informacoes por equipes autorizadas",
-      "Mapa interativo com Leaflet + OpenStreetMap e clusters para leitura rapida em cenarios de crise",
+      "Consulta de vagas, abrigos e pontos oficiais de coleta",
+      "Painel autenticado para atualização das informações pelas equipes responsáveis",
+      "Mapa com Leaflet e OpenStreetMap para visualizar locais de atendimento",
     ],
     challenges:
-      "Manter dados operacionais confiaveis e atualizados durante eventos de chuva forte com alta demanda.",
+      "Manter as informações práticas e fáceis de consultar em situações que mudam rapidamente.",
     solutions:
-      "Fluxo autenticado com NextAuth, modelagem de dados com Prisma e Postgres serverless, e interface otimizada para destacar necessidades urgentes.",
+      "Separei a consulta pública da área de atualização, usei autenticação no painel e organizei os dados com Prisma e PostgreSQL.",
     links: [
       { label: "GitHub", url: "https://github.com/euj4ckson/SOS_MG.git" },
     ],
@@ -283,22 +290,22 @@ export const projects: Project[] = [
     slug: "pacman-3d",
     title: "Pacman 3D",
     shortDescription:
-      "Jogo 3D inspirado em Pac-Man para jogar direto no navegador.",
+      "Uma releitura 3D de Pac-Man que roda no navegador.",
     description:
-      "Projeto de game web em 3D com movimentacao em labirinto, coleta de pontos e foco em jogabilidade fluida.",
+      "Jogo de navegador com labirinto tridimensional, movimentação em tempo real e coleta de pontos durante a partida.",
     year: "2026",
     role: "Desenvolvedor",
-    stack: ["JavaScript", "Three.js", "HTML", "CSS"],
+    stack: ["TypeScript", "Three.js", "Vite", "HTML", "CSS"],
     tags: ["GameDev", "3D", "Web"],
     highlights: [
-      "Mapa 3D interativo com movimentacao em tempo real",
-      "Loop de jogo com coleta de pontos e progressao da partida",
-      "Deploy web para execucao imediata no browser",
+      "Labirinto 3D navegável diretamente no browser",
+      "Partida com coleta de pontos e progressão",
+      "Controles pensados para manter a movimentação simples",
     ],
     challenges:
       "Manter boa performance de renderizacao 3D em diferentes dispositivos.",
     solutions:
-      "Otimizacao do loop de renderizacao, ajustes de colisao e organizacao modular da logica do jogo.",
+      "Organizei o loop de renderização e a lógica de colisão para manter a resposta do jogo fluida.",
     links: [
       { label: "Demo", url: "https://pacman-kappa-liard.vercel.app/" },
       { label: "GitHub", url: "https://github.com/euj4ckson/PACMAN.git" },
@@ -322,22 +329,37 @@ export const projects: Project[] = [
     slug: "encanshop",
     title: "EncanShop",
     shortDescription:
-      "Loja virtual de velas com foco em experiencia de compra simples.",
+      "Loja virtual de velas com catálogo, checkout e acompanhamento de pedidos.",
     description:
-      "Projeto de e-commerce para venda de velas, com interface web moderna e base em TypeScript.",
+      "E-commerce de velas com catálogo, carrinho, checkout e área do cliente. O painel administrativo cuida de produtos e pedidos; pagamentos e atualizações de status são integrados ao Mercado Pago, com Redis para proteger operações concorrentes.",
     year: "2026",
     role: "Desenvolvedor",
-    stack: ["TypeScript", "JavaScript", "CSS", "HTML"],
-    tags: ["TypeScript", "E-commerce", "Web"],
+    stack: [
+      "TypeScript",
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "React Router",
+      "React Query",
+      "React Hook Form",
+      "Zod",
+      "Vercel Functions",
+      "Upstash Redis",
+      "Vercel Blob",
+      "Mercado Pago",
+      "Nodemailer",
+    ],
+    tags: ["React", "TypeScript", "E-commerce", "Web"],
     highlights: [
-      "Catalogo de velas com apresentacao visual clara",
-      "Fluxo de navegacao pensado para descoberta de produtos",
-      "Base de frontend pronta para evolucao de funcionalidades",
+      "Catálogo, carrinho e checkout com Pix, cartão e opção de concluir pelo WhatsApp",
+      "Área do cliente para consultar pedidos, endereços e retomar pagamentos pendentes",
+      "Painel administrativo para produtos, cupons e acompanhamento de pedidos",
+      "Confirmação de pagamento por webhook e e-mails transacionais de cada etapa",
     ],
     challenges:
-      "Organizar apresentacao e navegacao dos produtos mantendo boa performance.",
+      "Manter valores e status dos pedidos consistentes entre o navegador, o provedor de pagamento e o painel administrativo.",
     solutions:
-      "Estrutura de componentes reutilizaveis, foco em UI objetiva e codigo tipado.",
+      "O servidor recalcula itens, variantes e frete antes de gravar o pedido; o webhook do Mercado Pago atualiza o pagamento e as operações concorrentes usam lock no Redis.",
     links: [{ label: "GitHub", url: "https://github.com/euj4ckson/EncanShop" }],
     thumbnail: {
       src: "/projects/encanshop.svg",
@@ -348,21 +370,21 @@ export const projects: Project[] = [
     slug: "fastbite",
     title: "FastBite",
     shortDescription:
-      "Aplicação web para pedidos rápidos com backend em Python.",
+      "Aplicação web simples para registrar e acompanhar pedidos.",
     description:
-      "Projeto full-stack com backend em Python e interface web em HTML, CSS e JavaScript.",
+      "Projeto full-stack com backend em Python e uma interface em HTML, CSS e JavaScript para organizar o fluxo de pedidos.",
     year: "2024",
     role: "Desenvolvedor",
     stack: ["Python", "HTML", "CSS", "JavaScript"],
     tags: ["Python", "Web", "Full-stack"],
     highlights: [
-      "Interface simples e objetiva para pedidos",
-      "Estrutura organizada para crescer o projeto",
-      "Separação clara entre lógica e apresentação",
+      "Interface para consultar e acompanhar pedidos",
+      "Backend em Python separado da apresentação",
+      "Estrutura direta, adequada ao escopo do projeto",
     ],
-    challenges: "Manter o backend simples e a interface leve para uso rápido.",
+    challenges: "Manter o fluxo de pedidos fácil de entender e rápido de usar.",
     solutions:
-      "Implementação modular e foco em fluxos curtos para o usuário final.",
+      "Separei a lógica do backend da interface e mantive as principais ações em fluxos curtos.",
     links: [{ label: "GitHub", url: "https://github.com/euj4ckson/FastBite" }],
     thumbnail: {
       src: "/projects/fastbite.svg",
@@ -374,18 +396,18 @@ export const projects: Project[] = [
     title: "App Controle Financeiro",
     shortDescription: "Aplicativo MAUI para organização financeira pessoal.",
     description:
-      "Aplicação multiplataforma em .NET MAUI focada em controle de despesas e receitas.",
+      "Aplicativo multiplataforma para registrar receitas e despesas e acompanhar a organização financeira pessoal.",
     year: "2025",
     role: "Desenvolvedor",
     stack: [".NET MAUI", "C#"],
     tags: ["MAUI", "Mobile", ".NET"],
     highlights: [
-      "Experiência consistente em múltiplas plataformas",
-      "Fluxos claros para cadastro e acompanhamento",
-      "Projeto pensado para evolução de features",
+      "Registro e consulta de movimentações financeiras",
+      "Interface desenvolvida com .NET MAUI e C#",
+      "Organização do código para evoluir as funcionalidades do aplicativo",
     ],
-    challenges: "Garantir boa experiência em diferentes dispositivos.",
-    solutions: "Componentização da UI e padronização de estilos e navegação.",
+    challenges: "Manter os fluxos de cadastro e consulta claros em diferentes dispositivos.",
+    solutions: "Organizei a interface em componentes e padronizei estilos e navegação.",
     links: [
       {
         label: "GitHub",
