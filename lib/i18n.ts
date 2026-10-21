@@ -273,39 +273,41 @@ type ProjectTranslation = Pick<
 
 const projectTranslations: Record<string, ProjectTranslation> = {
   "claude-admin-agent": {
-    title: "AI Ticket Control Center",
+    title: "Ticket Control Center",
     shortDescription:
-      "A local-first workspace for coordinating AI-assisted development with stronger safety and traceability.",
+      "A desktop-first tool for organizing ticket work, from scope review to tested delivery.",
     description:
-      "A web application that turns tickets into a controlled workflow across analysis, approval, implementation, testing, review, and delivery. It combines isolated worktrees, scope rules, verifiable evidence, and coding-agent integrations without automatic publication.",
+      "A local application for following development tickets through analysis, approval, implementation, testing, review, and delivery. The C# and ASP.NET Core server coordinates isolated Git worktrees, Azure DevOps tickets, Claude Code and Codex sessions, and delivery evidence. Ticket data and workflow files remain on the developer's machine.",
     role: "Full-stack Developer",
     tags: [
-      "Node.js",
+      "C#",
+      ".NET",
+      "ASP.NET Core",
       "Automation",
       "Developer Tools",
       "Security",
       "Full-stack",
     ],
     highlights: [
-      "Ticket dashboard with explicit approval and clear execution stages",
-      "Isolated worktrees and branches that protect the main checkout",
-      "Local hooks and policies that constrain scope, prevent accidental pushes, and coordinate shared resources",
-      "Variant matrices, reproducible evidence, and screenshots for manual test review",
-      "Local-first workflow that supports multiple repositories and coding agents",
+      "Ticket board with clear stages and scope approval tied to the planned changes",
+      "Separate Git worktrees for concurrent ticket work without disturbing the main checkout",
+      "Local policies for scope checks, shared build resources, and avoiding accidental pushes",
+      "Test matrices and attached evidence to make reviews easier to verify",
+      "Azure DevOps import and support for both Claude Code and Codex",
     ],
     challenges:
-      "Improve the reliability of AI-assisted development without turning automation into unrestricted authorization or losing ticket context.",
+      "Keep ticket context, code changes, and test results connected while several repositories and development sessions are in progress.",
     solutions:
-      "Built an auditable workflow with plan-bound approval, worktree isolation, tool policies, shared build and test reservations, and evidence-based documentation.",
+      "The application separates tickets into worktrees, records approvals and test evidence, and coordinates agent sessions through local policies. It automates routine tracking while leaving scope decisions and final delivery visible to the developer.",
     thumbnailAlt:
-      "Conceptual AI Ticket Control Center dashboard with tickets, approvals, and evidence",
+      "Ticket Control Center dashboard with development stages, approvals, and test evidence",
   },
   "database-portal": {
     title: "DatabasePortal",
     shortDescription:
-      "A governance portal for securely validating, authorizing, and auditing SQL Server operations.",
+      "A .NET portal for managing SQL Server access, permissions, and audit history.",
     description:
-      "A full-stack application that centralizes access to SQL Server databases and controls each operation by user, role, environment, statement, and object. The portal provides a protected SQL console, connection and permission management, and complete request traceability.",
+      "DatabasePortal brings database connections, access rules, and a SQL console into one place. Before a command runs, the server checks the user, environment, statement, and affected objects; the decision and result are recorded in the history.",
     role: "Full-stack Developer",
     tags: ["C#", ".NET", "Blazor", "SQL Server", "Full-stack"],
     highlights: [
@@ -327,30 +329,30 @@ const projectTranslations: Record<string, ProjectTranslation> = {
   bancada: {
     title: "Bancada",
     shortDescription:
-      "A recipe community born from my passion for cooking and thoughtfully crafted digital experiences.",
+      "A recipe community to discover dishes, save favorites, and cook together.",
     description:
-      "A full-stack platform where home cooks can publish and discover recipes, create profiles, save favorites, comment, and join culinary challenges. The project turns my personal passion for cooking into a complete, secure, and responsive experience.",
+      "Bancada brings recipe publishing and discovery together. Cooks can filter by ingredients, difficulty, or prep time, save favorites, comment, and take part in culinary challenges.",
     role: "Full-stack Developer",
     tags: ["C#", ".NET", "Blazor", "Full-stack", "API"],
     highlights: [
-      "Recipe publishing, editing, and discovery with filters for text, difficulty, time, and ingredients",
-      "Public profiles, favorites, comments, and secure HTTP-only cookie authentication",
-      "Culinary challenges and a Mystery Box designed to inspire creativity and community participation",
-      "Layered architecture, PostgreSQL, local/R2 image uploads, and domain and integration tests",
+      "Recipe search by ingredients, preparation time, and difficulty",
+      "Profiles, favorites, and comments protected by HTTP-only cookie authentication",
+      "Challenges and a Mystery Box for suggesting new combinations",
+      "Local or Cloudflare R2 image uploads, with domain and integration tests",
     ],
     challenges:
-      "Bring content, social interaction, and participation rules into a simple experience for home cooks without compromising security, consistency, or room to grow.",
+      "Bring recipes and community features together without making the experience cumbersome or scattering access rules throughout the application.",
     solutions:
-      "Separated domain, application, infrastructure, API, and Blazor client responsibilities, centralized authentication and authorization with ASP.NET Core Identity, and protected key workflows with automated tests.",
+      "Separated the interface, API, and business rules, centralized authentication and authorization with ASP.NET Core Identity, and covered the main flows with tests.",
     thumbnailAlt:
       "Bancada preview featuring an editorial introduction, culinary challenge, and recipe cards",
   },
   "supportdesk-api": {
     title: "SupportDesk API",
     shortDescription:
-      "Support ticket management API with authentication, auditing, and real-time updates.",
+      "Support API for handling tickets, access rules, and status updates.",
     description:
-      "Backend for support teams to manage the entire ticket lifecycle, with role-based access, public and internal comments, change history, and real-time notifications.",
+      "An API for the support workflow: ticket creation, assignment, comments, and status changes. Customers, agents, and administrators have different permissions, and updates can be followed in real time.",
     role: "Back-end Developer",
     tags: ["C#", ".NET", "API", "Back-end"],
     highlights: [
@@ -369,9 +371,9 @@ const projectTranslations: Record<string, ProjectTranslation> = {
   "service-scheduler-api": {
     title: "ServiceScheduler API",
     shortDescription:
-      "Service scheduling API with availability, secure bookings, and conflict prevention.",
+      "Scheduling API with availability lookup and protection against conflicting bookings.",
     description:
-      "Backend for customers to book services and providers to manage their catalog, weekly availability, and the complete appointment lifecycle.",
+      "Customers check availability and book services; providers manage their catalog and weekly schedule. The API also handles rescheduling, confirmation, completion, and cancellation.",
     role: "Back-end Developer",
     tags: ["C#", ".NET", "API", "Back-end"],
     highlights: [
@@ -393,9 +395,9 @@ const projectTranslations: Record<string, ProjectTranslation> = {
   "sos-mg": {
     title: "SOS MG",
     shortDescription:
-      "Public portal for managing shelters and donation points during floods and severe rainfall.",
+      "Shelter and donation-point information for periods of heavy rain in Minas Gerais.",
     description:
-      "Web application that centralizes official shelter and collection-point information during extreme weather in Minas Gerais, with a restricted dashboard for authorized teams to update capacity and urgent needs.",
+      "SOS MG brings shelters and donation points together on a map. Authorized teams update capacity and local needs through a dashboard, while the public can find available locations.",
     role: "Full-stack Developer",
     tags: ["Next.js", "TypeScript", "Prisma", "Maps", "Full-stack"],
     highlights: [
@@ -404,17 +406,17 @@ const projectTranslations: Record<string, ProjectTranslation> = {
       "Interactive Leaflet and OpenStreetMap experience with clustering for quick crisis response",
     ],
     challenges:
-      "Keep operational information reliable and current during periods of heavy rainfall and high demand.",
+      "Make local capacity and urgent needs easy to find as conditions change.",
     solutions:
-      "NextAuth authentication, Prisma data modeling, serverless PostgreSQL, and an interface designed to emphasize urgent needs.",
+      "Separated the public map from the update dashboard, with authentication, Prisma, and PostgreSQL for managing the information.",
     thumbnailAlt:
       "Flood-response map with shelters and donation points across Minas Gerais",
   },
   "pacman-3d": {
     title: "Pacman 3D",
-    shortDescription: "A browser-based 3D game inspired by Pac-Man.",
+    shortDescription: "A 3D maze inspired by Pac-Man, playable right in the browser.",
     description:
-      "3D web game featuring maze movement, point collection, and smooth browser-based gameplay.",
+      "A short arcade-style experience in 3D: explore the maze, collect points, and avoid the ghosts without installing anything.",
     role: "Developer",
     tags: ["GameDev", "3D", "Web"],
     highlights: [
@@ -423,9 +425,9 @@ const projectTranslations: Record<string, ProjectTranslation> = {
       "Web deployment for instant browser play",
     ],
     challenges:
-      "Maintain smooth 3D rendering performance across different devices.",
+      "Keep the controls responsive and rendering smooth across browsers.",
     solutions:
-      "Optimized the render loop, refined collision behavior, and modularized the game logic.",
+      "Separated the game loop, movement, and collision handling to make gameplay predictable and easier to tune.",
     thumbnailAlt:
       "Pacman 3D game preview featuring a maze and collectible points",
     galleryAlts: [
@@ -435,27 +437,29 @@ const projectTranslations: Record<string, ProjectTranslation> = {
   },
   encanshop: {
     title: "EncanShop",
-    shortDescription: "Candle e-commerce with a simple shopping experience.",
+    shortDescription:
+      "A candle shop with a catalog, checkout, and order tracking.",
     description:
-      "E-commerce project for selling candles, featuring a modern web interface built with TypeScript.",
+      "EncanShop brings the storefront, cart, checkout, and customer area together. The admin panel manages products and orders; Mercado Pago handles payments, and webhooks keep order status up to date.",
     role: "Developer",
-    tags: ["TypeScript", "E-commerce", "Web"],
+    tags: ["React", "TypeScript", "E-commerce", "Web"],
     highlights: [
-      "Candle catalog with a clear visual presentation",
-      "Navigation flow designed for product discovery",
-      "Front-end foundation ready for new features",
+      "Checkout with Pix, card, or completion through WhatsApp",
+      "Customer area for orders, addresses, and pending payments",
+      "Admin panel for products, coupons, and orders",
+      "Mercado Pago webhooks and transactional emails",
     ],
     challenges:
-      "Organize product presentation and navigation while maintaining strong performance.",
+      "Keep order totals and payment status consistent between the store and Mercado Pago.",
     solutions:
-      "Reusable component structure, focused interface design, and strongly typed code.",
+      "The server recalculates products and shipping before creating an order. Webhooks sync payment status, and Redis helps prevent duplicate concurrent processing.",
     thumbnailAlt: "EncanShop preview",
   },
   fastbite: {
     title: "FastBite",
-    shortDescription: "Fast-ordering web application with a Python backend.",
+    shortDescription: "A straightforward app for registering orders and following the service queue.",
     description:
-      "Full-stack project with a Python backend and an interface built with HTML, CSS, and JavaScript.",
+      "A small full-stack project with a Python backend and an HTML, CSS, and JavaScript interface for following orders without adding friction to the workflow.",
     role: "Developer",
     tags: ["Python", "Web", "Full-stack"],
     highlights: [
@@ -464,16 +468,16 @@ const projectTranslations: Record<string, ProjectTranslation> = {
       "Clear separation between logic and presentation",
     ],
     challenges:
-      "Keep the backend simple and the interface lightweight for quick use.",
+      "Make order progress clear without overloading the interface.",
     solutions:
-      "Modular implementation focused on short, direct flows for the end user.",
+      "Kept order logic in the backend and made the main actions available in a few steps.",
     thumbnailAlt: "FastBite dashboard with an order queue and delivery route",
   },
   "app-controle-financeiro": {
     title: "Financial Control App",
-    shortDescription: "A .NET MAUI app for managing personal finances.",
+    shortDescription: "A cross-platform app for recording personal income and expenses.",
     description:
-      "Cross-platform .NET MAUI application focused on tracking expenses and income.",
+      "A personal finance app built with .NET MAUI for recording income and expenses and checking transactions across devices.",
     role: "Developer",
     tags: ["MAUI", "Mobile", ".NET"],
     highlights: [
@@ -481,9 +485,9 @@ const projectTranslations: Record<string, ProjectTranslation> = {
       "Clear flows for entering and monitoring transactions",
       "Architecture designed for future features",
     ],
-    challenges: "Deliver a strong experience across different devices.",
+    challenges: "Keep transaction entry and review simple across different screen sizes.",
     solutions:
-      "Componentized the interface and standardized styling and navigation.",
+      "Used MAUI components and consistent navigation to keep the same workflows across platforms.",
     thumbnailAlt:
       "MAUI finance app mockup showing a summary of income and expenses",
   },
