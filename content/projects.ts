@@ -29,15 +29,17 @@ export const projects: Project[] = [
     slug: "claude-admin-agent",
     title: "Central de Tickets AI",
     shortDescription:
-      "Central local-first para organizar desenvolvimentos com agentes de código com mais segurança e rastreabilidade.",
+      "Central local-first para organizar desenvolvimentos com agentes de código, atualmente em migração gradual de Node.js para C#/.NET.",
     description:
-      "Aplicação web para transformar tickets em um fluxo controlado de análise, aprovação, implementação, testes, revisão e entrega. O projeto combina worktrees isoladas, regras de escopo, evidências verificáveis e integração com agentes de código sem publicar alterações automaticamente.",
+      "Aplicação web para transformar tickets em um fluxo controlado de análise, aprovação, implementação, testes, revisão e entrega. A versão principal usa Node.js e a migração incremental para C#/.NET 10 já inclui uma API e uma interface web de leitura, mantendo os dados existentes sem alterações.",
     year: "2026",
     role: "Desenvolvedor Full-stack",
     stack: [
       "Node.js",
       "JavaScript",
       "PowerShell",
+      "C#",
+      "ASP.NET Core 10",
       "Git",
       "Claude Code",
       "Testes automatizados",
@@ -55,11 +57,12 @@ export const projects: Project[] = [
       "Hooks e políticas locais para limitar escopo, bloquear push acidental e controlar recursos compartilhados",
       "Matriz de variantes, evidências reproduzíveis e prints de testes manuais para apoiar a revisão",
       "Fluxo local-first compatível com diferentes repositórios e agentes de desenvolvimento",
+      "Migração incremental para ASP.NET Core com API e interface responsiva, preservando a operação Node durante a transição",
     ],
     challenges:
       "Aumentar a confiabilidade de desenvolvimentos assistidos por IA sem transformar automação em autorização irrestrita ou perder o contexto do ticket.",
     solutions:
-      "Estruturei o fluxo em etapas auditáveis, com aprovação vinculada ao plano, isolamento por worktree, políticas de ferramentas, reserva de compilação/testes e documentação baseada em evidências.",
+      "Estruturei o fluxo em etapas auditáveis, com aprovação vinculada ao plano, isolamento por worktree, políticas de ferramentas, reserva de compilação/testes e documentação baseada em evidências. A migração para ASP.NET Core é feita em fatias testadas, sem substituir a Central Node antes de cobrir os fluxos equivalentes.",
     links: [
       {
         label: "GitHub",
