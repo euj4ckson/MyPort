@@ -75,9 +75,11 @@ export function CertificatesGrid() {
                     <h3 className="font-display text-xl font-semibold">
                       {certificate.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground">
-                      {certificate.issuer}
-                    </p>
+                    {certificate.issuer ? (
+                      <p className="text-sm text-muted-foreground">
+                        {certificate.issuer}
+                      </p>
+                    ) : null}
                     {certificate.period && (
                       <p className="mt-1 text-xs text-muted-foreground">
                         {certificate.period}
@@ -115,7 +117,11 @@ export function CertificatesGrid() {
               <DialogContent>
                 <DialogHeader>
                   <DialogTitle>{certificate.title}</DialogTitle>
-                  <DialogDescription>{certificate.issuer}</DialogDescription>
+                  <DialogDescription>
+                    {certificate.issuer ??
+                      certificate.period ??
+                      certificate.title}
+                  </DialogDescription>
                 </DialogHeader>
                 <div className="space-y-4">
                   {currentImage ? (

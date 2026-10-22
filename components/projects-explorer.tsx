@@ -17,6 +17,13 @@ const projectPriority = [
   "bancada",
 ];
 
+function normalizeSearchText(value: string) {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLocaleLowerCase();
+}
+
 export function ProjectsExplorer() {
   const { language, text } = useLanguage();
   const [query, setQuery] = React.useState("");
@@ -52,7 +59,9 @@ export function ProjectsExplorer() {
       const matchesTag = activeTag === null || project.tags.includes(activeTag);
       const searchText =
         `${project.title} ${project.shortDescription} ${project.description} ${project.stack.join(" ")} ${project.tags.join(" ")}`.toLowerCase();
-      const matchesQuery = searchText.includes(query.trim().toLowerCase());
+      const matchesQuery = normalizeSearchText(searchText).includes(
+        normalizeSearchText(query.trim()),
+      );
       return matchesTag && matchesQuery;
     });
   }, [activeTag, localizedProjects, query]);

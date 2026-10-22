@@ -69,9 +69,11 @@ export function CertificatesPreview() {
                 <h3 className="mt-4 font-display text-lg font-semibold leading-snug">
                   {certificate.title}
                 </h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {certificate.issuer}
-                </p>
+                {certificate.issuer ? (
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {certificate.issuer}
+                  </p>
+                ) : null}
                 {certificate.period && (
                   <p className="mt-1 text-xs text-muted-foreground">
                     {certificate.period}

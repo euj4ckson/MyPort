@@ -9,13 +9,23 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { profile } from "@/content/profile";
 
-type FormState = { name: string; email: string; message: string };
+type FormState = {
+  name: string;
+  email: string;
+  message: string;
+  website: string;
+};
 
 type Status = "idle" | "loading" | "success" | "error";
 
 type FieldErrors = Partial<Record<keyof FormState, string>>;
 
-const initialState: FormState = { name: "", email: "", message: "" };
+const initialState: FormState = {
+  name: "",
+  email: "",
+  message: "",
+  website: "",
+};
 
 export function ContactForm() {
   const { text } = useLanguage();
@@ -27,6 +37,13 @@ export function ContactForm() {
     (key: keyof FormState) =>
     (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       setValues((prev) => ({ ...prev, [key]: event.target.value }));
+      setErrors((prev) => {
+        if (!(key in prev)) return prev;
+        const next = { ...prev };
+        delete next[key];
+        return next;
+      });
+      setStatus((current) => (current === "loading" ? current : "idle"));
     };
 
   const validate = () => {
@@ -82,13 +99,28 @@ export function ContactForm() {
 
       setStatus("success");
       setValues(initialState);
-    } catch (error) {
+    } catch {
       setStatus("error");
     }
   };
 
   return (
     <form className="space-y-5" onSubmit={onSubmit} noValidate>
+      <div
+        className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden"
+        aria-hidden="true"
+      >
+        <label htmlFor="website">Website</label>
+        <input
+          id="website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={values.website}
+          onChange={onChange("website")}
+        />
+      </div>
       <div className="space-y-2">
         <label htmlFor="name" className="text-sm font-medium">
           {text.form.name}

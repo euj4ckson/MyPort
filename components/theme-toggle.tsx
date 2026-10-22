@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 
 export function ThemeToggle() {
   const { text } = useLanguage();
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
@@ -18,19 +18,23 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <Button variant="ghost" size="sm" aria-label={text.theme.toggle} disabled>
+      <span
+        aria-hidden="true"
+        className="inline-flex h-9 w-9 items-center justify-center rounded-full"
+      >
         <Sun className="h-4 w-4" />
-      </Button>
+      </span>
     );
   }
 
-  const isDark = theme === "dark";
+  const isDark = resolvedTheme === "dark";
 
   return (
     <Button
       variant="ghost"
       size="sm"
-      aria-label={text.theme.toggle}
+      aria-label={isDark ? text.theme.switchToLight : text.theme.switchToDark}
+      aria-pressed={isDark}
       onClick={() => setTheme(isDark ? "light" : "dark")}
     >
       {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}

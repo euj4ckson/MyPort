@@ -19,7 +19,10 @@ export const copy = {
       portuguese: "Português",
       english: "Inglês",
     },
-    theme: { toggle: "Alterar tema" },
+    theme: {
+      switchToLight: "Ativar tema claro",
+      switchToDark: "Ativar tema escuro",
+    },
     hero: {
       available: "Disponível para novas oportunidades",
       viewProjects: "Ver projetos",
@@ -77,19 +80,19 @@ export const copy = {
     },
     certificatesPreview: {
       eyebrow: "Certificados",
-      title: "Formação contínua em .NET e boas práticas",
+      title: "Formação e aprendizado contínuo.",
       description:
-        "Certificações e cursos focados em qualidade, escalabilidade e desenvolvimento moderno.",
+        "Formação acadêmica e cursos relevantes para desenvolvimento backend.",
       all: "Ver todos os certificados",
       credential: "Credencial:",
     },
     certificatesPage: {
       eyebrow: "Formação e certificados",
-      title: "Certificações e formação acadêmica",
+      title: "Certificados e formação acadêmica",
       description:
-        "Filtre por categoria para visualizar certificados ou formação acadêmica.",
+        "Veja cursos concluídos e formação acadêmica, incluindo estudos em andamento.",
       all: "Todos",
-      certifications: "Certificações",
+      certifications: "Certificados",
       academic: "Formação acadêmica",
       credential: "Credencial:",
       viewCredential: "Ver credencial",
@@ -144,7 +147,10 @@ export const copy = {
       portuguese: "Portuguese",
       english: "English",
     },
-    theme: { toggle: "Toggle theme" },
+    theme: {
+      switchToLight: "Switch to light theme",
+      switchToDark: "Switch to dark theme",
+    },
     hero: {
       available: "Available for new opportunities",
       viewProjects: "View projects",
@@ -200,9 +206,9 @@ export const copy = {
     },
     certificatesPreview: {
       eyebrow: "Certificates",
-      title: "Continuous learning in .NET and best practices",
+      title: "Education and continued learning.",
       description:
-        "Certificates and courses focused on quality, scalability, and modern development.",
+        "Academic background and selected courses relevant to backend development.",
       all: "View all certificates",
       credential: "Credential:",
     },
@@ -210,7 +216,7 @@ export const copy = {
       eyebrow: "Education and certificates",
       title: "Certificates and academic background",
       description:
-        "Filter by category to view certificates or academic education.",
+        "Browse completed courses and academic education, including studies in progress.",
       all: "All",
       certifications: "Certificates",
       academic: "Academic background",
@@ -414,7 +420,8 @@ const projectTranslations: Record<string, ProjectTranslation> = {
   },
   "pacman-3d": {
     title: "Pacman 3D",
-    shortDescription: "A 3D maze inspired by Pac-Man, playable right in the browser.",
+    shortDescription:
+      "A 3D maze inspired by Pac-Man, playable right in the browser.",
     description:
       "A short arcade-style experience in 3D: explore the maze, collect points, and avoid the ghosts without installing anything.",
     role: "Developer",
@@ -457,7 +464,8 @@ const projectTranslations: Record<string, ProjectTranslation> = {
   },
   fastbite: {
     title: "FastBite",
-    shortDescription: "A straightforward app for registering orders and following the service queue.",
+    shortDescription:
+      "A straightforward app for registering orders and following the service queue.",
     description:
       "A small full-stack project with a Python backend and an HTML, CSS, and JavaScript interface for following orders without adding friction to the workflow.",
     role: "Developer",
@@ -467,15 +475,15 @@ const projectTranslations: Record<string, ProjectTranslation> = {
       "Organized architecture ready to grow",
       "Clear separation between logic and presentation",
     ],
-    challenges:
-      "Make order progress clear without overloading the interface.",
+    challenges: "Make order progress clear without overloading the interface.",
     solutions:
       "Kept order logic in the backend and made the main actions available in a few steps.",
     thumbnailAlt: "FastBite dashboard with an order queue and delivery route",
   },
   "app-controle-financeiro": {
     title: "Financial Control App",
-    shortDescription: "A cross-platform app for recording personal income and expenses.",
+    shortDescription:
+      "A cross-platform app for recording personal income and expenses.",
     description:
       "A personal finance app built with .NET MAUI for recording income and expenses and checking transactions across devices.",
     role: "Developer",
@@ -485,7 +493,8 @@ const projectTranslations: Record<string, ProjectTranslation> = {
       "Clear flows for entering and monitoring transactions",
       "Architecture designed for future features",
     ],
-    challenges: "Keep transaction entry and review simple across different screen sizes.",
+    challenges:
+      "Keep transaction entry and review simple across different screen sizes.",
     solutions:
       "Used MAUI components and consistent navigation to keep the same workflows across platforms.",
     thumbnailAlt:
@@ -576,8 +585,8 @@ const certificateTranslations: Record<
     issuer: "Estácio",
   },
   "/certificates/computacao-em-nuvem-aws.png": {
-    title: "Cloud Computing",
-    issuer: "Amazon Web Services (AWS)",
+    title: "Cloud Computing | AWS Discovery Day",
+    issuer: "Estácio · Ka Solution",
   },
 };
 
@@ -598,10 +607,7 @@ export function localizeCertificate(
     return {
       ...certificate,
       title: academicTitles[certificate.title] ?? certificate.title,
-      issuer:
-        certificate.issuer === "Formacao Academica"
-          ? "Academic Education"
-          : certificate.issuer,
+      issuer: certificate.issuer,
       period:
         certificate.period === "Mar/2023 - Ago/2025"
           ? "Mar 2023 - Aug 2025"

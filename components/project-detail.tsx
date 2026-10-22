@@ -18,6 +18,7 @@ export function ProjectDetail({ project }: { project: Project }) {
     GitHub: text.projectDetail.github,
     "Case Study": text.projectDetail.caseStudy,
   };
+  const gallery = localizedProject.gallery ?? [];
 
   return (
     <div className="space-y-10">
@@ -78,7 +79,13 @@ export function ProjectDetail({ project }: { project: Project }) {
           className="h-72 w-full object-cover md:h-96"
         />
       </Card>
-      <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+      <div
+        className={
+          gallery.length > 0
+            ? "grid gap-8 lg:grid-cols-[1.1fr_0.9fr]"
+            : "grid gap-8"
+        }
+      >
         <div className="space-y-6">
           <div className="space-y-3">
             <h2 className="font-display text-2xl font-semibold">
@@ -115,13 +122,13 @@ export function ProjectDetail({ project }: { project: Project }) {
             </div>
           </div>
         </div>
-        <div className="space-y-4">
-          <h2 className="font-display text-2xl font-semibold">
-            {text.projectDetail.gallery}
-          </h2>
+        {gallery.length > 0 ? (
           <div className="space-y-4">
-            {(localizedProject.gallery ?? [localizedProject.thumbnail]).map(
-              (item) => (
+            <h2 className="font-display text-2xl font-semibold">
+              {text.projectDetail.gallery}
+            </h2>
+            <div className="space-y-4">
+              {gallery.map((item) => (
                 <Card key={item.src} className="overflow-hidden">
                   <Image
                     src={item.src}
@@ -131,10 +138,10 @@ export function ProjectDetail({ project }: { project: Project }) {
                     className="h-56 w-full object-cover"
                   />
                 </Card>
-              ),
-            )}
+              ))}
+            </div>
           </div>
-        </div>
+        ) : null}
       </div>
       <div className="flex flex-wrap items-center justify-between gap-5 rounded-2xl border border-primary/25 bg-primary/5 p-6">
         <div>

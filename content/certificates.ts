@@ -1,6 +1,6 @@
 export type Certificate = {
   title: string;
-  issuer: string;
+  issuer?: string;
   category: "certificate" | "academic";
   period?: string;
   credentialId?: string;
@@ -11,7 +11,7 @@ export type Certificate = {
 export const certificates: Certificate[] = [
   {
     title: "Programação de Algoritmos Escaláveis",
-    issuer: "Estacio",
+    issuer: "Estácio",
     category: "certificate",
     credentialId: "dcb68b7730c17a9e4d5ba68",
     url: "https://certificado.estacio.br/dcb68b7730c17a9e4d5ba68",
@@ -28,7 +28,7 @@ export const certificates: Certificate[] = [
   {
     title:
       "Desenvolvimento Rápido de Aplicações em Python para Cloud, IoT e Big Data",
-    issuer: "Estacio",
+    issuer: "Estácio",
     category: "certificate",
     credentialId: "2d91da0166a3a91f56fb1ce",
     url: "https://certificado.estacio.br/2d91da0166a3a91f56fb1ce",
@@ -45,7 +45,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Programação para Internet",
-    issuer: "Estacio",
+    issuer: "Estácio",
     category: "certificate",
     credentialId: "899f002ae2c48c0faf74772",
     url: "https://certificado.estacio.br/899f002ae2c48c0faf74772",
@@ -53,15 +53,15 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Programação para Dispositivos Móveis",
-    issuer: "Estacio",
+    issuer: "Estácio",
     category: "certificate",
     credentialId: "5b05a371daeea62a840e032",
     url: "https://certificado.estacio.br/5b05a371daeea62a840e032",
     image: "/certificates/programacao-dispositivos-moveis.jpg",
   },
   {
-    title: "Computação em Nuvem",
-    issuer: "Amazon Web Services (AWS)",
+    title: "Computação em Nuvem | AWS Discovery Day",
+    issuer: "Estácio · Ka Solution",
     category: "certificate",
     credentialId: "05053-53866",
     url: "https://www.kasolution.com.br/certificado",
@@ -76,14 +76,13 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Pós-graduação em Engenharia de Software",
-    issuer: "Formacao Academica",
     category: "academic",
     period: "Abr/2026 - Abr/2027 · Em andamento",
     url: "#",
   },
   {
     title: "Tecnólogo em Análise e Desenvolvimento de Sistemas",
-    issuer: "Centro Universitario Estacio Juiz de Fora",
+    issuer: "Centro Universitário Estácio Juiz de Fora",
     category: "academic",
     credentialId: "1986.1986.9161ed4d229e",
     period: "Mar/2023 - Ago/2025",
