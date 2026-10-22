@@ -82,7 +82,6 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Tecnólogo em Análise e Desenvolvimento de Sistemas",
-    issuer: "Centro Universitário Estácio Juiz de Fora",
     category: "academic",
     credentialId: "1986.1986.9161ed4d229e",
     period: "Mar/2023 - Ago/2025",
