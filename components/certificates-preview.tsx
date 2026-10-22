@@ -10,8 +10,8 @@ import { localizeCertificate } from "@/lib/i18n";
 
 const featured = [
   "Tecnólogo em Análise e Desenvolvimento de Sistemas",
-  "Computação em Nuvem",
-  "Programação de Algoritmos Escaláveis",
+  "Pós-graduação em Engenharia de Software",
+  ".NET MAUI",
 ];
 
 export function CertificatesPreview() {
