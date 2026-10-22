@@ -9,7 +9,7 @@ export const size = {
 
 export const contentType = "image/png";
 export const alt =
-  "Jackson Eduardo — Desenvolvedor Backend .NET Pleno. APIs, integrações e sistemas de gestão.";
+  "Jackson Eduardo — Desenvolvedor Backend. APIs, integrações e sistemas de gestão.";
 
 export default function OpenGraphImage() {
   return new ImageResponse(

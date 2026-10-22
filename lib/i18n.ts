@@ -520,7 +520,7 @@ export function localizeProject(project: Project, language: Language): Project {
 
 export const profileEnglish = {
   ...profile,
-  headline: "Mid-level .NET Backend Developer",
+  headline: "Backend Developer",
   location: "Juiz de Fora, Brazil",
   bio: "I work with C#, .NET and SQL Server to evolve business systems and integrations. In my personal projects, I explore APIs, security, testing and AI-assisted automation.",
   summary:
@@ -534,7 +534,7 @@ export function localizeProfile(language: Language) {
 export const timelineEnglish: TimelineItem[] = [
   {
     period: "Jun 2025 - Present",
-    title: "Mid-level .NET Backend Developer",
+    title: "Backend Developer",
     company: "Union Sistemas de Gestão",
     description:
       "ERP development and maintenance with C#, ASP.NET, VB.NET and SQL Server; REST integrations, tax, financial and logistics processes, and an Android sales app integrated through WCF/SOAP and SQLite.",

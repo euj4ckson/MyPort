@@ -12,7 +12,7 @@ Quando configurado explicitamente com localhost, o site não publica URLs locais
 
 ## Sugestão de título para o LinkedIn
 
-Desenvolvedor Backend .NET Pleno | C# · ASP.NET · SQL Server · APIs REST | ERP e integrações
+Desenvolvedor Backend | C# · ASP.NET · SQL Server · APIs REST | ERP e integrações
 
 ## Texto para apresentar o portfólio
 

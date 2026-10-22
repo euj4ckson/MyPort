@@ -12,9 +12,9 @@ const isPublicUrlConfigured =
 
 export const siteConfig = {
   name: "Jackson Eduardo",
-  title: "Jackson Eduardo | Desenvolvedor Backend .NET Pleno",
+  title: "Jackson Eduardo | Desenvolvedor Backend",
   description:
-    "Desenvolvedor Backend .NET Pleno com experiência em C#, SQL Server, ERP e integrações. Explore meus projetos de APIs, segurança e automação com IA.",
+    "Desenvolvedor Backend com experiência em C#, SQL Server, ERP e integrações. Explore meus projetos de APIs, segurança e automação com IA.",
   url: siteUrl.origin,
   isPublicUrlConfigured,
   ogImage: "/opengraph-image",

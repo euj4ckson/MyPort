@@ -8,7 +8,7 @@ export type TimelineItem = {
 export const timeline: TimelineItem[] = [
   {
     period: "Jun/2025 - atual",
-    title: "Desenvolvedor Backend .NET Pleno",
+    title: "Desenvolvedor Backend",
     company: "Union Sistemas de Gestão",
     description:
       "Desenvolvimento e sustentação de ERP com C#, ASP.NET, VB.NET e SQL Server; integrações REST, processos fiscais, financeiros e logísticos, além de evolução de aplicativo Android integrado por WCF/SOAP e SQLite.",

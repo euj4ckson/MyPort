@@ -1,6 +1,6 @@
 export const profile = {
   name: "Jackson Eduardo",
-  headline: "Desenvolvedor Backend .NET Pleno",
+  headline: "Desenvolvedor Backend",
   location: "Juiz de Fora, MG · Brasil",
   bio: "Trabalho com C#, .NET e SQL Server na evolução de sistemas de gestão e integrações. Nos meus projetos, exploro APIs, segurança, testes e automação com IA.",
   summary:
